@@ -7,12 +7,7 @@
             <span class="person-icon">⼈</span>
             Adobe Acrobat Sign
           </div>
-          <img
-            class="adobe-logo"
-            src="https://na4.documents.adobe.com/images/emailNextGen/email-adobe-tag-classic@2x.png"
-            alt="Adobe Logo"
-          />
-        </div>
+      
 
         <div class="success-check">✓</div>
 
