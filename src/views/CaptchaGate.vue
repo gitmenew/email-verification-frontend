@@ -1,4 +1,4 @@
-<!-- CaptchaGate logic here --><template>
+<template>
   <div class="container">
     <h1>Human Check</h1>
     <p>Please press and hold to continue. Captcha must validate successfully.</p>
