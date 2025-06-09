@@ -161,7 +161,7 @@ function cancelHold() {
 
 .email-input {
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   padding: 0.6rem;
   margin-top: 1rem;
   border: 1px solid #ccc;
@@ -178,7 +178,7 @@ function cancelHold() {
   cursor: pointer;
   margin-top: 1rem;
   font-size: 1rem;
-  width: 60%;
+  width: 95%;
   max-width: 180px;
 }
 
