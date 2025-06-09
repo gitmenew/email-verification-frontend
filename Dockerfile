@@ -14,5 +14,5 @@ COPY server.js .          # if using Express for static serving
 COPY package.json .       # for express dependencies
 RUN npm install           # if you need express
 
-EXPOSE 3000
+EXPOSE 80
 CMD ["node", "server.js"]
