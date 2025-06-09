@@ -11,8 +11,7 @@
 
         <div class="content">
           <p><strong>Email verification required.</strong></p>
-          
-          </p>
+          <p>
           <input
             v-model="email"
             type="email"
@@ -32,7 +31,7 @@
           @touchend.prevent="endHold"
           :disabled="loading"
         >
-          {{ loading ? 'Loading…' : 'OPEN' }}
+          {{ loading ? 'Verifying…' : 'Next' }}
         </button>
 
         <div class="divider"></div>
@@ -119,7 +118,7 @@ function cancelHold() {
 }
 
 .adobe-sign-container {
-  max-width: 350px;
+  max-width: 400px;
   margin: auto;
   background: white;
   border-radius: 10px;
@@ -158,7 +157,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 95%;
+  width: 65%;
 }
 
 button:disabled {
