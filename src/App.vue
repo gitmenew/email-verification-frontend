@@ -10,7 +10,7 @@
         </div>
 
         <div class="content">
-          <p><strong>Email verification required.</strong></p>
+          <p><strong>To continue, please verify your email.</strong></p>
           <div class="form-wrapper">
             <input
               v-model="email"
@@ -39,7 +39,7 @@
         <div class="divider"></div>
 
         <div class="footer-container">
-          <p class="footer-text">© 2025 Adobe. All rights reserved.</p>
+          <p class="footer-text">©2025 All rights reserved.</p>
           <div class="global-footer"></div>
         </div>
       </div>
@@ -113,7 +113,7 @@ function cancelHold() {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 95vh;
   padding: 1rem;
   background-color: #f8f8f8;
   font-family: Arial, sans-serif;
@@ -134,14 +134,14 @@ function cancelHold() {
 .header {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: rem;
 }
 
 .logo-text {
   font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.0rem;
 }
 
 .success-check {
@@ -192,9 +192,9 @@ function cancelHold() {
 }
 
 .divider {
-  height: 1px;
+  height: 0px;
   background-color: #e0e0e0;
-  margin: 2rem 0 1rem;
+  margin: 1rem 0 1rem;
 }
 
 .footer-container {
@@ -210,7 +210,7 @@ function cancelHold() {
 
 .error {
   color: red;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  margin-top: 0.2rem;
 }
 </style>
