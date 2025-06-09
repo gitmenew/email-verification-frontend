@@ -123,14 +123,14 @@ function cancelHold() {
 .header {
   display: flex;
   justify-content: center;
-  margin-bottom: rem;
+  margin-bottom: 1rem;
 }
 
 .logo-text {
   font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 0rem;
+  gap: 1rem;
 }
 
 .success-check {
@@ -165,9 +165,9 @@ function cancelHold() {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 0rem;
+  margin-top: 0.2rem;
   font-size: 1rem;
-  width: 95%;
+  width: 75%;
   max-width: 380px;
 }
 
