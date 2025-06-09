@@ -3,7 +3,7 @@
   <div class="main-content">
     <img src="/favicon.ico" alt="Logo" class="heading-favicon" />
     <h1 class="h1">Before we continue...</h1>
-    <p class="body-text spacer">Please verify your email and hold the button briefly to continue.</p>
+    <p class="body-text spacer">Please verify your email & hold the button briefly to continue.</p>
 
     <input
       v-model="email"
