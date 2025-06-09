@@ -119,12 +119,16 @@ function cancelHold() {
   font-family: Arial, sans-serif;
 }
 .adobe-sign-container {
-  max-width: 350px;
-  margin: auto;
+  width: 100%;
+  max-width: 420px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 }
 
 
