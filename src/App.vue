@@ -112,13 +112,16 @@ function cancelHold() {
 }
 </script>
 
-<style scoped>
-/* make sure the page really fills the viewport */
+<!-- global styles must be unscoped -->
+<style>
 html, body, #app {
   height: 100%;
   margin: 0;
 }
+</style>
 
+<!-- component-specific styles -->
+<style scoped>
 .background {
   min-height: 100vh;
   padding: 2rem;
@@ -176,6 +179,11 @@ html, body, #app {
   border-radius: 5px;
 }
 
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
 .action-button {
   background-color: #0051c3;
   color: white;
@@ -211,10 +219,5 @@ html, body, #app {
   font-size: 0.85rem;
   color: #333;
   margin-top: 0.5rem;
-}
-
-.error {
-  color: red;
-  font-size: 0.9rem;
 }
 </style>
