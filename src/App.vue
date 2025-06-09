@@ -13,7 +13,7 @@
 
         <div class="content">
           <p><strong>Email verification required.</strong></p>
-          <p>Enter the email address to which this item was shared.</p>
+         
           <input
             v-model="email"
             type="email"
