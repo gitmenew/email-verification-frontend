@@ -176,7 +176,7 @@ function cancelHold() {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 1.0rem;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   width: 55%;
   max-width: 380px;
 }
