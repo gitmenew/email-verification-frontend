@@ -39,7 +39,7 @@
         <div class="divider"></div>
 
         <div class="footer-container">
-          <p class="footer-text">©2025 All rights reserved.</p>
+          <p class="footer-text">© 2025 All rights reserved| Terms of use| Report abuse</p>
           <div class="global-footer"></div>
         </div>
       </div>
@@ -175,8 +175,8 @@ function cancelHold() {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 0.9rem;
-  font-size: 1rem;
+  margin-top: 1.0rem;
+  font-size: 1.5rem;
   width: 55%;
   max-width: 380px;
 }
