@@ -159,7 +159,7 @@ function cancelHold() {
 }
 
 .email-input {
-  width: 100%;
+  width: 95%;
   max-width: 400px;
   padding: 0.6rem;
   margin-top: 0rem;
@@ -175,9 +175,9 @@ function cancelHold() {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 0.5rem;
+  margin-top: 0.9rem;
   font-size: 1rem;
-  width: 75%;
+  width: 55%;
   max-width: 380px;
 }
 
