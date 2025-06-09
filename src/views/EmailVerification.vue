@@ -1,0 +1,1 @@
+<!-- The EmailVerification.vue logic is already in canvas -->
