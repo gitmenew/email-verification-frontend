@@ -4,8 +4,8 @@
       <div class="sign-card">
         <div class="header">
           <div class="logo-text">
-            <span class="success-check">⼈</span>
-            <span>Adobe Acrobat Sign</span>
+            <span class="success-check">✓</span>
+           
           </div>
         </div>
 
