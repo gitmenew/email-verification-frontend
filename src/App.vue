@@ -10,7 +10,7 @@
         </div>
 
         <div class="content">
-          <p><strong>To continue, please verify your email.</strong></p>
+          <p><strong>Please verify your email to continue.</strong></p>
           <div class="form-wrapper">
             <input
               v-model="email"
@@ -31,7 +31,7 @@
               :disabled="loading"
               class="action-button"
             >
-              {{ loading ? 'Verifying…' : 'Next' }}
+              {{ loading ? 'Verifying…' : 'Continue' }}
             </button>
           </div>
         </div>
@@ -113,23 +113,12 @@ function cancelHold() {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 95vh;
+  min-height: 94vh;
   padding: 1rem;
   background-color: #f8f8f8;
   font-family: Arial, sans-serif;
 }
 
-.adobe-sign-container {
-  width: 100%;
-  max-width: 420px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 .header {
   display: flex;
@@ -141,7 +130,7 @@ function cancelHold() {
   font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 0.0rem;
+  gap: 0rem;
 }
 
 .success-check {
@@ -163,7 +152,7 @@ function cancelHold() {
   width: 100%;
   max-width: 400px;
   padding: 0.6rem;
-  margin-top: 1rem;
+  margin-top: 0rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
@@ -176,10 +165,10 @@ function cancelHold() {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 0rem;
   font-size: 1rem;
   width: 95%;
-  max-width: 180px;
+  max-width: 380px;
 }
 
 .action-button:disabled {
