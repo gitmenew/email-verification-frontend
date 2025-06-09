@@ -4,7 +4,7 @@
     <h1>Human Check</h1>
     <p>Please press and hold to continue. Captcha must validate successfully.</p>
     <div class="captcha-box">
-      <div id="cf-turnstile" class="turnstile" data-sitekey="1x00000000000000000000AA" data-theme="light"></div>
+      <div id="cf-turnstile" class="turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08" data-theme="light"></div>
     </div>
     <button
       class="cta"
