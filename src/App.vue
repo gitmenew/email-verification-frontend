@@ -4,8 +4,8 @@
       <div class="sign-card">
         <div class="header">
           <div class="logo-text">
-            <span class="success-check">✓</span>
-           
+            <span class="success-check">⼈</span>
+           <span>Adobe Acrobat Sign</span>
           </div>
         </div>
 
@@ -173,11 +173,11 @@ function cancelHold() {
   color: white;
   padding: 0.6rem 1.5rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 13px;
   cursor: pointer;
   margin-top: 1.0rem;
   font-size: 1rem;
-  width: 50%;
+  width: 40%;
   max-width: 380px;
 }
 
