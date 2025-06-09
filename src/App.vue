@@ -112,7 +112,7 @@ function cancelHold() {
 .background {
   padding: 2rem;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #fff;
 }
 
 .adobe-sign-container {
