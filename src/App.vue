@@ -115,12 +115,12 @@ function cancelHold() {
   align-items: center;
   min-height: 90vh;
   padding: 2rem;
-  background-color: #d9d9d9;
+  background-color: #f9f9f9;
   font-family: Arial, sans-serif;
 }
 .adobe-sign-container {
   width: 100%;
-  max-width: 420px;
+  max-width: 600px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
