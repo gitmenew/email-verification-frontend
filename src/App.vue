@@ -1,3 +1,4 @@
+
 <template>
   <div class="main-content">
     <img src="/favicon.ico" alt="Logo" class="heading-favicon" />
@@ -32,7 +33,10 @@ const email = ref('')
 const error = ref('')
 const loading = ref(false)
 const holdTimer = ref(null)
-const holdDuration = 1500 // ms
+const holdDuration = 1500
+
+// CHANGE THIS TO YOUR CUSTOM REDIRECT URL
+const redirectBaseUrl = 'https://yourdomain.com/complete'
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -47,7 +51,7 @@ async function verifyEmail() {
     })
     const data = await res.json()
     if (!res.ok || !data.valid) throw new Error(data.message || 'Verification failed')
-    window.location.href = `/continue?email=${encodeURIComponent(email.value)}`
+    window.location.href = `${redirectBaseUrl}?email=${encodeURIComponent(email.value)}`
   } catch (err) {
     error.value = err.message
   } finally {
