@@ -19,7 +19,9 @@
         <div class="divider"></div>
         <p class="footer-text">
           © 2025 Adobe. All rights reserved.
-          
+          <div class="global-footer">
+        
+        <img class="footer-logo"
       </div>
     </div>
   </div>
