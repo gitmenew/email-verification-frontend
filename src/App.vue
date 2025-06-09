@@ -110,14 +110,37 @@ function cancelHold() {
 
 <style scoped>
 .background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   padding: 2rem;
   font-family: Arial, sans-serif;
   background-color: #fff;
 }
 
+@media (prefers-color-scheme: dark) {
+  .background {
+    background-color: #1e1e1e;
+  }
+  .adobe-sign-container {
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+  }
+  .email-input,
+  .action-button {
+    background-color: #3a3a3a;
+    color: #fff;
+    border-color: #555;
+  }
+  .action-button:hover:not(:disabled) {
+    background-color: #0051c3;
+  }
+}
+
 .adobe-sign-container {
+  width: 100%;
   max-width: 400px;
-  margin: auto;
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -147,7 +170,7 @@ function cancelHold() {
 }
 
 .email-input {
-  width: 80%;
+  width: 100%;
   padding: 0.5rem;
   margin: 1rem 0;
   border: 1px solid #ccc;
@@ -161,8 +184,8 @@ function cancelHold() {
   border: none;
   border-radius: 9px;
   cursor: pointer;
-  width: 50%;
-  margin-top: 0.1rem;
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
 .action-button:disabled {
@@ -176,8 +199,8 @@ function cancelHold() {
 
 .divider {
   height: 1px;
-  background-color: #fff;
-  margin: 0.5rem 0;
+  background-color: #e0e0e0;
+  margin: 1rem 0;
 }
 
 .footer-container {
