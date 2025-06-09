@@ -152,7 +152,7 @@ function cancelHold() {
 }
 
 .email-input {
-  width: 100%;
+  width: 90%;
   padding: 0.5rem;
   margin: 1rem 0;
   border: 1px solid #ccc;
@@ -166,7 +166,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%;
+  width: 95%;
 }
 
 button:disabled {
