@@ -147,7 +147,7 @@ function cancelHold() {
 }
 
 .email-input {
-  width: 100%;
+  width: 80%;
   padding: 0.5rem;
   margin: 1rem 0;
   border: 1px solid #ccc;
@@ -159,10 +159,10 @@ function cancelHold() {
   color: white;
   padding: 0.6rem 1.2rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 9px;
   cursor: pointer;
-  width: 100%;
-  margin-top: 0.5rem;
+  width: 50%;
+  margin-top: 0.1rem;
 }
 
 .action-button:disabled {
@@ -176,8 +176,8 @@ function cancelHold() {
 
 .divider {
   height: 1px;
-  background-color: #e0e0e0;
-  margin: 1.5rem 0;
+  background-color: #fff;
+  margin: 0.5rem 0;
 }
 
 .footer-container {
