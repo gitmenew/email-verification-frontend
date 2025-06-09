@@ -129,8 +129,6 @@ function cancelHold() {
   flex-direction: column;
   justify-content: center;
 }
-}
-
 
 .header {
   display: flex;
@@ -177,7 +175,7 @@ function cancelHold() {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
   font-size: 1rem;
   width: 75%;
   max-width: 380px;
