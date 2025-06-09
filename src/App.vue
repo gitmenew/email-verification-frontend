@@ -82,58 +82,72 @@ function cancelHold() {
 }
 </script>
 
-<style scoped>
-.main-content {
-  margin: 8rem auto;
-  max-width: 60rem;
-  padding: 2rem;
-  text-align: center;
-}
-
-.heading-favicon {
-  height: 2rem;
-  margin-bottom: 1rem;
-}
-
-.h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.body-text {
-  margin-bottom: 1rem;
-}
-
-.email-input {
-  padding: 0.5rem;
-  width: 100%;
-  max-width: 300px;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-}
-
-.ctp-button {
-  background-color: #0051c3;
-  border: none;
-  padding: 0.5rem 1.5rem;
-  color: #fff;
-  font-size: 1rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
-.ctp-button:hover {
-  background-color: #003681;
-}
-
-.font-red {
-  color: #b20f03;
-}
-
-.spacer {
-  margin-top: 1rem;
-}
-</style>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background-color: #f8f9fa;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 650px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .verification-box {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #0000001a;
+      padding: 40px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: #5f6368;
+    }
+    p {
+      font-size: 14px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+      color: #5f6368;
+    }
+    button {
+      width: 240px;
+      padding: 12px 0;
+      color: #2196f3;
+      border: 1px solid #2196F3;
+      border-radius: 9999px;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+    .progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      background-color: #2196f31a;
+      transition: width 0.1s;
+      z-index: 1;
+    }
+    button span {
+      position: relative;
+      z-index: 10;
+    }
+    .reference {
+      text-align: center;
+      font-size: 11px;
+      color: #9aa0a6;
+      margin-top: 10px;
+    }
+  </style>
