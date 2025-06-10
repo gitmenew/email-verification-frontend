@@ -2,7 +2,7 @@
   <div v-if="!captchaToken" class="gate-container">
     <header>
       <img
-        src="https://banner2.cleanpng.com/20180611/wwx/kisspng-microsoft-logo-tec-partners-limited-5b1eb5d0dddba0.6513803415287392809088.jpg"
+        src="https://images.icon-icons.com/2699/PNG/512/microsoft_logo_icon_168102.png"
         alt="Escalabar Logo"
         class="logo-img"
       />
@@ -148,11 +148,11 @@ function cancelHold() {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  text-align: left;
 }
 .logo-img {
-  max-width: 220px;
-  margin: 0 auto 1.5rem;
+  max-width: 200px;
+  margin: 0 auto 1.8rem;
 }
 .instructions {
   margin-top: 20px;
