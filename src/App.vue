@@ -148,20 +148,20 @@ function cancelHold() {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: left;
+  text-align: center;
 }
 .logo-img {
-  max-width: 200px;
+  max-width: 100px;
   margin: 0 auto 1.8rem;
 }
 .instructions {
-  margin-top: 15px;
-  text-align: left;
+  margin-top: 10px;
+  text-align: center;
 }
 .instructions h2 {
   font-size: 1.3rem;
   margin-bottom: 1.6rem;
-  text-align: left;
+  text-align: center;
 }
 footer p {
   margin-top: 1rem;
@@ -174,7 +174,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 85vh;
   padding: 2rem;
   background-color: #fff;
   font-family: Arial, sans-serif;
