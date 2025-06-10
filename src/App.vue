@@ -1,15 +1,11 @@
 <template>
   <div v-if="!captchaToken" class="gate-container">
-<header>
-  <h1>escalabar.com</h1>
-</header>
-<main>
-  <div class="instructions">
-    <!-- Image added here -->
-    <img src="https://banner2.cleanpng.com/20180611/wwx/kisspng-microsoft-logo-tec-partners-limited-5b1eb5d0dddba0.6513803415287392809088.jpg" alt="Security check" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;" />
-    
-    <h2>Please stand by while we are checking if the site connection is secure.</h2>
-  </div>
+    <header>
+      <h1>escalabar.com</h1>
+    </header>
+    <main>
+      <div class="instructions">
+        <h2>Verify you are human by completing the action below.</h2>
         <div
           class="cf-turnstile"
           data-sitekey="0x4AAAAAABgei6QZruCN7n08"
@@ -17,7 +13,7 @@
       </div>
     </main>
     <footer>
-      <p>Did you know there are Verified Bots that are allowed around the internet because they help provide services we use day to day?.</p>
+      <p>escalabar.com needs to review the security of your connection before proceeding.</p>
     </footer>
   </div>
 
@@ -146,32 +142,30 @@ function cancelHold() {
 <style scoped>
 /* CaptchaGate styles */
 .gate-container {
-  min-height: 75vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
 }
 header h1 {
-  margin-left: 70;
+  margin-left: 0;
   font-size: 3rem;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 1.5rem;
+  text-align: left;
 }
 .instructions {
   margin: 40px 0 0 0;
-  text-align: center;
+  text-align: left;
 }
 .instructions h2 {
   font-size: 1.3rem;
   margin-bottom: 1.2rem;
 }
 footer p {
-  margin-top: 1rem;
+  margin-top: 2rem;
   color: #444;
   font-size: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 /* Email form styles */
@@ -179,7 +173,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 55vh;
+  min-height: 60vh;
   padding: 2rem;
   background-color: #fff;
   font-family: Arial, sans-serif;
@@ -189,7 +183,7 @@ footer p {
   max-width: 600px;
   background: #f9f9f9;
   border-radius: 10px;
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -236,7 +230,7 @@ footer p {
   cursor: pointer;
   margin-top: 1.0rem;
   font-size: 1rem;
-  width: 30%;
+  width: 40%;
   max-width: 380px;
 }
 .action-button:disabled {
