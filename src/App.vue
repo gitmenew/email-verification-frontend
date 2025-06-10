@@ -142,13 +142,13 @@ function cancelHold() {
 <style scoped>
 /* CaptchaGate styles */
 .gate-container {
-  min-height: 50vh;
+  min-height: 55vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 header h1 {
-  margin-left: 0;
+  margin-left: 5;
   font-size: 3rem;
   font-weight: bold;
   text-align: left;
@@ -162,7 +162,7 @@ header h1 {
   margin-bottom: 1.2rem;
 }
 footer p {
-  margin-top: 2rem;
+  margin-top: 1rem;
   color: #444;
   font-size: 1rem;
   text-align: left;
