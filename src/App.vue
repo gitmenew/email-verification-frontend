@@ -146,12 +146,14 @@ function cancelHold() {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 header h1 {
-  margin-left: 5;
+  margin-left: 10;
   font-size: 3rem;
   font-weight: bold;
   text-align: left;
+  margin-bottom: 2.2rem;
 }
 .instructions {
   margin: 40px 0 0 0;
@@ -163,7 +165,7 @@ header h1 {
 }
 footer p {
   margin-top: 1rem;
-  color: #444;
+  color: #ddd;
   font-size: 1rem;
   text-align: left;
 }
