@@ -140,7 +140,7 @@ function cancelHold() {
 
 <style scoped>
 html, body {
-  height: 70vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -158,13 +158,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 60vh;
+  height: 90vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;    /* Align content to top */
   align-items: center;            /* Center horizontally */
-  padding-top: 50px;
+  padding-top: 90px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -184,7 +184,7 @@ body {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
-  padding: 10rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -244,7 +244,7 @@ body {
   cursor: pointer;
   margin-top: 1rem;
   font-size: 1rem;
-  width: 50%;
+  width: 90%;
   max-width: 380px;
 }
 
