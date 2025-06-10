@@ -215,6 +215,12 @@ footer p {
   flex-direction: column;
   justify-content: center;
 }
+  .adobe-sign-container,
+.instructions {
+  max-height: 80vh;          /* Avoid content overflow */
+  overflow: hidden;
+}
+
 .header {
   display: flex;
   justify-content: center;
