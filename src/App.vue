@@ -2,7 +2,7 @@
   <div v-if="!captchaToken" class="gate-container">
     <header>
       <img
-        src="https://images.icon-icons.com/2699/PNG/512/microsoft_logo_icon_168102.png"
+        src=""
         alt="Escalabar Logo"
         class="logo-img"
       />
@@ -159,7 +159,7 @@ function cancelHold() {
   margin-top: 10px;
   text-align: center;
 }
-.instructions h2 {
+.instructions h {
   font-size: 1.1rem;
   margin-bottom: 1.6rem;
   text-align: center;
