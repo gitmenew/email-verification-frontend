@@ -5,5 +5,5 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     outDir: 'dist',
-  }
+  },
 })
