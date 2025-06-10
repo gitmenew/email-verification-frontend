@@ -140,39 +140,34 @@ function cancelHold() {
 </script>
 
 <style scoped>
-/* Captcha styles */
+/* CaptchaGate styles */
 .gate-container {
   min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: left;
+  text-align: center;
 }
 header h1 {
+  margin-left: 70;
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 .instructions {
-  margin: 1rem auto;
-  max-width: 600px;
-  text-align: left; /* Change to 'right' or 'center' as needed */
+  margin: 40px 0 0 0;
+  text-align: center;
 }
 .instructions h2 {
   font-size: 1.3rem;
-  margin: 1rem 0;
-}
-.captcha-image {
-  width: 50%;
-  max-width: 500px;
-  height: 50%;
-  margin-bottom: 1rem;
-  text-align: left;
+  margin-bottom: 1.2rem;
 }
 footer p {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   color: #444;
   font-size: 1rem;
+  text-align: center;
 }
 
 /* Email form styles */
@@ -180,7 +175,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+  min-height: 55vh;
   padding: 2rem;
   background-color: #fff;
   font-family: Arial, sans-serif;
@@ -190,7 +185,7 @@ footer p {
   max-width: 600px;
   background: #f9f9f9;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -237,7 +232,7 @@ footer p {
   cursor: pointer;
   margin-top: 1.0rem;
   font-size: 1rem;
-  width: 40%;
+  width: 30%;
   max-width: 380px;
 }
 .action-button:disabled {
