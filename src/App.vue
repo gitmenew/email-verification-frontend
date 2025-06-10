@@ -155,7 +155,7 @@ function cancelHold() {
   margin: 0 auto 1.8rem;
 }
 .instructions {
-  margin-top: 20px;
+  margin-top: 15px;
   text-align: left;
 }
 .instructions h2 {
