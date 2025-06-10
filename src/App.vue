@@ -154,17 +154,19 @@ body {
   flex-direction: column;
 }
 
-.gate-container,
-.background {
-  position: fixed;          /* Lock in place */
+.background,
+.gate-container {
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;   /* aligns to top */
   align-items: center;
+  padding-top: 40px;             /* space from the top */
+
 }
 
   .cf-turnstile {
