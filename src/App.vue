@@ -5,7 +5,7 @@
     </header>
     <main>
       <div class="instructions">
-        <h>Please stand by while we are checking if the site connection is secure.</h>
+        <p>Please stand by while we are checking if the site connection is secure.</p>
         <div
           class="cf-turnstile"
           data-sitekey="0x4AAAAAABgei6QZruCN7n08"
