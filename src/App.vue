@@ -149,11 +149,11 @@ function cancelHold() {
   text-align: center;
 }
 header h1 {
-  margin-left: 10;
+  margin-left: 70;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.5rem;
 }
 .instructions {
   margin: 40px 0 0 0;
