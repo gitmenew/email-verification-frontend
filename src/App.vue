@@ -139,13 +139,23 @@ function cancelHold() {
 </script>
 
 <style scoped>
+
+  html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #F0F0F0;
+}
+
 .gate-container {
-  min-height: 70vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   background-color: #F0F0F0;
+  padding: 1rem;
+
 }
   .cf-turnstile {
   transform: scale(0.85);         /* shrink or enlarge — 1 is default */
@@ -178,11 +188,12 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 75vh;
+  height: 100vh;
   padding: 2rem;
   background-color: #F0F0F0;
   font-family: Arial, sans-serif;
 }
+
 .adobe-sign-container {
   width: 600%;
   max-width: 600px;
