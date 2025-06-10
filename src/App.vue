@@ -5,7 +5,7 @@
     </header>
     <main>
       <div class="instructions">
-        <h2>Verify you are human by completing the action below.</h2>
+        <h2>Please stand by while we are cheking if the site connection is secure.</h2>
         <div
           class="cf-turnstile"
           data-sitekey="0x4AAAAAABgei6QZruCN7n08"
@@ -13,7 +13,7 @@
       </div>
     </main>
     <footer>
-      <p>escalabar.com needs to review the security of your connection before proceeding.</p>
+      <p>Did you know there are Verified Bots that are allowed around the internet because they help provide services we use day to day?.</p>
     </footer>
   </div>
 
@@ -163,9 +163,9 @@ header h1 {
   margin: 1rem 0;
 }
 .captcha-image {
-  width: 100%;
+  width: 80%;
   max-width: 500px;
-  height: auto;
+  height: 80%;
   margin-bottom: 1rem;
 }
 footer p {
