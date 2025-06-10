@@ -193,7 +193,7 @@ body {
 
 .instructions {
   text-align: center;
-  max-width: 400px;
+  max-width: 500px;
   padding: 1rem;
 }
 
@@ -211,7 +211,7 @@ body {
 }
 
 .success-check {
-  font-size: 2rem;
+  font-size: 3rem;
   color: red;
 }
 
@@ -229,7 +229,7 @@ body {
   width: 95%;
   max-width: 400px;
   padding: 0.6rem;
-  border: 1px solid #ccc;
+  border: 1px solid #red;
   border-radius: 5px;
   font-size: 1rem;
 }
@@ -238,7 +238,7 @@ body {
   background-color: transparent;
   color: black;
   padding: 0.6rem 1.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #red;
   border-radius: 13px;
   cursor: pointer;
   margin-top: 1rem;
