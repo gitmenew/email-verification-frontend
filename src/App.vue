@@ -163,10 +163,11 @@ header h1 {
   margin: 1rem 0;
 }
 .captcha-image {
-  width: 80%;
+  width: 50%;
   max-width: 500px;
-  height: 80%;
+  height: 50%;
   margin-bottom: 1rem;
+  text-align: left;
 }
 footer p {
   margin-top: 1.5rem;
