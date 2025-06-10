@@ -145,7 +145,7 @@ function cancelHold() {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #F0F0F0;
 }
   .cf-turnstile {
   transform: scale(0.85);         /* shrink or enlarge — 1 is default */
@@ -180,7 +180,7 @@ footer p {
   align-items: center;
   min-height: 75vh;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: #F0F0F0;
   font-family: Arial, sans-serif;
 }
 .adobe-sign-container {
