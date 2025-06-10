@@ -142,7 +142,7 @@ function cancelHold() {
 <style scoped>
 /* CaptchaGate styles */
 .gate-container {
-  min-height: 70vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -183,7 +183,7 @@ footer p {
   max-width: 600px;
   background: #f9f9f9;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   display: flex;
   flex-direction: column;
