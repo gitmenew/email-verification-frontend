@@ -1,12 +1,14 @@
 {
-  "name": "vue-frontend",
+  "name": "email-verification-frontend",
+  "version": "1.0.0",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
-    "start": "node server.js"
+    "serve": "node server.js"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "vue": "^3.3.0"
+    "vue": "^3.3.0",
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "vite": "^5.0.0",
