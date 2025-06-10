@@ -10,7 +10,6 @@
     
     <h2>Please stand by while we are checking if the site connection is secure.</h2>
   </div>
-</main>
         <div
           class="cf-turnstile"
           data-sitekey="0x4AAAAAABgei6QZruCN7n08"
