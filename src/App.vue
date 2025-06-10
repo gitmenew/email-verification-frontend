@@ -230,7 +230,7 @@ body {
   width: 95%;
   max-width: 400px;
   padding: 0.6rem;
-  border: 1px color: red;
+  border: 1px solid #D10000;
   border-radius: 5px;
   font-size: 1rem;
 }
@@ -239,7 +239,7 @@ body {
   background-color: transparent;
   color: black;
   padding: 0.6rem 1.5rem;
-  border: 1px solid color: red;
+  border: 1px solid #D10000;
   border-radius: 13px;
   cursor: pointer;
   margin-top: 1rem;
