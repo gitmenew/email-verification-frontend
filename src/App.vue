@@ -164,7 +164,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;    /* Align content to top */
   align-items: center;            /* Center horizontally */
-  padding-top: 40px;
+  padding-top: 60px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -179,7 +179,7 @@ body {
 
 /* Email form container */
 .adobe-sign-container {
-  width: 50%;
+  width: 70%;
   max-width: 400px;
   background: #fff;
   border-radius: 10px;
@@ -243,7 +243,7 @@ body {
   cursor: pointer;
   margin-top: 1rem;
   font-size: 1rem;
-  width: 100%;
+  width: 50%;
   max-width: 380px;
 }
 
