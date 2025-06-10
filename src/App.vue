@@ -140,7 +140,7 @@ function cancelHold() {
 
 <style scoped>
 html, body {
-  height: 100vh;
+  height: 90vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -158,13 +158,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 80vh;
+  height: 60vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;    /* Align content to top */
   align-items: center;            /* Center horizontally */
-  padding-top: 60px;
+  padding-top: 50px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -172,7 +172,7 @@ body {
 /* CAPTCHA scaling */
 .cf-turnstile {
   transform: scale(0.9);
-  transform-origin: top center;
+  transform-origin: center;
   height: auto !important;
   width: auto !important;
 }
@@ -180,11 +180,11 @@ body {
 /* Email form container */
 .adobe-sign-container {
   width: 70%;
-  max-width: 400px;
+  max-width: 500px;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,7 +229,7 @@ body {
 .email-input {
   width: 95%;
   max-width: 400px;
-  padding: 0.6rem;
+  padding: 1.6rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
@@ -238,7 +238,7 @@ body {
 .action-button {
   background-color: transparent;
   color: black;
-  padding: 0.6rem 1.5rem;
+  padding: 1.6rem 1.5rem;
   border: 1px solid #ccc;
   border-radius: 13px;
   cursor: pointer;
