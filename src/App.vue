@@ -156,17 +156,18 @@ function cancelHold() {
 }
 .instructions {
   margin-top: 20px;
-  text-align: center;
+  text-align: lefr;
 }
 .instructions h2 {
   font-size: 1.3rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.6rem;
+  text-align: left;
 }
 footer p {
   margin-top: 1rem;
   color: #444;
   font-size: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .background {
@@ -179,11 +180,11 @@ footer p {
   font-family: Arial, sans-serif;
 }
 .adobe-sign-container {
-  width: 100%;
+  width: 900%;
   max-width: 600px;
   background: #f9f9f9;
   border-radius: 10px;
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 80px rgba: #000;
   padding: 2rem;
   display: flex;
   flex-direction: column;
