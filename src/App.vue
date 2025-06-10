@@ -141,27 +141,32 @@ function cancelHold() {
 <style scoped>
 
 html, body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent any scrollbars */
+  overflow: hidden;         /* Disable scrollbars */
   background-color: #F0F0F0;
+  font-family: Arial, sans-serif;
 }
-  .gate-container,
-.background {
-  height: 100vh;
-  overflow: hidden; /* Prevent child elements from forcing scroll */
-}
-.gate-container {
-  height: 100vh;
+
+body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background-color: #F0F0F0;
-  padding: 1rem;
-
 }
+
+.gate-container,
+.background {
+  position: fixed;          /* Lock in place */
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
   .cf-turnstile {
   transform: scale(0.85);         /* shrink or enlarge — 1 is default */
   transform-origin: center;     /* ensure it scales from top-left corner */
