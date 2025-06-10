@@ -140,13 +140,18 @@ function cancelHold() {
 
 <style scoped>
 
-  html, body {
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden; /* Prevent any scrollbars */
   background-color: #F0F0F0;
 }
-
+  .gate-container,
+.background {
+  height: 100vh;
+  overflow: hidden; /* Prevent child elements from forcing scroll */
+}
 .gate-container {
   height: 100vh;
   display: flex;
