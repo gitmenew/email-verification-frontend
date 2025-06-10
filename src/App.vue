@@ -140,32 +140,38 @@ function cancelHold() {
 </script>
 
 <style scoped>
-/* CaptchaGate styles */
+/* Captcha styles */
 .gate-container {
-  min-height: 70vh;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 header h1 {
-  margin-left: 0;
   font-size: 3rem;
   font-weight: bold;
-  text-align: left;
+  margin-bottom: 1rem;
 }
 .instructions {
-  margin: 40px 0 0 0;
-  text-align: left;
+  margin: 1rem auto;
+  max-width: 600px;
+  text-align: left; /* Change to 'right' or 'center' as needed */
 }
 .instructions h2 {
   font-size: 1.3rem;
-  margin-bottom: 1.2rem;
+  margin: 1rem 0;
+}
+.captcha-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-bottom: 1rem;
 }
 footer p {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   color: #444;
   font-size: 1rem;
-  text-align: left;
 }
 
 /* Email form styles */
