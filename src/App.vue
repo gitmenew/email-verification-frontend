@@ -156,7 +156,7 @@ function cancelHold() {
 }
 .instructions {
   margin-top: 20px;
-  text-align: lefr;
+  text-align: left;
 }
 .instructions h2 {
   font-size: 1.3rem;
@@ -184,7 +184,7 @@ footer p {
   max-width: 600px;
   background: #f9f9f9;
   border-radius: 10px;
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.30)
+  box-shadow: 0 0 80px rgba(241,241,241);
   padding: 2rem;
   display: flex;
   flex-direction: column;
