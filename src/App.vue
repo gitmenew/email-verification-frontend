@@ -208,7 +208,7 @@ footer p {
 
 .adobe-sign-container {
   width: 400%;
-  max-width: 600px;
+  max-width: 400px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 1 80px rgba (241,241,241);
