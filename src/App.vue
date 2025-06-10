@@ -141,7 +141,7 @@ function cancelHold() {
 <style scoped>
 
 html, body {
-  height: 100vh;
+  height: 80vh;
   margin: 0;
   padding: 0;
   overflow: hidden;         /* Disable scrollbars */
@@ -205,7 +205,7 @@ footer p {
 }
 
 .adobe-sign-container {
-  width: 600%;
+  width: 400%;
   max-width: 600px;
   background: #fff;
   border-radius: 10px;
@@ -217,7 +217,7 @@ footer p {
 }
   .adobe-sign-container,
 .instructions {
-  max-height: 80vh;          /* Avoid content overflow */
+  max-height: 70vh;          /* Avoid content overflow */
   overflow: hidden;
 }
 
