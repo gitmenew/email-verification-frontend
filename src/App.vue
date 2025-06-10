@@ -158,7 +158,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -183,12 +183,13 @@ body {
   max-width: 400px;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 1 1px 10px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
+  height: 70vh;
 }
 
 .instructions {
@@ -229,7 +230,7 @@ body {
   width: 95%;
   max-width: 400px;
   padding: 0.6rem;
-  border: 1px solid #red;
+  border: 1px color: red;
   border-radius: 5px;
   font-size: 1rem;
 }
@@ -238,7 +239,7 @@ body {
   background-color: transparent;
   color: black;
   padding: 0.6rem 1.5rem;
-  border: 1px solid #red;
+  border: 1px solid color: red;
   border-radius: 13px;
   cursor: pointer;
   margin-top: 1rem;
