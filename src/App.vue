@@ -140,7 +140,7 @@ function cancelHold() {
 
 <style scoped>
 html, body {
-  height: 90vh;
+  height: 70vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -183,8 +183,8 @@ body {
   max-width: 500px;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.1);
-  padding: 4rem;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+  padding: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,7 +229,7 @@ body {
 .email-input {
   width: 95%;
   max-width: 400px;
-  padding: 1.6rem;
+  padding: 0.6rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
@@ -238,7 +238,7 @@ body {
 .action-button {
   background-color: transparent;
   color: black;
-  padding: 1.6rem 1.5rem;
+  padding: 0.6rem 1.5rem;
   border: 1px solid #ccc;
   border-radius: 13px;
   cursor: pointer;
