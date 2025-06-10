@@ -139,21 +139,20 @@ function cancelHold() {
 </script>
 
 <style scoped>
-
 html, body {
-  height: 80vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  overflow: hidden;         /* Disable scrollbars */
+  overflow: hidden;
   background-color: #F0F0F0;
   font-family: Arial, sans-serif;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
+/* Shared layout for both .background and .gate-container */
 .background,
 .gate-container {
   position: fixed;
@@ -161,66 +160,41 @@ body {
   left: 0;
   height: 100vh;
   width: 100vw;
-  overflow: hidden;
   display: flex;
-  justify-content: flex-start;   /* aligns to top */
-  align-items: center;
-  padding-top: 40px;             /* space from the top */
-
+  flex-direction: column;
+  justify-content: flex-start;    /* Align content to top */
+  align-items: center;            /* Center horizontally */
+  padding-top: 40px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-  .cf-turnstile {
-  transform: scale(0.85);         /* shrink or enlarge — 1 is default */
-  transform-origin: center;     /* ensure it scales from top-left corner */
-  height: auto !important;        /* make sure container adjusts */
+/* CAPTCHA scaling */
+.cf-turnstile {
+  transform: scale(0.9);
+  transform-origin: top center;
+  height: auto !important;
   width: auto !important;
 }
 
-.logo-img {
-  max-width: 100px;
-  margin: 0 auto 1.8rem;
-}
-.instructions {
-  margin-top: 10px;
-  text-align: center;
-}
-.instructions h {
-  font-size: 1.1rem;
-  margin-bottom: 1.6rem;
-  text-align: center;
-}
-footer p {
-  margin-top: 1.6rem;
-  color: #444;
-  font-size: 1rem;
-  text-align: center;
-}
-
-.background {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 2rem;
-  background-color: #F0F0F0;
-  font-family: Arial, sans-serif;
-}
-
+/* Email form container */
 .adobe-sign-container {
-  width: 400%;
+  width: 100%;
   max-width: 400px;
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 1 80px rgba (241,241,241);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
 }
-  .adobe-sign-container,
+
 .instructions {
-  max-height: 70vh;          /* Avoid content overflow */
-  overflow: hidden;
+  text-align: center;
+  max-width: 400px;
+  padding: 1rem;
 }
 
 .header {
@@ -228,66 +202,77 @@ footer p {
   justify-content: center;
   margin-bottom: 1rem;
 }
+
 .logo-text {
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .success-check {
   font-size: 2rem;
   color: red;
 }
+
 .content {
   text-align: center;
 }
+
 .form-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .email-input {
   width: 95%;
   max-width: 400px;
   padding: 0.6rem;
-  margin-top: 0rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
 }
+
 .action-button {
-  background-color: #transparent;
+  background-color: transparent;
   color: black;
   padding: 0.6rem 1.5rem;
   border: 1px solid #ccc;
   border-radius: 13px;
   cursor: pointer;
-  margin-top: 1.0rem;
+  margin-top: 1rem;
   font-size: 1rem;
-  width: 30%;
+  width: 100%;
   max-width: 380px;
 }
+
 .action-button:disabled {
   opacity: 0.6;
   cursor: default;
 }
+
 .action-button:hover:not(:disabled) {
-  background-color: #transparent;
+  background-color: transparent;
 }
+
 .divider {
-  height: 0px;
+  height: 0;
   background-color: #e0e0e0;
-  margin: 1rem 0 1rem;
+  margin: 1rem 0;
 }
+
 .footer-container {
   text-align: center;
 }
+
 .footer-text,
 .global-footer {
   font-size: 0.85rem;
   color: #333;
   margin-top: 0.5rem;
 }
+
 .error {
   color: red;
   font-size: 0.9rem;
