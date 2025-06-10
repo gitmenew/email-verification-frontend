@@ -142,14 +142,14 @@ function cancelHold() {
 <style scoped>
 /* CaptchaGate styles */
 .gate-container {
-  min-height: 90vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 header h1 {
   margin-left: 0;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   text-align: left;
 }
@@ -173,7 +173,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 50vh;
+  min-height: 60vh;
   padding: 2rem;
   background-color: #fff;
   font-family: Arial, sans-serif;
@@ -183,7 +183,7 @@ footer p {
   max-width: 600px;
   background: #f9f9f9;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   display: flex;
   flex-direction: column;
