@@ -57,7 +57,7 @@
         </div>
         <div class="divider"></div>
         <div class="footer-container">
-          <p class="footer-text">© 2025 All rights reserved </p>
+          <p class="footer-text">© 2025 All rights reserved. </p>
         </div>
       </div>
     </div>
@@ -176,13 +176,13 @@ footer p {
   align-items: center;
   min-height: 75vh;
   padding: 2rem;
-  background-color: #fff;
+  background-color: #f9f9f9;
   font-family: Arial, sans-serif;
 }
 .adobe-sign-container {
   width: 600%;
   max-width: 600px;
-  background: #f9f9f9;
+  background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 80px rgba (241,241,241);
   padding: 2rem;
@@ -239,7 +239,7 @@ footer p {
   cursor: default;
 }
 .action-button:hover:not(:disabled) {
-  background-color: #003a91;
+  background-color: #transparent;
 }
 .divider {
   height: 0px;
