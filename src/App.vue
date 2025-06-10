@@ -179,7 +179,7 @@ body {
 
 /* Email form container */
 .adobe-sign-container {
-  width: 100%;
+  width: 50%;
   max-width: 400px;
   background: #fff;
   border-radius: 10px;
