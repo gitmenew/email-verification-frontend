@@ -63,8 +63,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-
+import { ref, onMounted, nextTick } from 'vue'
 const email = ref('')
 const error = ref('')
 const loading = ref(false)
@@ -75,9 +74,13 @@ const holdDuration = 1500
 const redirectBaseUrl = 'https://yourdomain.com/complete'
 
 // Load Turnstile callback
-onMounted(() => {
-  window.onCaptchaSuccess = (token) => {
-    captchaToken.value = token
+onMounted(async () => {
+  await nextTick()
+  if (window.turnstile) {
+    window.turnstile.render('.cf-turnstile', {
+      sitekey: '0x4AAAAAABgei6QZruCN7n08',
+      callback: (token) => {
+        captchaToken.value = token
   }
 })
 function isValidEmail(e) {
