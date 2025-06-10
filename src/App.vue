@@ -149,7 +149,7 @@ function cancelHold() {
 }
   .cf-turnstile {
   transform: scale(0.85);         /* shrink or enlarge — 1 is default */
-  transform-origin: top left;     /* ensure it scales from top-left corner */
+  transform-origin: center;     /* ensure it scales from top-left corner */
   height: auto !important;        /* make sure container adjusts */
   width: auto !important;
 }
