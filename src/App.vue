@@ -184,7 +184,7 @@ footer p {
   max-width: 600px;
   background: #f9f9f9;
   border-radius: 10px;
-  box-shadow: 0 0 80px rgba: #000;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.30)
   padding: 2rem;
   display: flex;
   flex-direction: column;
