@@ -1,11 +1,7 @@
 <template>
   <div v-if="!captchaToken" class="gate-container">
     <header>
-      <img
-        
-        
-        class="logo-img"
-      />
+   
     </header>
     <main>
       <div class="instructions">
