@@ -144,7 +144,7 @@ function cancelHold() {
 
 <style scoped>
 .gate-container {
-  min-height: 75vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -159,28 +159,28 @@ function cancelHold() {
   text-align: center;
 }
 .instructions h2 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-bottom: 1.6rem;
   text-align: center;
 }
 footer p {
-  margin-top: 1rem;
+  margin-top: 1.6rem;
   color: #444;
   font-size: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 .background {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 85vh;
+  min-height: 75vh;
   padding: 2rem;
   background-color: #fff;
   font-family: Arial, sans-serif;
 }
 .adobe-sign-container {
-  width: 800%;
+  width: 600%;
   max-width: 600px;
   background: #f9f9f9;
   border-radius: 10px;
@@ -203,7 +203,7 @@ footer p {
 }
 .success-check {
   font-size: 2rem;
-  color: green;
+  color: red;
 }
 .content {
   text-align: center;
@@ -223,10 +223,10 @@ footer p {
   font-size: 1rem;
 }
 .action-button {
-  background-color: #0051c3;
-  color: white;
+  background-color: #transparent;
+  color: black;
   padding: 0.6rem 1.5rem;
-  border: none;
+  border: 1px solid #ccc;
   border-radius: 13px;
   cursor: pointer;
   margin-top: 1.0rem;
