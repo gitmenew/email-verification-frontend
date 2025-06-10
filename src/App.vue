@@ -174,13 +174,13 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 55vh;
+  min-height: 45vh;
   padding: 2rem;
   background-color: #fff;
   font-family: Arial, sans-serif;
 }
 .adobe-sign-container {
-  width: 900%;
+  width: 800%;
   max-width: 600px;
   background: #f9f9f9;
   border-radius: 10px;
