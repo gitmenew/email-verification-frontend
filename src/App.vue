@@ -173,7 +173,7 @@ footer p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 50vh;
   padding: 2rem;
   background-color: #fff;
   font-family: Arial, sans-serif;
