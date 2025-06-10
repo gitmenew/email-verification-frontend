@@ -1,11 +1,16 @@
 <template>
   <div v-if="!captchaToken" class="gate-container">
-    <header>
-      <h1>escalabar.com</h1>
-    </header>
-    <main>
-      <div class="instructions">
-        <h2>Please stand by, while we are cheking if the site connection is secure.</h2>
+<header>
+  <h1>escalabar.com</h1>
+</header>
+<main>
+  <div class="instructions">
+    <!-- Image added here -->
+    <img src="https://banner2.cleanpng.com/20180611/wwx/kisspng-microsoft-logo-tec-partners-limited-5b1eb5d0dddba0.6513803415287392809088.jpg" alt="Security check" style="width: 100%; max-width: 500px; height: auto; display: block; margin: 0 auto;" />
+    
+    <h2>Please stand by while we are checking if the site connection is secure.</h2>
+  </div>
+</main>
         <div
           class="cf-turnstile"
           data-sitekey="0x4AAAAAABgei6QZruCN7n08"
@@ -232,7 +237,7 @@ footer p {
   cursor: pointer;
   margin-top: 1.0rem;
   font-size: 1rem;
-  width: 40%;
+  width: 30%;
   max-width: 380px;
 }
 .action-button:disabled {
