@@ -2,8 +2,8 @@
   <div v-if="!captchaToken" class="gate-container">
     <header>
       <img
-        src=""
-        alt="Escalabar Logo"
+        
+        
         class="logo-img"
       />
     </header>
