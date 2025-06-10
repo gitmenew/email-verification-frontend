@@ -149,6 +149,7 @@ function cancelHold() {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background-color: #f9f9f9;
 }
 .logo-img {
   max-width: 100px;
