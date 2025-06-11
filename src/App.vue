@@ -96,11 +96,6 @@ async function submitForm() {
 }
 </script>
 
-<!-- Metadata to reduce bot detection and indexing -->
-<head>
-  <meta name="robots" content="noindex,nofollow">
-</head>
-
 
 
 
