@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="content">
-          <p><strong>This content is protected—please confirm your email address.</strong></p>
+          <p><strong>This content is protected,please confirm your email address.</strong></p>
           <div class="form-wrapper">
             <input
               v-model="email"
