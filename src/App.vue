@@ -154,7 +154,7 @@ body {
   background: #0078D4;
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  padding: 0.9rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
