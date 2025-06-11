@@ -164,9 +164,9 @@ body {
 
 .verify-card {
   background: #ddd;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .header {
