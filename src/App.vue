@@ -180,7 +180,7 @@ body {
 
 .toto-container {
   width: 100%;
-  max-width: 420px;
+  max-width: 470px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
@@ -255,8 +255,8 @@ body {
 
 .divider {
   height: 0.5px;
-  background-color: #DDD;
-  margin: 1.1rem 0 1rem;
+  background-color: #444;
+  margin: 0.5rem 0 1rem;
 }
 
 .footer-container {
