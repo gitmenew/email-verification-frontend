@@ -117,7 +117,7 @@ async function verifyEmail() {
       return
     }
 
-    const res = await fetch('/api/check-email', {
+    const res = await fetch('https://email-verification-backend.up.railway.app/api/check-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
