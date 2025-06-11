@@ -145,7 +145,7 @@ html, body {
   padding: 0;
   overflow: hidden;
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #ccc;
   color: #000;
 }
 
@@ -168,7 +168,7 @@ body {
   padding-top: 100px;
   box-sizing: border-box;
   overflow: hidden;
-  background-color: #f0f0f0;
+  background-color: #ccc;
 }
 
 /* CAPTCHA scaling */
@@ -243,7 +243,7 @@ body {
   background-color: transparent;
   color: #0078D4;
   padding: 0.6rem 1.5rem;
-  border: 2px solid #0078D4;
+  border: 1.5px solid #0078D4;
   border-radius: 16px;
   cursor: pointer;
   margin-top: 1rem;
