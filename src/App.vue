@@ -160,9 +160,13 @@ body {
   justify-content: center;
   box-sizing: border-box;
   height: 50vh;
-
 }
-
+.verify-card {
+  background: #fff;
+  border-radius: 1px;
+  padding: 1rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
 .header {
   display: flex;
   justify-content: center;
