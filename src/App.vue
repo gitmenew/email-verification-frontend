@@ -213,8 +213,9 @@ body {
 }
 
 .success-check {
-  font-size: 3rem;
+  font-size: 2rem;
   color: red;
+  line-height: 1;
 }
 
 .content {
