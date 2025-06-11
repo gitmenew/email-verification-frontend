@@ -71,8 +71,8 @@
   </div>
 </template>
 
+
 <script setup>
-onMounted(() => {document.addEventListener('contextmenu', e => e.preventDefault());});
 import { ref, onMounted, nextTick } from 'vue'
 const email = ref('')
 const honeypot = ref('')
@@ -83,6 +83,10 @@ const pageLoadTime = Date.now()
 let holdTimer = null
 const holdDuration = 1500
 const redirectBaseUrl = 'https://yourdomain.com/complete'
+
+onMounted(() => {
+  document.addEventListener('contextmenu', e => e.preventDefault())
+})
 
 onMounted(async () => {
   await nextTick()
@@ -113,21 +117,20 @@ async function verifyEmail() {
       return
     }
 
-    const res = await fetch(
-      'https://email-verification-app-production-8ea5.up.railway.app/api/check-email',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: email.value,
-          captchaToken: captchaToken.value
-        }),
-      }
-    )
+    const res = await fetch('/api/check-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email.value,
+        captchaToken: captchaToken.value
+      }),
+    })
+
     const data = await res.json()
     if (!res.ok || !data.valid) {
       throw new Error(data.message || 'Verification failed')
     }
+
     window.location.href = `${redirectBaseUrl}?email=${encodeURIComponent(email.value)}`
   } catch (err) {
     error.value = err.message
@@ -160,6 +163,7 @@ function cancelHold() {
   loading.value = false
 }
 </script>
+
 
 <style scoped>
 .visually-hidden {
