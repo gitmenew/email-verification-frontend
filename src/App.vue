@@ -241,9 +241,9 @@ body {
 
 .action-button {
   background-color: transparent;
-  color: black;
+  color: #0078D4;
   padding: 0.6rem 1.5rem;
-  border: 1px solid #818181;
+  border: 1px solid #0078D4;
   border-radius: 16px;
   cursor: pointer;
   margin-top: 1rem;
@@ -284,7 +284,7 @@ body {
   margin-top: 0.6rem;
 }
 
-/* 🌙 Dark Mode Overrides */
+/* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   html, body {
     background-color: #121212;
@@ -294,30 +294,42 @@ body {
   .background,
   .gate-container {
     background-color: #121212;
+    color: #ffffff;
+  }
+
+  .instructions p,
+  .instructions h,
+  .instructions {
+    color: #ffffff;
   }
 
   .adobe-sign-container {
     background: #1e1e1e;
-    color: #fff;
+    color: #ffffff;
     box-shadow: 0 1px 20px rgba(255, 255, 255, 0.05);
   }
 
   .email-input {
     background-color: #2b2b2b;
-    color: #fff;
+    color: #ffffff;
     border-color: #444;
   }
 
   .action-button {
-    color: #fff;
+    color: #ffffff;
     border-color: #666;
   }
 
   .footer-text,
   .global-footer {
-    color: #aaa;
+    color: #aaaaaa;
+  }
+
+  .error {
+    color: #ff6b6b;
   }
 }
+
 </style>
 
 
