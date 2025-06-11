@@ -153,7 +153,7 @@ body {
   max-width: 600px;
   background: #0078D4;
   border-radius: 10px;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   display: flex;
   flex-direction: column;
