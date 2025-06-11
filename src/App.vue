@@ -161,7 +161,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 80px;
   background-color: #FAF9F6;
 }
 
@@ -180,15 +180,15 @@ body {
 
 .toto-container {
   width: 100%;
-  max-width: 600px;
-  background: #fff;
+  max-width: 420px;
+  background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
-  padding: 4rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 50vh;
+  box-sizing: border-box;
 }
 
 .header {
@@ -201,11 +201,11 @@ body {
   font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .success-check {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: red;
   line-height: 1;
 }
@@ -218,11 +218,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
 }
 
 .email-input {
-  width: 95%;
-  max-width: 400px;
+  width: 100%;
   padding: 0.6rem;
   border: 1px solid #818181;
   border-radius: 5px;
@@ -234,14 +235,13 @@ body {
 .action-button {
   background-color: transparent;
   color: #0078D4;
-  padding: 0.6rem 1.5rem;
+  padding: 0.5rem 1.2rem;
   border: 1.5px solid #0078D4;
-  border-radius: 16px;
+  border-radius: 12px;
   cursor: pointer;
-  margin-top: 1rem;
   font-size: 1rem;
-  width: 50%;
-  max-width: 380px;
+  width: 100%;
+  transition: background-color 0.2s ease;
 }
 
 .action-button:disabled {
@@ -250,13 +250,13 @@ body {
 }
 
 .action-button:hover:not(:disabled) {
-  background-color: transparent;
+  background-color: #f0f8ff;
 }
 
 .divider {
-  height: 0;
+  height: 1px;
   background-color: #e0e0e0;
-  margin: 1rem 0;
+  margin: 1.5rem 0 1rem;
 }
 
 .footer-container {
@@ -266,13 +266,13 @@ body {
 .footer-text {
   font-size: 0.85rem;
   color: #333;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .error {
   color: red;
   font-size: 0.9rem;
-  margin-top: 0.6rem;
+  margin-top: 0.25rem;
 }
 
 /* Dark mode */
@@ -306,5 +306,10 @@ body {
   .error {
     color: #ff6b6b;
   }
+
+  .action-button:hover:not(:disabled) {
+    background-color: #1a1a1a;
+  }
 }
 </style>
+
