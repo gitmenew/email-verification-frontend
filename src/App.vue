@@ -13,8 +13,8 @@
       <div class="verify-card">
         <div class="header">
           <div class="logo-text">
-            <span class="success-check">⼈</span>
-            <span>Verify Your Access</span>
+            <span class="success-check">Verify Your Access</span>
+            <span></span>
           </div>
         </div>
         <div class="content">
