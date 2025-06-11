@@ -232,7 +232,7 @@ body {
   width: 95%;
   max-width: 400px;
   padding: 0.6rem;
-  border: 1px solid #efefef;
+  border: 1px solid #818181;
   border-radius: 5px;
   font-size: 1rem;
 }
@@ -241,7 +241,7 @@ body {
   background-color: transparent;
   color: black;
   padding: 0.6rem 1.5rem;
-  border: 1px solid #efefef;
+  border: 1px solid #818181;
   border-radius: 16px;
   cursor: pointer;
   margin-top: 1rem;
