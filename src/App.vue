@@ -305,7 +305,7 @@ body {
 
   .footer-text,
   .global-footer {
-    color: #000;
+    color: #aaaaaa;
   }
 
   .error {
