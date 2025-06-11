@@ -144,20 +144,22 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #ccc;
   font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #000;
 }
 
 body {
   display: block;
 }
 
+/* Shared container layout */
 .background,
 .gate-container {
   position: fixed;
   top: 0;
   left: 0;
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -166,8 +168,10 @@ body {
   padding-top: 100px;
   box-sizing: border-box;
   overflow: hidden;
+  background-color: #f0f0f0;
 }
 
+/* CAPTCHA scaling */
 .cf-turnstile {
   transform: scale(0.9);
   transform-origin: center;
@@ -175,10 +179,16 @@ body {
   width: auto !important;
 }
 
+.instructions {
+  text-align: center;
+  max-width: 500px;
+  padding: 1rem;
+}
+
 .adobe-sign-container {
   width: 70%;
   max-width: 500px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
   padding: 3rem;
@@ -187,12 +197,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   height: 60vh;
-}
-
-.instructions {
-  text-align: center;
-  max-width: 500px;
-  padding: 1rem;
 }
 
 .header {
@@ -280,23 +284,28 @@ body {
   margin-top: 0.6rem;
 }
 
-/* 🌙 Dark Mode Styles */
+/* 🌙 Dark Mode Overrides */
 @media (prefers-color-scheme: dark) {
   html, body {
     background-color: #121212;
     color: #ffffff;
   }
 
+  .background,
+  .gate-container {
+    background-color: #121212;
+  }
+
   .adobe-sign-container {
     background: #1e1e1e;
-    color: #ffffff;
-    box-shadow: 0 1px 20px rgba(255, 255, 255, 0.1);
+    color: #fff;
+    box-shadow: 0 1px 20px rgba(255, 255, 255, 0.05);
   }
 
   .email-input {
-    background-color: #2c2c2c;
-    color: #ffffff;
-    border-color: #555;
+    background-color: #2b2b2b;
+    color: #fff;
+    border-color: #444;
   }
 
   .action-button {
@@ -310,4 +319,5 @@ body {
   }
 }
 </style>
+
 
