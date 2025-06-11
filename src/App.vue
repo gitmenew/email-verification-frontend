@@ -186,17 +186,17 @@ body {
 }
 
 .adobe-sign-container {
-  width: 70%;
+  width: 100%;
   max-width: 500px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  height: 60vh;
+  height: 50vh;
 }
 
 .header {
