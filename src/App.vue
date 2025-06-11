@@ -158,13 +158,13 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 90vh;
+  height: 80vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;    /* Align content to top */
   align-items: center;            /* Center horizontally */
-  padding-top: 90px;
+  padding-top: 80px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -189,7 +189,7 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  height: 80vh;
+  height: 60vh;
 }
 
 .instructions {
@@ -244,7 +244,7 @@ body {
   cursor: pointer;
   margin-top: 1rem;
   font-size: 1rem;
-  width: 90%;
+  width: 50%;
   max-width: 380px;
 }
 
