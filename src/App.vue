@@ -1,4 +1,4 @@
-<title>Page Title</title>
+<template>
   <div v-if="!captchaToken" class="gate-container">
     <main>
       <div class="instructions">
