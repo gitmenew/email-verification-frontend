@@ -117,7 +117,7 @@ async function verifyEmail() {
       return
     }
  
-    const res = await fetch('/api/check-email', {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
