@@ -240,7 +240,7 @@ body {
   border-radius: 12px;
   cursor: pointer;
   font-size: 1rem;
-  width: 100%;
+  width: 60%;
   transition: background-color 0.2s ease;
 }
 
@@ -254,9 +254,9 @@ body {
 }
 
 .divider {
-  height: 1px;
-  background-color: #e0e0e0;
-  margin: 1.5rem 0 1rem;
+  height: 0.5px;
+  background-color: #DDD;
+  margin: 1.1rem 0 1rem;
 }
 
 .footer-container {
