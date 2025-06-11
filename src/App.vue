@@ -152,7 +152,6 @@ body {
   display: block;
 }
 
-/* Shared layout for both .background and .gate-container */
 .background,
 .gate-container {
   position: fixed;
@@ -162,14 +161,13 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;    /* Align content to top */
-  align-items: center;            /* Center horizontally */
+  justify-content: flex-start;
+  align-items: center;
   padding-top: 100px;
   box-sizing: border-box;
   overflow: hidden;
 }
 
-/* CAPTCHA scaling */
 .cf-turnstile {
   transform: scale(0.9);
   transform-origin: center;
@@ -177,7 +175,6 @@ body {
   width: auto !important;
 }
 
-/* Email form container */
 .adobe-sign-container {
   width: 70%;
   max-width: 500px;
@@ -209,7 +206,6 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-
 }
 
 .success-check {
@@ -235,6 +231,8 @@ body {
   border: 1px solid #818181;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: #fff;
+  color: #000;
 }
 
 .action-button {
@@ -281,4 +279,35 @@ body {
   font-size: 0.9rem;
   margin-top: 0.6rem;
 }
+
+/* 🌙 Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .adobe-sign-container {
+    background: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 1px 20px rgba(255, 255, 255, 0.1);
+  }
+
+  .email-input {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border-color: #555;
+  }
+
+  .action-button {
+    color: #fff;
+    border-color: #666;
+  }
+
+  .footer-text,
+  .global-footer {
+    color: #aaa;
+  }
+}
 </style>
+
