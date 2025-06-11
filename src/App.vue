@@ -144,7 +144,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #F0F0F0;
+  background-color: #ccc;
   font-family: Arial, sans-serif;
 }
 
@@ -164,7 +164,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;    /* Align content to top */
   align-items: center;            /* Center horizontally */
-  padding-top: 80px;
+  padding-top: 100px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -240,7 +240,7 @@ body {
   color: black;
   padding: 0.6rem 1.5rem;
   border: 1px solid #ccc;
-  border-radius: 13px;
+  border-radius: 16px;
   cursor: pointer;
   margin-top: 1rem;
   font-size: 1rem;
