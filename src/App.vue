@@ -21,31 +21,11 @@
           <p><strong>This content is protected, please confirm your email address.</strong></p>
           <div class="form-wrapper">
             <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
-            <input
-              id="honeypot"
-              v-model="honeypot"
-              type="text"
-              style="display: none;"
-              tabindex="-1"
-              autocomplete="off"
-              aria-hidden="true"
-            />
+            <input id="honeypot" v-model="honeypot" type="text" style="display: none;" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <label for="email" class="visually-hidden">Email address</label>
-            <input
-              id="email"
-              v-model="email"
-              type="email"
-              placeholder="Enter email"
-              required
-              class="email-input"
-              :disabled="loading"
-            />
+            <input id="email" v-model="email" type="email" placeholder="Enter email" required class="email-input" :disabled="loading" />
             <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
-            <button
-              @click="submitForm"
-              :disabled="loading"
-              class="action-button"
-            >
+            <button @click="submitForm" :disabled="loading" class="action-button">
               {{ loading ? 'Verifying…' : 'CONTINUE' }}
             </button>
           </div>
@@ -66,11 +46,6 @@ const honeypot = ref('')
 const error = ref('')
 const loading = ref(false)
 const captchaToken = ref(null)
-const pageLoadTime = Date.now()
-
-onMounted(() => {
-  document.addEventListener('contextmenu', e => e.preventDefault())
-})
 
 onMounted(async () => {
   await nextTick()
@@ -85,22 +60,6 @@ onMounted(async () => {
 })
 
 async function submitForm() {
-  if (!email.value.trim()) {
-    error.value = 'Please enter your email.'
-    return
-  }
-
-  const timeSinceLoad = Date.now() - pageLoadTime
-  if (timeSinceLoad < 2000) {
-    error.value = 'Too fast. Please try again.'
-    return
-  }
-
-  if (honeypot.value) {
-    error.value = 'Bot-like activity detected.'
-    return
-  }
-
   error.value = ''
   loading.value = true
 
@@ -111,8 +70,7 @@ async function submitForm() {
       body: JSON.stringify({
         email: email.value,
         captchaToken: captchaToken.value,
-        middleName: honeypot.value,
-        clientTimestamp: pageLoadTime
+        middleName: honeypot.value
       })
     })
 
@@ -130,6 +88,7 @@ async function submitForm() {
   }
 }
 </script>
+
 
 
 
