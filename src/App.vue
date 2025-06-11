@@ -209,7 +209,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 1rem;
+
 }
 
 .success-check {
@@ -231,7 +231,7 @@ body {
   width: 95%;
   max-width: 400px;
   padding: 0.6rem;
-  border: 3px solid #ccc;
+  border: 1px solid #efefef;
   border-radius: 5px;
   font-size: 1rem;
 }
@@ -240,7 +240,7 @@ body {
   background-color: transparent;
   color: black;
   padding: 0.6rem 1.5rem;
-  border: 3px solid #ccc;
+  border: 1px solid #efefef;
   border-radius: 16px;
   cursor: pointer;
   margin-top: 1rem;
