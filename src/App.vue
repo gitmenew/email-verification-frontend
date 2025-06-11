@@ -151,7 +151,7 @@ body {
 .email-verify-container {
   width: 100%;
   max-width: 600px;
-  background: #ffffff;
+  background: #0078D4;
   border-radius: 10px;
   box-shadow: 0 1px 90px rgba(0, 0, 0, 0.1);
   padding: 4rem;
