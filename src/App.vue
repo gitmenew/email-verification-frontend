@@ -109,16 +109,17 @@ async function verifyEmail() {
       return
     }
 
-    const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: email.value,
-        captchaToken: captchaToken.value,
-        middleName: honeypot.value,
-        clientTimestamp: Date.now()
-      })
-    })
+   const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    email: email.value,
+    captchaToken: captchaToken.value,
+    middleName: honeypot.value,
+    clientTimestamp: pageLoadTime  // ✅ fix here
+  })
+})
+
 
     const data = await res.json()
     if (!res.ok || !data.valid) {
