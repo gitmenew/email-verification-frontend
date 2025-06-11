@@ -163,7 +163,7 @@ body {
 }
 
 .verify-card {
-  background: #ffffff;
+  background: #ddd;
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
