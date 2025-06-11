@@ -1,20 +1,11 @@
 <template>
-  <div v-if="!captchaToken" class="gate-container">
-    <main>
-      <div class="instructions">
-        <p>Please stand by while we are checking if your connection is secure.</p>
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
-      </div>
-    </main>
-  </div>
-
-  <div v-else class="background">
+  <div class="background">
     <div class="email-verify-container">
       <div class="verify-card">
         <div class="header">
           <div class="logo-text">
-            <span class="success-check">Verify Your Access</span>
-            <span></span>
+            <span class="success-check">⼈</span>
+            <span>Verify Your Access</span>
           </div>
         </div>
         <div class="content">
@@ -118,8 +109,7 @@ body {
   display: block;
 }
 
-.background,
-.gate-container {
+.background {
   position: fixed;
   top: 0;
   left: 0;
@@ -135,23 +125,10 @@ body {
   background-color: #FAF9F6;
 }
 
-.cf-turnstile {
-  transform: scale(0.9);
-  transform-origin: center;
-  height: auto !important;
-  width: auto !important;
-}
-
-.instructions {
-  text-align: center;
-  max-width: 500px;
-  padding: 1rem;
-}
-
 .email-verify-container {
-  width: 90%;
+  width: 100%;
   max-width: 600px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
   padding: 4rem;
@@ -160,6 +137,13 @@ body {
   justify-content: center;
   box-sizing: border-box;
   height: 50vh;
+}
+
+.verify-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
 }
 
 .header {
@@ -253,15 +237,8 @@ body {
     color: #ffffff;
   }
 
-  .background,
-  .gate-container {
+  .background {
     background-color: #121212;
-    color: #ffffff;
-  }
-
-  .instructions p,
-  .instructions h,
-  .instructions {
     color: #ffffff;
   }
 
@@ -296,4 +273,3 @@ body {
   }
 }
 </style>
-
