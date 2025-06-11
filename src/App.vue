@@ -87,6 +87,11 @@ async function submitForm() {
 }
 </script>
 
+
+
+
+
+
 <style scoped>
 .visually-hidden {
   position: absolute !important;
@@ -95,7 +100,7 @@ async function submitForm() {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
-html, body {
+  html, body {
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -109,7 +114,9 @@ body {
   display: block;
 }
 
-.background {
+/* Shared container layout */
+.background,
+.gate-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -125,7 +132,21 @@ body {
   background-color: #FAF9F6;
 }
 
-.email-verify-container {
+/* CAPTCHA scaling */
+.cf-turnstile {
+  transform: scale(0.9);
+  transform-origin: center;
+  height: auto !important;
+  width: auto !important;
+}
+
+.instructions {
+  text-align: center;
+  max-width: 500px;
+  padding: 1rem;
+}
+
+.adobe-sign-container {
   width: 100%;
   max-width: 600px;
   background: #ffffff;
@@ -137,13 +158,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   height: 50vh;
-}
-
-.verify-card {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
 }
 
 .header {
@@ -231,25 +245,29 @@ body {
   margin-top: 0.6rem;
 }
 
+/* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   html, body {
     background-color: #121212;
     color: #ffffff;
   }
 
-  .background {
+  .background,
+  .gate-container {
     background-color: #121212;
     color: #ffffff;
   }
 
-  .email-verify-container {
-    background-color: #1e1e1e;
+  .instructions p,
+  .instructions h,
+  .instructions {
     color: #ffffff;
   }
 
-  .verify-card {
-    background-color: #2a2a2a;
+  .adobe-sign-container {
+    background: #1e1e1e;
     color: #ffffff;
+    box-shadow: 0 1px 20px rgba(255, 255, 255, 0.05);
   }
 
   .email-input {
