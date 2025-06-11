@@ -171,7 +171,7 @@ body {
 .adobe-sign-container {
   width: 100%;
   max-width: 600px;
-  background: #ffffff;
+  background: #000;
   border-radius: 10px;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
   padding: 4rem;
