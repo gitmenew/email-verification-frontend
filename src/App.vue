@@ -3,10 +3,7 @@
     <main>
       <div class="instructions">
         <p>Please stand by while we are checking if the site connection is secure.</p>
-        <div
-          class="cf-turnstile"
-          data-sitekey="0x4AAAAAABgei6QZruCN7n08"
-        ></div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
       </div>
     </main>
   </div>
@@ -87,17 +84,9 @@ onMounted(async () => {
   }
 })
 
-function isValidEmail(e) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)
-}
-
 async function submitForm() {
   if (!email.value.trim()) {
     error.value = 'Please enter your email.'
-    return
-  }
-  if (!isValidEmail(email.value)) {
-    error.value = 'Invalid email format.'
     return
   }
 
