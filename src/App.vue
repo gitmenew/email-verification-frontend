@@ -243,7 +243,7 @@ body {
   background-color: transparent;
   color: #0078D4;
   padding: 0.6rem 1.5rem;
-  border: 1px solid #0078D4;
+  border: 2px solid #0078D4;
   border-radius: 16px;
   cursor: pointer;
   margin-top: 1rem;
@@ -316,8 +316,8 @@ body {
   }
 
   .action-button {
-    color: #ffffff;
-    border-color: #666;
+    color: #0078D4;
+    border-color: #0078D4;
   }
 
   .footer-text,
