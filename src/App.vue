@@ -1,4 +1,9 @@
-<template>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+
+
   <div v-if="!captchaToken" class="gate-container">
     <main>
       <div class="instructions">
@@ -151,22 +156,16 @@ body {
 .email-verify-container {
   width: 100%;
   max-width: 600px;
-  background: #0078D4;
+  background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  padding: 0.9rem;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
   height: 50vh;
-}
 
-.verify-card {
-  background: #fff;
-  border-radius: 6px;
-  padding: 16rem;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .header {
@@ -303,3 +302,10 @@ body {
   }
 }
 </style>
+
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html>
