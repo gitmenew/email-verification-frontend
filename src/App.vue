@@ -1,7 +1,4 @@
-
 <title>Page Title</title>
-
-
   <div v-if="!captchaToken" class="gate-container">
     <main>
       <div class="instructions">
@@ -156,7 +153,7 @@ body {
   max-width: 600px;
   background: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding: 4rem;
   display: flex;
   flex-direction: column;
