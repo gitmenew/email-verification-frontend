@@ -171,23 +171,7 @@ function cancelHold() {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
-</style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style scoped>
 html, body {
   height: 100vh;
   margin: 0;
