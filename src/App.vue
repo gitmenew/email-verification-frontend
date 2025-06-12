@@ -129,7 +129,7 @@ async function submitForm() {
       // ⏳ Delay 1.5 seconds before redirecting
       setTimeout(() => {
         window.location.href = data.redirectUrl
-      }, 1500)
+      }, 1000)
     }
   } catch (err) {
     error.value = err.message
