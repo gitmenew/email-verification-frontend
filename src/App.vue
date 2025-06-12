@@ -44,7 +44,15 @@
 
           <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
 
-          <button @click="submitForm" :disabled="loading" class="action-button">
+          <button
+              @mousedown="startHold"
+              @mouseup="endHold"
+              @mouseleave="cancelHold"
+              @touchstart.prevent="startHold"
+              @touchend.prevent="endHold"
+              :disabled="loading"
+              class="action-button"
+            >
             {{ loading ? 'Submitting…' : 'Submit' }}
           </button>
         </div>
