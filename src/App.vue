@@ -44,17 +44,13 @@
 
           <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
 
-     <button
-              @mousedown="startHold"
-              @mouseup="endHold"
-              @mouseleave="cancelHold"
-              @touchstart.prevent="startHold"
-              @touchend.prevent="endHold"
-              :disabled="loading"
-              class="action-button"
-            >
-              {{ loading ? 'Verifying…' : 'CONTINUE' }}
-            </button>
+   <button
+  @click="submitForm"
+  :disabled="loading"
+  class="action-button"
+>
+  {{ loading ? 'Submitting…' : 'Submit' }}
+</button>
           </div>
         </div>
 
