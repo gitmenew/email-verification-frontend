@@ -49,7 +49,7 @@
   :disabled="loading"
   class="action-button"
 >
-  {{ loading ? 'Submitting…' : 'Submit' }}
+  {{ loading ? 'Submitting…' : 'SUBMIT' }}
 </button>
           </div>
         </div>
@@ -243,7 +243,7 @@ body {
 }
 
 .email-input {
-  width: 95%;
+  width: 90%;
   padding: 0.6rem;
   border: 1px solid #818181;
   border-radius: 5px;
@@ -255,8 +255,8 @@ body {
 .action-button {
   background-color: transparent;
   color: #0078D4;
-  padding: 0.6rem 1.2rem;
-  border: 1.5px solid #0078D4;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #0078D4;
   border-radius: 9px;
   cursor: pointer;
   font-size: 1rem;
