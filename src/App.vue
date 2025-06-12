@@ -316,6 +316,8 @@ body {
   .email-input {
     background-color: #2b2b2b;
     border-color: #444;
+    color: #ffffff; /* ✅ make input text white in dark mode */
+    caret-color: #ffffff; /* optional: makes the cursor white too */
   }
 
   .footer-text {
@@ -329,5 +331,6 @@ body {
   .action-button:hover:not(:disabled) {
     background-color: #1a1a1a;
   }
+}
 }
 </style>
