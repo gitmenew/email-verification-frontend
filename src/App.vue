@@ -71,6 +71,7 @@ const honeypot = ref('')
 const error = ref('')
 const loading = ref(false)
 const captchaToken = ref(null)
+let turnstileRendered = false
 
 onMounted(async () => {
   await nextTick()
@@ -83,20 +84,21 @@ onMounted(async () => {
     }
   })
 
-  // Render Cloudflare Turnstile
-  if (window.turnstile) {
+  // Render Cloudflare Turnstile only once
+  if (window.turnstile && !turnstileRendered) {
     window.turnstile.render('.cf-turnstile', {
       sitekey: '0x4AAAAAABgei6QZruCN7n08',
       callback: token => {
         captchaToken.value = token
       },
     })
+    turnstileRendered = true
   }
 })
 
 async function submitForm() {
-  error.value = '';
-  loading.value = true;
+  error.value = ''
+  loading.value = true
 
   try {
     const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
@@ -107,24 +109,23 @@ async function submitForm() {
         captchaToken: captchaToken.value,
         middleName: honeypot.value
       })
-    });
+    })
 
-    const data = await res.json();
+    const data = await res.json()
     if (!res.ok || !data.valid) {
-      throw new Error(data.message || 'Verification failed');
+      throw new Error(data.message || 'Verification failed')
     }
 
-    // ✅ Redirect directly
     if (data.redirectUrl) {
-      window.location.href = data.redirectUrl;
+      const encoded = btoa(data.redirectUrl)
+      window.location.href = `${import.meta.env.VITE_API_BASE}/forward?data=${encoded}`
     }
   } catch (err) {
-    error.value = err.message;
+    error.value = err.message
   } finally {
-    loading.value = false;
+    loading.value = false
   }
 }
-
 </script>
 
 <style scoped>
@@ -276,7 +277,6 @@ body {
   margin-top: 0.25rem;
 }
 
-/* Dark mode */
 @media (prefers-color-scheme: dark) {
   html, body,
   .background,
@@ -313,4 +313,3 @@ body {
   }
 }
 </style>
-
