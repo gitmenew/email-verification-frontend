@@ -44,7 +44,7 @@
 
           <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
 
-          <button
+     <button
               @mousedown="startHold"
               @mouseup="endHold"
               @mouseleave="cancelHold"
@@ -53,10 +53,10 @@
               :disabled="loading"
               class="action-button"
             >
-            {{ loading ? 'Submitting…' : 'Submit' }}
-          </button>
+              {{ loading ? 'Verifying…' : 'CONTINUE' }}
+            </button>
+          </div>
         </div>
-      </div>
 
       <div class="divider"></div>
 
