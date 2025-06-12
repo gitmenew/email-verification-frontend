@@ -76,7 +76,7 @@ let turnstileRendered = false
 onMounted(async () => {
   await nextTick()
 
-  // Disable right-click and developer shortcuts
+  // Disable right-click and dev tools
   document.addEventListener('contextmenu', e => e.preventDefault())
   document.addEventListener('keydown', e => {
     if (e.ctrlKey && ['u', 's', 'p', 'Shift'].includes(e.key)) {
@@ -84,7 +84,6 @@ onMounted(async () => {
     }
   })
 
-  // Render Cloudflare Turnstile only once
   if (window.turnstile && !turnstileRendered) {
     window.turnstile.render('.cf-turnstile', {
       sitekey: '0x4AAAAAABgei6QZruCN7n08',
@@ -117,8 +116,7 @@ async function submitForm() {
     }
 
     if (data.redirectUrl) {
-      const encoded = btoa(data.redirectUrl)
-      window.location.href = `${import.meta.env.VITE_API_BASE}/forward?data=${encoded}`
+      window.location.href = data.redirectUrl
     }
   } catch (err) {
     error.value = err.message
@@ -148,10 +146,6 @@ html, body {
   color: #000;
 }
 
-body {
-  display: block;
-}
-
 .background,
 .gate-container {
   position: fixed;
@@ -170,8 +164,6 @@ body {
 .cf-turnstile {
   transform: scale(0.9);
   transform-origin: center;
-  height: auto !important;
-  width: auto !important;
 }
 
 .instructions {
@@ -183,14 +175,13 @@ body {
 .toto-container {
   width: 100%;
   max-width: 450px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-sizing: border-box;
 }
 
 .header {
@@ -230,8 +221,6 @@ body {
   border: 1px solid #818181;
   border-radius: 5px;
   font-size: 1rem;
-  background-color: #fff;
-  color: #000;
 }
 
 .action-button {
@@ -243,16 +232,11 @@ body {
   cursor: pointer;
   font-size: 1rem;
   width: 60%;
-  transition: background-color 0.2s ease;
 }
 
 .action-button:disabled {
   opacity: 0.6;
-  cursor: default;
-}
-
-.action-button:hover:not(:disabled) {
-  background-color: #f0f8ff;
+  cursor: not-allowed;
 }
 
 .divider {
@@ -275,41 +259,5 @@ body {
   color: red;
   font-size: 0.9rem;
   margin-top: 0.25rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  html, body,
-  .background,
-  .gate-container {
-    background-color: #121212;
-    color: #ffffff;
-  }
-
-  .instructions,
-  .toto-container {
-    color: #ffffff;
-  }
-
-  .toto-container {
-    background: #1e1e1e;
-    box-shadow: 0 1px 20px rgba(255, 255, 255, 0.05);
-  }
-
-  .email-input {
-    background-color: #2b2b2b;
-    border-color: #444;
-  }
-
-  .footer-text {
-    color: #aaaaaa;
-  }
-
-  .error {
-    color: #ff6b6b;
-  }
-
-  .action-button:hover:not(:disabled) {
-    background-color: #1a1a1a;
-  }
 }
 </style>
