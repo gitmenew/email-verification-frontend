@@ -36,7 +36,7 @@
             id="email"
             v-model="email"
             type="email"
-            placeholder="Enter your email"
+            placeholder="Enter email"
             required
             class="email-input"
             :disabled="loading"
