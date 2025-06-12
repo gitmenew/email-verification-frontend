@@ -55,8 +55,8 @@
       <div class="footer-container">
         <p class="footer-text">
           © 2025 All rights reserved.
-          <a href="/privacy" target="_blank">Privacy Policy</a> |
-          <a href="/terms" target="_blank">Terms</a>
+          <a href="https://docs.hoppscotch.io/support/privacy/privacy" target=https://docs.hoppscotch.io/support/privacy">Privacy Policy</a> |
+          <a href="https://docs.hoppscotch.io/support/privacy" target="_blank">Terms</a>
         </p>
       </div>
     </div>
