@@ -126,6 +126,15 @@ async function submitForm() {
 }
 </script>
 
+
+
+
+
+
+
+
+
+
 <style scoped>
 .visually-hidden {
   position: absolute !important;
@@ -146,6 +155,10 @@ html, body {
   color: #000;
 }
 
+body {
+  display: block;
+}
+
 .background,
 .gate-container {
   position: fixed;
@@ -164,6 +177,8 @@ html, body {
 .cf-turnstile {
   transform: scale(0.9);
   transform-origin: center;
+  height: auto !important;
+  width: auto !important;
 }
 
 .instructions {
@@ -175,13 +190,14 @@ html, body {
 .toto-container {
   width: 100%;
   max-width: 450px;
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .header {
@@ -221,6 +237,8 @@ html, body {
   border: 1px solid #818181;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: #fff;
+  color: #000;
 }
 
 .action-button {
@@ -232,11 +250,16 @@ html, body {
   cursor: pointer;
   font-size: 1rem;
   width: 60%;
+  transition: background-color 0.2s ease;
 }
 
 .action-button:disabled {
   opacity: 0.6;
-  cursor: not-allowed;
+  cursor: default;
+}
+
+.action-button:hover:not(:disabled) {
+  background-color: #f0f8ff;
 }
 
 .divider {
@@ -259,5 +282,41 @@ html, body {
   color: red;
   font-size: 0.9rem;
   margin-top: 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body,
+  .background,
+  .gate-container {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .instructions,
+  .toto-container {
+    color: #ffffff;
+  }
+
+  .toto-container {
+    background: #1e1e1e;
+    box-shadow: 0 1px 20px rgba(255, 255, 255, 0.05);
+  }
+
+  .email-input {
+    background-color: #2b2b2b;
+    border-color: #444;
+  }
+
+  .footer-text {
+    color: #aaaaaa;
+  }
+
+  .error {
+    color: #ff6b6b;
+  }
+
+  .action-button:hover:not(:disabled) {
+    background-color: #1a1a1a;
+  }
 }
 </style>
