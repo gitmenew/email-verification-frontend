@@ -58,7 +58,7 @@
 
       <div class="footer-container">
         <p class="footer-text">
-          © 2025 All rights reserved.|
+          © 2025 All rights reserved.
           <a href="https://docs.hoppscotch.io/support/privacy/privacy" target="_blank">Privacy Policy</a> |
           <a href="https://docs.hoppscotch.io/support/privacy" target="_blank">Terms</a>
         </p>
@@ -214,7 +214,7 @@ body {
 .header {
   display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.10rem;
 }
 
 .logo-text {
@@ -238,7 +238,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 1.1rem;
   margin-top: 1rem;
 }
 
