@@ -126,11 +126,13 @@ async function submitForm() {
     }
 
     if (data.redirectUrl) {
-      window.location.href = data.redirectUrl // token-based redirect
+      // ⏳ Delay 1.5 seconds before redirecting
+      setTimeout(() => {
+        window.location.href = data.redirectUrl
+      }, 1500)
     }
   } catch (err) {
     error.value = err.message
-  } finally {
     loading.value = false
   }
 }
