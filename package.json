@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "node server.js",
-    "start": "node server.js"   // ✅ <-- Required by Railway
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.21.2",
