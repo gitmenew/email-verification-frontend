@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "start": "node server.js"   // ✅ <-- Required by Railway
   },
   "dependencies": {
     "express": "^4.21.2",
