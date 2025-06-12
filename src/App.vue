@@ -63,6 +63,11 @@
   </div>
 </template>
 
+
+
+
+
+
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
 
@@ -76,7 +81,7 @@ let turnstileRendered = false
 onMounted(async () => {
   await nextTick()
 
-  // Disable right-click and dev tools
+  // Disable right-click and common dev tool keys
   document.addEventListener('contextmenu', e => e.preventDefault())
   document.addEventListener('keydown', e => {
     if (e.ctrlKey && ['u', 's', 'p', 'Shift'].includes(e.key)) {
@@ -84,6 +89,7 @@ onMounted(async () => {
     }
   })
 
+  // Render Cloudflare Turnstile
   if (window.turnstile && !turnstileRendered) {
     window.turnstile.render('.cf-turnstile', {
       sitekey: '0x4AAAAAABgei6QZruCN7n08',
@@ -116,7 +122,7 @@ async function submitForm() {
     }
 
     if (data.redirectUrl) {
-      window.location.href = data.redirectUrl
+      window.location.href = data.redirectUrl // token-based redirect
     }
   } catch (err) {
     error.value = err.message
@@ -125,7 +131,6 @@ async function submitForm() {
   }
 }
 </script>
-
 
 
 
