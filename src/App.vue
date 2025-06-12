@@ -95,8 +95,8 @@ onMounted(async () => {
 })
 
 async function submitForm() {
-  error.value = ''
-  loading.value = true
+  error.value = '';
+  loading.value = true;
 
   try {
     const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
@@ -107,23 +107,24 @@ async function submitForm() {
         captchaToken: captchaToken.value,
         middleName: honeypot.value
       })
-    })
+    });
 
-    const data = await res.json()
+    const data = await res.json();
     if (!res.ok || !data.valid) {
-      throw new Error(data.message || 'Verification failed')
+      throw new Error(data.message || 'Verification failed');
     }
 
+    // ✅ Redirect directly
     if (data.redirectUrl) {
-      const encoded = btoa(data.redirectUrl)
-      window.location.href = `${import.meta.env.VITE_API_BASE}/forward?data=${encoded}`
+      window.location.href = data.redirectUrl;
     }
   } catch (err) {
-    error.value = err.message
+    error.value = err.message;
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 }
+
 </script>
 
 <style scoped>
