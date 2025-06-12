@@ -49,7 +49,7 @@
   :disabled="loading"
   class="action-button"
 >
-  {{ loading ? 'Submitting…' : 'SUBMIT' }}
+  {{ loading ? 'Submitting…' : 'Submit' }}
 </button>
           </div>
         </div>
