@@ -294,6 +294,14 @@ body {
   font-size: 0.9rem;
   margin-top: 0.25rem;
 }
+  .footer-text a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}
 
 @media (prefers-color-scheme: dark) {
   html, body,
