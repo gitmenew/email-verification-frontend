@@ -4,14 +4,23 @@ FROM node:18
 # Set working directory
 WORKDIR /app
 
-# Copy only necessary files
+# Copy package files first (for layer caching)
+COPY package*.json ./
+
+# Install all dependencies including dev
+RUN npm install
+
+# Copy all source files
 COPY . .
 
-# Install only production dependencies
-RUN npm install --omit=dev
+# Run Vite build to generate dist/
+RUN npm run build
 
-# Expose the app port
+# Install only production dependencies
+RUN npm prune --omit=dev
+
+# Expose port for Express server
 EXPOSE 3000
 
-# Start server
+# Start the Express server
 CMD ["node", "server.js"]
