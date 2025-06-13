@@ -164,7 +164,7 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 80px;
+  padding-top: 65px;
   background-color: #FAF9F6;
 
   }
@@ -174,7 +174,7 @@ html, body {
   flex-direction: column;
   justify-content: center; /* vertical center */
   align-items: center;     /* horizontal center */
-  height: 90vh;
+  height:  100vh;
   padding: 0;
 }
 
