@@ -281,14 +281,11 @@ html, body {
   text-align: center;
 }
 .footer-text {
-  font-size: 0.75rem;   /* slightly smaller */
+  font-size: 0.85rem;   /* slightly smaller */
   color: #777;          /* consistent color */
-  margin-top: 0.8rem;
+  margin-top: 0.1rem;
 }
-.footer-text a {
-  color: inherit;
-  text-decoration: none;
-}
+
 .footer-text a {
   color: inherit;       /* match text color */
   text-decoration: none;
