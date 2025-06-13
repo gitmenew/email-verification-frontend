@@ -178,10 +178,11 @@ html, body {
 }
 
 .instructions {
+  margin-top: 30vh; /* add vertical offset inside the container */
   text-align: center;
   max-width: 500px;
   padding: 1rem;
-  flex-grow: 1;
+  flex-grow: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
