@@ -48,6 +48,7 @@
 
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
+
 const email = ref('')
 const honeypot = ref('')
 const error = ref('')
@@ -57,10 +58,26 @@ let turnstileRendered = false
 
 onMounted(async () => {
   await nextTick()
+
+  // Disable right-click
+  document.addEventListener('contextmenu', e => e.preventDefault())
+
+  // Block common devtools shortcuts
+  document.addEventListener('keydown', e => {
+    if (
+      e.key === 'F12' || // DevTools
+      (e.ctrlKey && ['u', 's', 'p'].includes(e.key.toLowerCase())) ||
+      (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase()))
+    ) {
+      e.preventDefault()
+    }
+  })
+
+  // Render Turnstile
   if (window.turnstile && !turnstileRendered) {
     window.turnstile.render('.cf-turnstile', {
       sitekey: '0x4AAAAAABgei6QZruCN7n08',
-      callback: token => { captchaToken.value = token },
+      callback: token => { captchaToken.value = token }
     })
     turnstileRendered = true
   }
@@ -81,21 +98,16 @@ async function submitForm() {
     })
     const data = await res.json()
     if (!res.ok || !data.valid) throw new Error(data.message || 'Verification failed')
-    if (data.redirectUrl) setTimeout(() => { window.location.href = data.redirectUrl }, 1000)
+    if (data.redirectUrl) setTimeout(() => {
+      window.location.href = data.redirectUrl
+    }, 1000)
   } catch (err) {
     error.value = err.message
+  } finally {
     loading.value = false
   }
 }
 </script>
-
-
-
-
-
-
-
-
 
 <style scoped>
 .visually-hidden {
@@ -117,12 +129,7 @@ html, body {
   color: #000;
 }
 
-body {
-  display: block;
-}
-
-.background,
-.gate-container {
+.background, .gate-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -165,7 +172,7 @@ body {
 .header {
   display: flex;
   justify-content: center;
-  margin-bottom: 0.10rem;
+  margin-bottom: 0.1rem;
 }
 
 .logo-text {
@@ -189,7 +196,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.1rem;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
@@ -201,6 +208,13 @@ body {
   font-size: 1rem;
   background-color: #fff;
   color: #000;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.19rem;
+  margin-bottom: -0.19rem;
 }
 
 .action-button {
@@ -224,37 +238,6 @@ body {
   background-color: #f0f8ff;
 }
 
-.divider {
-  height: 0.6px;
-  background-color: #444;
-  margin: 0.9rem 0 1rem;
-}
-
-.footer-container {
-  text-align: center;
-}
-
-.footer-text {
-  font-size: 0.85rem;
-  color: #333;
-  margin-top: 0.25rem;
-}
-
-.error {
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 0.20rem;
-  margin-bottom: 0.20rem
-}
-  .footer-text a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.footer-text a:hover {
-  text-decoration: underline;
-}
-
 @media (prefers-color-scheme: dark) {
   html, body,
   .background,
@@ -276,12 +259,8 @@ body {
   .email-input {
     background-color: #2b2b2b;
     border-color: #444;
-    color: #ffffff; /* ✅ make input text white in dark mode */
-    caret-color: #ffffff; /* optional: makes the cursor white too */
-  }
-
-  .footer-text {
-    color: #aaaaaa;
+    color: #ffffff;
+    caret-color: #ffffff;
   }
 
   .error {
