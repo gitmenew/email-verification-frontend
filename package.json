@@ -15,5 +15,9 @@
     "vite": "^5.4.19",
     "vue": "^3.5.16",
     "@vitejs/plugin-vue": "^5.2.4"
+     },
+    "engines": {
+  "node": ">=18"
+      
   }
 }
