@@ -176,8 +176,6 @@ html, body {
   height: auto !important;
   width: auto !important;
 }
-
-.instructions {
  .instructions {
   margin-top: 5vh; /* add vertical offset inside the container */
   text-align: center;
