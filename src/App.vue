@@ -158,7 +158,7 @@ html, body {
   position: fixed;
   top: 20;
   left: 0;
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
