@@ -12,7 +12,6 @@ import es from './locales/es.json'
 import ja from './locales/ja.json'
 
 const messages = { en, fr, de, nl, pl, zh, es, ja }
-
 const userLang = navigator.language.slice(0, 2)
 const i18n = createI18n({
   locale: messages[userLang] ? userLang : 'en',
