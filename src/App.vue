@@ -162,23 +162,13 @@ html, body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* start at top */
   align-items: center;
   background-color: #FAF9F6;
-  padding: 2rem 1rem;
+  padding-top: 80px; /* push content slightly down */
   box-sizing: border-box;
-  transform: translateY(-5%); /* move slightly upward */
+
   }
-
-.gate-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* align to top */
-  align-items: center;
-  height: 100vh;
-  padding-top: 80px; /* push down slightly from top (adjust as needed) */
-}
-
 
 .cf-turnstile {
   transform: scale(0.9);
