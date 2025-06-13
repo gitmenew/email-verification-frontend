@@ -283,7 +283,7 @@ html, body {
 .footer-text {
   font-size: 0.75rem;   /* slightly smaller */
   color: #777;          /* consistent color */
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 .footer-text a {
   color: inherit;
