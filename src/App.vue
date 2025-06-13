@@ -174,8 +174,8 @@ html, body {
   flex-direction: column;
   justify-content: flex-start; /* align to top */
   align-items: center;
-  height: 140vh;
-  padding-top: 120px; /* push down slightly from top (adjust as needed) */
+  height: 100vh;
+  padding-top: 80px; /* push down slightly from top (adjust as needed) */
 }
 
 
