@@ -172,11 +172,12 @@ html, body {
 .gate-container {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical center */
-  align-items: center;     /* horizontal center */
-  height:  100vh;
-  padding: 0;
+  justify-content: flex-start; /* align to top */
+  align-items: center;
+  height: 100vh;
+  padding-top: 120px; /* push down slightly from top (adjust as needed) */
 }
+
 
 .cf-turnstile {
   transform: scale(0.9);
