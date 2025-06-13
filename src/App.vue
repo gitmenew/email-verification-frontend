@@ -156,17 +156,18 @@ html, body {
 
 .background, .gate-container {
   position: fixed;
-  top: 20;
+  top: 0;
   left: 0;
-  height: 120vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  padding-top: 100px;
   background-color: #FAF9F6;
-
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  transform: translateY(-5%); /* move slightly upward */
   }
 
 .gate-container {
