@@ -1,0 +1,23 @@
+# Ignore local dependencies
+node_modules/
+
+# Ignore Git files
+.git
+.gitignore
+
+# Ignore local config and secrets
+.env
+.env.local
+.env.*.local
+
+# Ignore dev-only artifacts
+*.log
+*.md
+
+# Ignore editor settings
+.vscode/
+.idea/
+
+# Optional: ignore tests or mock files if you have them
+tests/
+mock/
