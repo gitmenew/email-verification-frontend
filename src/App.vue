@@ -178,7 +178,8 @@ html, body {
 }
 
 .instructions {
-  margin-top: 30vh; /* add vertical offset inside the container */
+ .instructions {
+  margin-top: 5vh; /* add vertical offset inside the container */
   text-align: center;
   max-width: 500px;
   padding: 1rem;
