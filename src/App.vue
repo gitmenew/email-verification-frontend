@@ -296,7 +296,7 @@ html, body {
   .background,
   .gate-container {
     background-color: #121212;
-    color: #ffffff;
+    color: #000;
   }
 
   .instructions,
