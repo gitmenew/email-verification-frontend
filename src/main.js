@@ -1,3 +1,10 @@
+// 🚫 Disable Vue DevTools in production
+if (import.meta.env.PROD && window.__VUE_DEVTOOLS_GLOBAL_HOOK__) {
+  window.__VUE_DEVTOOLS_GLOBAL_HOOK__.Vue = null
+  window.__VUE_DEVTOOLS_GLOBAL_HOOK__.apps = []
+  delete window.__VUE_DEVTOOLS_GLOBAL_HOOK__
+}
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import { createI18n } from 'vue-i18n'
