@@ -166,6 +166,16 @@ html, body {
   align-items: center;
   padding-top: 80px;
   background-color: #FAF9F6;
+
+  }
+
+.gate-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
+  height: 100vh;
+  padding: 0;
 }
 
 .cf-turnstile {
@@ -179,6 +189,10 @@ html, body {
   text-align: center;
   max-width: 500px;
   padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .toto-container {
@@ -221,8 +235,9 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .email-input {
@@ -266,16 +281,17 @@ html, body {
   text-align: center;
 }
 .footer-text {
-  font-size: 0.78rem;
-  color: #555;
-  margin-top: 0.25rem;
+  font-size: 0.75rem;   /* slightly smaller */
+  color: #777;          /* consistent color */
+  margin-top: 1.5rem;
 }
 .footer-text a {
   color: inherit;
   text-decoration: none;
 }
-.footer-text a:hover {
-  text-decoration: underline;
+.footer-text a {
+  color: inherit;       /* match text color */
+  text-decoration: none;
 }
 @media (prefers-color-scheme: dark) {
   html, body,
