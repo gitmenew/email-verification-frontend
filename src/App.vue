@@ -164,7 +164,7 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 65px;
+  padding-top: 100px;
   background-color: #FAF9F6;
 
   }
