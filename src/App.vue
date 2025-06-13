@@ -235,7 +235,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -283,7 +283,7 @@ html, body {
 .footer-text {
   font-size: 0.75rem;   /* slightly smaller */
   color: #777;          /* consistent color */
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 .footer-text a {
   color: inherit;
