@@ -174,7 +174,7 @@ html, body {
   flex-direction: column;
   justify-content: center; /* vertical center */
   align-items: center;     /* horizontal center */
-  height: 100vh;
+  height: 90vh;
   padding: 0;
 }
 
