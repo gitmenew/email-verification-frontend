@@ -1,4 +1,3 @@
-
 <template>
   <div v-if="!captchaToken" class="gate-container">
     <main>
