@@ -243,7 +243,8 @@ body {
 .error {
   color: red;
   font-size: 0.9rem;
-  margin-top: 0.25rem;
+  margin-top: 0.20rem;
+  margin-bottom: 0.20rem
 }
   .footer-text a {
   color: inherit;
