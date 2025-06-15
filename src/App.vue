@@ -103,7 +103,7 @@ async function submitForm() {
 
   loading.value = true
   try {
-    const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
+    const res = await fetch(${import.meta.env.VITE_API_BASE}/api/check-email, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -176,7 +176,7 @@ html, body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* start at top */
+  justify-content: flex-start; /* start at top */
   align-items: center;
   background-color: #FAF9F6;
   padding-top: 80px; /* push content slightly down */
@@ -189,10 +189,6 @@ html, body {
   transform-origin: center;
   height: auto !important;
   width: auto !important;
-  margin-top: 20px;
-}
-  .captcha-offset {
-  margin-top: 20vh; /* Push it down a bit */
 }
  .instructions {
   margin-top: 5vh; /* add vertical offset inside the container */
@@ -203,7 +199,6 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-   text-align: center;
 }
 
 .toto-container {
