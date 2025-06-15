@@ -69,6 +69,10 @@ onMounted(async () => {
     }
   })
 
+  renderCaptcha()
+})
+
+function renderCaptcha() {
   if (window.turnstile && !turnstileRendered) {
     window.turnstile.render('.cf-turnstile', {
       sitekey: '0x4AAAAAABgei6QZruCN7n08',
@@ -77,16 +81,13 @@ onMounted(async () => {
         setTimeout(() => {
           captchaToken.value = null
           turnstileRendered = false
-          window.turnstile.render('.cf-turnstile', {
-            sitekey: '0x4AAAAAABgei6QZruCN7n08',
-            callback: t => captchaToken.value = t
-          })
-        }, 120000)
+          renderCaptcha()
+        }, 110000)
       }
     })
     turnstileRendered = true
   }
-})
+}
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -101,13 +102,20 @@ async function submitForm() {
     return
   }
 
+  if (!captchaToken.value) {
+    error.value = 'CAPTCHA expired or not completed'
+    renderCaptcha()
+    return
+  }
+
   loading.value = true
+
   try {
-    const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
+     const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email: email.value,
+        email: email.value, 
         captchaToken: captchaToken.value,
         middleName: honeypot.value
       })
@@ -140,6 +148,7 @@ async function submitForm() {
   }
 }
 </script>
+
 
 
 
