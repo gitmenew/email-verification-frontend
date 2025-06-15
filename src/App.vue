@@ -1,7 +1,7 @@
 <template>
   <div v-if="!captchaToken" class="gate-container">
     <main>
-      <div class="instructions">
+      <div class="instructions captcha-adjusted">
         <p>Please stand by while we are checking if the site connection is secure.</p>
         <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
       </div>
@@ -44,6 +44,7 @@
         </p>
       </div>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -103,7 +104,7 @@ async function submitForm() {
 
   loading.value = true
   try {
-    const res = await fetch(${import.meta.env.VITE_API_BASE}/api/check-email, {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -126,17 +127,6 @@ async function submitForm() {
 }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
 <style scoped>
 .visually-hidden {
   position: absolute !important;
@@ -146,18 +136,11 @@ async function submitForm() {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
-.loading-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(255,255,255,0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  z-index: 999;
+
+.captcha-adjusted {
+  margin-top: 6vh !important;
 }
-  
+
 html, body {
   height: 100vh;
   margin: 0;
@@ -176,13 +159,12 @@ html, body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* start at top */
+  justify-content: flex-start;
   align-items: center;
   background-color: #FAF9F6;
-  padding-top: 80px; /* push content slightly down */
+  padding-top: 80px;
   box-sizing: border-box;
-
-  }
+}
 
 .cf-turnstile {
   transform: scale(0.9);
@@ -190,12 +172,11 @@ html, body {
   height: auto !important;
   width: auto !important;
 }
- .instructions {
-  margin-top: 5vh; /* add vertical offset inside the container */
+
+.instructions {
   text-align: center;
   max-width: 500px;
   padding: 1rem;
-  flex-grow: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -283,19 +264,22 @@ html, body {
 .action-button:hover:not(:disabled) {
   background-color: #f0f8ff;
 }
+
 .footer-container {
   text-align: center;
 }
+
 .footer-text {
-  font-size: 0.85rem;   /* slightly smaller */
-  color: #777;          /* consistent color */
+  font-size: 0.85rem;
+  color: #777;
   margin-top: 0.1rem;
 }
 
 .footer-text a {
-  color: inherit;       /* match text color */
+  color: inherit;
   text-decoration: none;
 }
+
 @media (prefers-color-scheme: dark) {
   html, body,
   .background,
