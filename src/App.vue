@@ -108,14 +108,17 @@ async function submitForm() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: email.value,
+        captchaToken: captchaToken.value,
         middleName: honeypot.value
       })
     })
-    if (res.redirected) {
-      window.location.href = res.url
+
+    const data = await res.json()
+    if (data.redirected) {
+      window.location.href = data.redirectUrl
       return
     }
-    const data = await res.json()
+
     if (!res.ok || !data.valid) throw new Error(data.message || 'Verification failed')
     if (data.redirectUrl) {
       setTimeout(() => {
@@ -145,6 +148,7 @@ async function submitForm() {
 
 
 
+
 <style scoped>
 .visually-hidden {
   position: absolute !important;
@@ -156,7 +160,7 @@ async function submitForm() {
 }
 
 .captcha-adjusted {
-  margin-top: 15vh !important;
+  margin-top: 25vh !important;
 }
 
 html, body {
