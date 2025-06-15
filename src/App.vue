@@ -44,9 +44,6 @@
         </p>
       </div>
     </div>
-
-    <div v-if="loading" class="loading-overlay"></div>
-  </div>
 </template>
 
 <script setup>
