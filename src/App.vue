@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div v-if="loading" class="loading-overlay">Submitting…</div>
+    <div v-if="loading" class="loading-overlay"></div>
   </div>
 </template>
 
