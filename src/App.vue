@@ -21,26 +21,10 @@
 
         <div class="form-wrapper">
           <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
-          <input
-            id="honeypot"
-            v-model="honeypot"
-            type="text"
-            tabindex="-1"
-            autocomplete="off"
-            aria-hidden="true"
-            class="visually-hidden"
-          />
+          <input id="honeypot" v-model="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" class="visually-hidden" />
 
           <label for="email" class="visually-hidden">Email address</label>
-          <input
-            id="email"
-            v-model="email"
-            type="email"
-            placeholder="Enter email"
-            required
-            class="email-input"
-            :disabled="loading"
-          />
+          <input id="email" v-model="email" type="email" placeholder="Enter email" required class="email-input" :disabled="loading" />
 
           <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
 
@@ -60,6 +44,8 @@
         </p>
       </div>
     </div>
+
+    <div v-if="loading" class="loading-overlay">Submitting…</div>
   </div>
 </template>
 
@@ -89,14 +75,35 @@ onMounted(async () => {
   if (window.turnstile && !turnstileRendered) {
     window.turnstile.render('.cf-turnstile', {
       sitekey: '0x4AAAAAABgei6QZruCN7n08',
-      callback: token => { captchaToken.value = token }
+      callback: token => {
+        captchaToken.value = token
+        setTimeout(() => {
+          captchaToken.value = null
+          turnstileRendered = false
+          window.turnstile.render('.cf-turnstile', {
+            sitekey: '0x4AAAAAABgei6QZruCN7n08',
+            callback: t => captchaToken.value = t
+          })
+        }, 120000)
+      }
     })
     turnstileRendered = true
   }
 })
 
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
+
 async function submitForm() {
+  if (loading.value) return
   error.value = ''
+
+  if (!isValidEmail(email.value)) {
+    error.value = 'Invalid email format'
+    return
+  }
+
   loading.value = true
   try {
     const res = await fetch(`${import.meta.env.VITE_API_BASE}/api/check-email`, {
@@ -133,7 +140,6 @@ async function submitForm() {
 
 
 
-
 <style scoped>
 .visually-hidden {
   position: absolute !important;
@@ -143,7 +149,18 @@ async function submitForm() {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
-
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 999;
+}
+  
 html, body {
   height: 100vh;
   margin: 0;
