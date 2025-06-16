@@ -257,7 +257,7 @@ html, body {
   background-color: #0080e2;
   color: #fff;
   padding: 0.6rem 1.2rem;
-  border: 1px solid #0078D4;
+  border: 1px solid #444;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
