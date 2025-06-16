@@ -192,8 +192,8 @@ html, body {
 }
 
 .toto-container {
-  width: 90%;
-  max-width: 420px;
+  width: 85%;
+  max-width: 400px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
@@ -237,7 +237,7 @@ html, body {
 }
 
 .email-input {
-  width: 71%;
+  width: 70%;
   padding: 0.6rem;
   border: 1px solid #818181;
   border-radius: 5px;
@@ -258,7 +258,7 @@ html, body {
   color: #0078D4;
   padding: 0.6rem 1.2rem;
   border: 1px solid #0078D4;
-  border-radius: 9px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
   width: 75%;
