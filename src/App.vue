@@ -189,7 +189,7 @@ body, html {
   transform-origin: center;
   height: auto !important;
   width: auto !important;
-  margin-top: 2rem;
+  margin-top: 14rem;
 }
 
 .captcha-adjusted {
