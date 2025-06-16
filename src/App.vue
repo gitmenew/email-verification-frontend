@@ -147,7 +147,7 @@ async function submitForm() {
 }
 
 .captcha-adjusted {
-  margin-top: 20vh !important;
+  margin-top: 19vh !important;
 }
 
 html, body {
@@ -193,7 +193,7 @@ html, body {
 
 .toto-container {
   width: 90%;
-  max-width: 450px;
+  max-width: 420px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
