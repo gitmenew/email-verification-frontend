@@ -239,7 +239,7 @@ html, body {
 .email-input {
   width: 90%;
   padding: 0.6rem;
-  border: 1px solid #444;
+  border: 1px solid #e1e1e1;
   border-radius: 5px;
   font-size: 1rem;
   background-color: #fff;
