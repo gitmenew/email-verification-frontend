@@ -204,7 +204,7 @@ body {
 .toto-container {
   width: 70%;
   max-width: 350px;
-  background: #ffffff;
+  background: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   padding: 3rem;
@@ -305,8 +305,8 @@ body {
 <style>
 .fullscreen-wrapper {
   position: relative;
-  width: 80vw;
-  height: 80vh;
+  width: 90vw;
+  height: 90vh;
   overflow: hidden;
 }
 
