@@ -135,6 +135,17 @@ async function submitForm() {
 }
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
 <style scoped>
 .visually-hidden {
   position: absolute !important;
@@ -162,8 +173,8 @@ body {
 .background,
 .gate-container {
   position: relative;
-  height: 100vh;
-  width: 100vw;
+  height: 90vh;
+  width: 90vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
