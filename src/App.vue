@@ -261,7 +261,7 @@ html, body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  width: 97%;
+  width: 98%;
   transition: background-color 0.2s ease;
 }
 
@@ -281,8 +281,8 @@ html, body {
 .footer-text {
   font-size: 0.85rem;
   color: #777;
-  margin-top: 0.5rem;
-  margin-buttom: 1rem;
+  margin-top: 0.1rem;
+  margin-buttom: 1.5rem;
 }
 
 .footer-text a {
