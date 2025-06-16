@@ -42,8 +42,8 @@
       <div class="footer-container">
         <p class="footer-text">
           © 2025 All rights reserved.
-          <a href="/privacy" target="_blank">Privacy Policy</a> |
-          <a href="/terms" target="_blank">Terms</a>
+          <a href="/privacy" target="_blank">Privacy Policy</a>
+        
         </p>
       </div>
     </div>
@@ -192,8 +192,8 @@ html, body {
 }
 
 .toto-container {
-  width: 85%;
-  max-width: 400px;
+  width: 80%;
+  max-width: 380px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
