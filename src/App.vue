@@ -122,6 +122,15 @@ html, body {
   color: #000;
 
 }
+  .fullscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f7f9f9;
+  text-align: center;
+}
 .input-section {
   width: 80%;
   max-width: 340px;
