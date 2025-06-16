@@ -147,7 +147,7 @@ async function submitForm() {
 }
 
 .captcha-adjusted {
-  margin-top: 19vh !important;
+  margin-top: 18vh !important;
 }
 
 html, body {
@@ -176,7 +176,7 @@ html, body {
 }
 
 .cf-turnstile {
-  transform: scale(0.9);
+  transform: scale(0.7);
   transform-origin: center;
   height: auto !important;
   width: auto !important;
@@ -185,7 +185,7 @@ html, body {
 .instructions {
   text-align: center;
   max-width: 500px;
-  padding: 1rem;
+  padding: 0.9rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,7 +232,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   margin-bottom: 1.5rem;
 }
 
