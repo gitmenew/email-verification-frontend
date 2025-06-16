@@ -123,7 +123,9 @@ html, body {
 
 }
 .input-section {
-  width: 85px;
+  width: 80%;
+  max-width: 340px;
+  padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
