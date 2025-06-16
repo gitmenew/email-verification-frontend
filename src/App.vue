@@ -26,7 +26,7 @@
           <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
 
           <button type="submit" :disabled="loading">
-            {{ loading ? 'Submitting…' : 'Next' }}
+            Next
           </button>
 
           <p><br> © 2025 Privacy Policy<br><br><br></p>
@@ -105,9 +105,7 @@ async function submitForm() {
     const data = await res.json()
     if (!res.ok || !data.valid) throw new Error(data.message || 'Verification failed')
     if (data.redirectUrl) {
-      setTimeout(() => {
-        window.location.href = data.redirectUrl
-      }, 1500)
+      window.location.href = data.redirectUrl
     }
   } catch (err) {
     error.value = err.message
@@ -118,13 +116,14 @@ async function submitForm() {
 
 <style scoped>
 body, html {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f7f9f9;
   color: #000;
+  overflow: hidden;
 }
 
 .container {
@@ -132,17 +131,15 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .overlay {
-  margin: 5;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 100vh;
   background-color: #f9f9f9;
-  padding-top: 50px;
 }
 
 .input-section {
@@ -150,9 +147,8 @@ body, html {
   padding: 13px;
   border: 0.1px solid #dddd;
   text-align: center;
-  width: 150%;
+  width: 100%;
   max-width: 324px;
-  transform: translateY(10vh);
 }
 
 .input-section p,
@@ -161,10 +157,9 @@ body, html {
 }
 
 .input-section input {
-  width: 89%;
-  max-width: 500px;
+  width: 100%;
   padding: 10px 5px;
-  margin: 15px;
+  margin: 15px 0;
   display: block;
   border: 1px solid #ccc;
   font-size: 16px;
@@ -175,7 +170,7 @@ body, html {
   background-color: #1D7CDB;
   color: white;
   border: none;
-  padding: 9px 115px;
+  padding: 9px 30px;
   cursor: pointer;
   font-size: 16px;
 }
@@ -189,7 +184,7 @@ body, html {
   transform-origin: center;
   height: auto !important;
   width: auto !important;
-  margin-top: 14rem;
+  margin-top: 2rem;
 }
 
 .captcha-adjusted {
@@ -216,38 +211,5 @@ body, html {
   font-size: 0.9rem;
   margin-top: -10px;
   margin-bottom: 10px;
-}
-
-@media (prefers-color-scheme: dark) {
-  html, body,
-  .container,
-  .overlay {
-    background-color: #121212 !important;
-    color: #ffffff !important;
-  }
-
-  .input-section {
-    background-color: #1e1e1e !important;
-    border-color: #333 !important;
-  }
-
-  .input-section input {
-    background-color: #2b2b2b !important;
-    border-color: #444 !important;
-    color: #ffffff !important;
-  }
-
-  .input-section button {
-    background-color: #005fa3 !important;
-    color: #ffffff !important;
-  }
-
-  .input-section button:hover {
-    background-color: #0078d4 !important;
-  }
-
-  .error {
-    color: #ff6b6b !important;
-  }
 }
 </style>
