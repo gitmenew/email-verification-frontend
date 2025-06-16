@@ -120,15 +120,7 @@ html, body {
   font-family: Arial, sans-serif;
   background-color: #f7f9f9;
   color: #000;
-}
-.fullscreen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  width: 90vw;
-  background-color: #f7f9f9;
-  text-align: center;
+
 }
 .input-section {
   width: 85px;
