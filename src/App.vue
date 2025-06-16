@@ -176,7 +176,7 @@ html, body {
 }
 
 .cf-turnstile {
-  transform: scale(0.7);
+  transform: scale(0.9);
   transform-origin: center;
   height: auto !important;
   width: auto !important;
@@ -282,7 +282,7 @@ html, body {
   font-size: 0.85rem;
   color: #777;
   margin-top: 0.1rem;
-  margin-buttom: 1.5rem;
+  margin-buttom: 2.5rem;
 }
 
 .footer-text a {
