@@ -154,13 +154,7 @@ async function submitForm() {
   background-repeat: no-repeat;
   z-index: -2;
   filter: blur(12px) brightness(0.7);
-}
 
-.background,
-.gate-container {
-  position: relative;
-  z-index: 0;
-  background-color: transparent !important;
 }
 
 .visually-hidden {
@@ -196,9 +190,11 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: #FAF9F6;
+  background-color: transparent;
   padding-top: 40px;
   box-sizing: border-box;
+  position: relative;
+  z-index: 0;
 }
 
 .cf-turnstile {
