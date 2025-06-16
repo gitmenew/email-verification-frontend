@@ -281,7 +281,8 @@ html, body {
 .footer-text {
   font-size: 0.85rem;
   color: #777;
-  margin-top: 0.1rem;
+  margin-top: 1rem;
+  margin-buttom: 1rem;
 }
 
 .footer-text a {
