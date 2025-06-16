@@ -289,8 +289,8 @@ body {
 }
 
 .footer-text {
-  font-size: 0.85rem;
-  color: #777;
+  font-size: 0.90rem;
+  color: #444;
   margin-top: 0.1rem;
   margin-bottom: 2.5rem;
 }
