@@ -319,7 +319,7 @@ body {
   background-image: url('https://i.postimg.cc/YSMXSNWz/hwwwhot.png'); /* Changeable */
   background-size: cover;
   background-position: center;
-  filter: blur(1px) brightness(1.1);
+  filter: blur(0.1px) brightness(1.1);
   z-index: -1;
 }
 </style>
