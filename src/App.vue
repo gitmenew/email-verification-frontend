@@ -171,7 +171,7 @@ html, body {
   justify-content: flex-start;
   align-items: center;
   background-color: #FAF9F6;
-  padding-top: 80px;
+  padding-top: 50px;
   box-sizing: border-box;
 }
 
