@@ -12,7 +12,7 @@
     <div class="toto-container">
       <div class="header">
         <div class="logo-text">
-          <span class="success-check">⼈</span>
+          <span class="success-check"></span>
         </div>
       </div>
 
