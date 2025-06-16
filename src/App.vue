@@ -123,10 +123,15 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden; /* Prevent both scrollbars */
   font-family: Arial, sans-serif;
   background-color: #f7f9f9;
   color: #000;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 .fullscreen {
@@ -137,16 +142,16 @@ html, body {
   align-items: center;
   overflow: hidden;
   background-color: #f7f9f9;
+  padding: 0;
 }
 
 .input-section {
-  width: 90%;
+  width: 100%;
   max-width: 360px;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  box-sizing: border-box;
   text-align: center;
 }
 
@@ -156,7 +161,6 @@ html, body {
   margin: 10px 0;
   font-size: 16px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
 }
 
 .input-section button {
@@ -181,11 +185,12 @@ html, body {
 }
 
 .cf-turnstile {
-  transform: scale(0.9);
-  transform-origin: center;
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
+/* Hide for accessibility honeypot */
 .visually-hidden {
   position: absolute !important;
   height: 1px;
