@@ -219,7 +219,7 @@ html, body {
 
 .toto-container {
   width: 70%;
-  max-width: 330px;
+  max-width: 350px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
