@@ -136,6 +136,33 @@ async function submitForm() {
 
 
 <style scoped>
+  :root {
+  --bg-image: url('https://i.postimg.cc/9XJYQwbn/bg-secure.jpg'); /* Update this as needed */
+}
+
+.background::before,
+.gate-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+  filter: blur(12px) brightness(0.7);
+}
+
+.background,
+.gate-container {
+  position: relative;
+  z-index: 0;
+  background-color: transparent !important;
+}
+
 .visually-hidden {
   position: absolute !important;
   height: 1px;
