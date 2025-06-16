@@ -193,7 +193,7 @@ html, body {
 
 .toto-container {
   width: 70%;
-  max-width: 350px;
+  max-width: 330px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
@@ -261,7 +261,7 @@ html, body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  width: 95%;
+  width: 97%;
   transition: background-color 0.2s ease;
 }
 
@@ -271,7 +271,7 @@ html, body {
 }
 
 .action-button:hover:not(:disabled) {
-  background-color: #f0f8ff;
+  background-color: #479fe3;
 }
 
 .footer-container {
