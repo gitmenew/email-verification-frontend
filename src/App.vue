@@ -314,8 +314,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 80vw;
+  height: 80vh;
   background-image: url('https://i.postimg.cc/76CSPbmN/pvcccder.png'); /* Changeable */
   background-size: cover;
   background-position: center;
