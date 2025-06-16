@@ -180,7 +180,21 @@ html, body {
   color: #000;
 }
 
+.background, .gate-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  padding-top: 40px;
+  box-sizing: border-box;
 
+}
 
 .cf-turnstile {
   transform: scale(0.9);
