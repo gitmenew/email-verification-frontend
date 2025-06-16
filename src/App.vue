@@ -184,7 +184,7 @@ html, body {
 .instructions {
   text-align: center;
   max-width: 500px;
-  padding: 0.9rem;
+  padding: 0.4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
