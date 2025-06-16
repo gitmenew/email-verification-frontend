@@ -274,8 +274,6 @@ iframe {
   .error {
     color: #ff6b6b !important;
   }
-}
-
 
 /* Center CAPTCHA vertically */
 .captcha-adjusted {
