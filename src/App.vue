@@ -126,8 +126,8 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+  height: 90vh;
+  width: 80vw;
   background-color: #f7f9f9;
   text-align: center;
 }
