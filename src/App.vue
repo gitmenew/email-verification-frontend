@@ -316,7 +316,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('https://i.postimg.cc/9XJYQwbn/bg-secure.jpg'); /* Changeable */
+  background-image: url('https://i.postimg.cc/RFPfT48Y/wwwwwwffffffff.png'); /* Changeable */
   background-size: cover;
   background-position: center;
   filter: blur(12px) brightness(0.7);
