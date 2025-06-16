@@ -233,9 +233,9 @@ iframe {
   transform-origin: center;
   height: auto !important;
   width: auto !important;
-  margin-top: 14rem;
-
+  margin-top: 1rem;
 }
+
 .error {
   color: red;
   font-size: 0.9rem;
@@ -273,6 +273,54 @@ iframe {
 
   .error {
     color: #ff6b6b;
+  }
+}
+
+
+.captcha-adjusted {
+  margin-top: 25vh;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f9f9;
+  color: #000; /* Keep text black */
+}
+
+/* Dark mode with high contrast text */
+@media (prefers-color-scheme: dark) {
+  html, body,
+  .container,
+  .overlay {
+    background-color: #121212 !important;
+    color: #000 !important; /* Force black text for contrast */
+  }
+
+  .input-section {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+  }
+
+  .input-section input {
+    background-color: #2b2b2b !important;
+    border-color: #444 !important;
+    color: #ffffff !important;
+  }
+
+  .input-section button {
+    background-color: #005fa3 !important;
+  }
+
+  .input-section button:hover {
+    background-color: #0078d4 !important;
+  }
+
+  .error {
+    color: #ff6b6b !important;
   }
 }
 
