@@ -14,7 +14,7 @@
         <div class="logo-text">
      <span class="success-check">⼈</span>
         </div>
-      </div>
+        </div>
 
       <div class="content">
         <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="100" height="35">
@@ -137,21 +137,16 @@ async function submitForm() {
 
 
 <style scoped>
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-}
-
-.captcha-adjusted {
-  margin-top: 25vh !important;
+/* Ensure all elements respect box boundaries */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html, body {
   height: 100vh;
+  width: 100vw;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -160,7 +155,8 @@ html, body {
   color: #000;
 }
 
-.background, .gate-container {
+.background,
+.gate-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -172,14 +168,18 @@ html, body {
   align-items: center;
   background-color: #FAF9F6;
   padding-top: 80px;
-  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.captcha-adjusted {
+  margin-top: 25vh !important;
 }
 
 .cf-turnstile {
-  transform: scale(0.9);
+  transform: scale(0.95);
   transform-origin: center;
-  height: auto !important;
-  width: auto !important;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .instructions {
@@ -201,7 +201,9 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .header {
@@ -225,6 +227,7 @@ html, body {
 
 .content {
   text-align: center;
+  width: 100%;
 }
 
 .form-wrapper {
@@ -234,34 +237,28 @@ html, body {
   gap: 0.8rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
-.email-input {
-  width: 75%;
+.email-input,
+.action-button {
+  width: 100%;
+  max-width: 320px;
   padding: 0.6rem;
   border: 1px solid #818181;
   border-radius: 5px;
   font-size: 1rem;
-  background-color: #fff;
-  color: #000;
 }
 
-.error {
-  color: red;
-  font-size: 0.9rem;
-  margin-top: 0.19rem;
-  margin-bottom: -0.19rem;
+.email-input {
+  background-color: #fff;
+  color: #000;
 }
 
 .action-button {
   background-color: transparent;
   color: #0078D4;
-  padding: 0.6rem 1.2rem;
-  border: 1px solid #818181;
-  border-radius: 9px;
   cursor: pointer;
-  font-size: 1rem;
-  width: 75%;
   transition: background-color 0.2s ease;
 }
 
@@ -272,6 +269,13 @@ html, body {
 
 .action-button:hover:not(:disabled) {
   background-color: #f0f8ff;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.19rem;
+  margin-bottom: -0.19rem;
 }
 
 .footer-container {
@@ -287,6 +291,16 @@ html, body {
 .footer-text a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Anti-bot honeypot */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
 }
 
 @media (prefers-color-scheme: dark) {
