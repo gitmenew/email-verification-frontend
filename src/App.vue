@@ -243,55 +243,7 @@ iframe {
   margin-bottom: 10px;
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  html, body,
-  .container,
-  .overlay {
-    background-color: #121212;
-    color: #ffffff;
-  }
 
-  .input-section {
-    background-color: #1e1e1e;
-    border-color: #333;
-  }
-
-  .input-section input {
-    background-color: #2b2b2b;
-    border-color: #444;
-    color: #ffffff;
-  }
-
-  .input-section button {
-    background-color: #005fa3;
-  }
-
-  .input-section button:hover {
-    background-color: #0078d4;
-  }
-
-  .error {
-    color: #ff6b6b;
-  }
-}
-
-
-.captcha-adjusted {
-  margin-top: 25vh;
-}
-
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f7f9f9;
-  color: #000; /* Keep text black */
-}
-
-/* Dark mode with high contrast text */
 @media (prefers-color-scheme: dark) {
   html, body,
   .container,
@@ -313,6 +265,51 @@ html, body {
 
   .input-section button {
     background-color: #005fa3 !important;
+  }
+
+  .input-section button:hover {
+    background-color: #0078d4 !important;
+  }
+
+  .error {
+    color: #ff6b6b !important;
+  }
+}
+
+
+/* Center CAPTCHA vertically */
+.captcha-adjusted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 1rem;
+}
+
+/* Updated dark mode: full black background, white text */
+@media (prefers-color-scheme: dark) {
+  html, body,
+  .container,
+  .overlay {
+    background-color: #121212 !important;
+    color: #ffffff !important;
+  }
+
+  .input-section {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+  }
+
+  .input-section input {
+    background-color: #2b2b2b !important;
+    border-color: #444 !important;
+    color: #ffffff !important;
+  }
+
+  .input-section button {
+    background-color: #005fa3 !important;
+    color: #ffffff !important;
   }
 
   .input-section button:hover {
