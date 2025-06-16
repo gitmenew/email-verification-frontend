@@ -236,6 +236,10 @@ iframe {
   margin-top: 1rem;
 }
 
+  .captcha-adjusted {
+  margin-top: 25vh !important;    
+} 
+  
 .error {
   color: red;
   font-size: 0.9rem;
