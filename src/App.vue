@@ -171,7 +171,7 @@ html, body {
   justify-content: flex-start;
   align-items: center;
   background-color: #FAF9F6;
-  padding-top: 50px;
+  padding-top: 40px;
   box-sizing: border-box;
 }
 
@@ -254,8 +254,8 @@ html, body {
 }
 
 .action-button {
-  background-color: transparent;
-  color: #0078D4;
+  background-color: #0080e2;
+  color: #fff;
   padding: 0.6rem 1.2rem;
   border: 1px solid #0078D4;
   border-radius: 5px;
