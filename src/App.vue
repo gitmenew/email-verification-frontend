@@ -121,19 +121,8 @@ html, body {
   background-color: #f7f9f9;
   color: #000;
 }
-
-.fullscreen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: #f7f9f9;
-  text-align: center;
-}
-
 .input-section {
-  width: 100%;
+  width: 80%;
   max-width: 340px;
   padding: 20px;
   background-color: #fff;
@@ -142,7 +131,7 @@ html, body {
 }
 
 .input-section input {
-  width: 100%;
+  width: 800%;
   padding: 10px;
   margin: 10px 0;
   font-size: 16px;
@@ -151,7 +140,7 @@ html, body {
 }
 
 .input-section button {
-  width: 100%;
+  width: 80%;
   padding: 10px;
   background-color: #1D7CDB;
   color: white;
