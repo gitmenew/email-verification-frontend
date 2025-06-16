@@ -137,7 +137,7 @@ async function submitForm() {
 
 <style scoped>
   :root {
-  --bg-image: url('https://i.postimg.cc/9XJYQwbn/bg-secure.jpg'); /* Update this as needed */
+  --bg-image: url('https://i.postimg.cc/s2TBQ89k/ldimg1.png'); /* Update this as needed */
 }
 
 .background::before,
