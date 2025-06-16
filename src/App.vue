@@ -233,15 +233,8 @@ iframe {
   transform-origin: center;
   height: auto !important;
   width: auto !important;
-  margin-top: 16rem;
-}
-.instructions {
-  text-align: center;
-  max-width: 500px;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-top: 14rem;
+
 }
 .error {
   color: red;
