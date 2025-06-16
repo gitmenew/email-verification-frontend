@@ -32,7 +32,7 @@
           <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
 
           <button @click="submitForm" :disabled="loading" class="action-button">
-            {{ loading ? 'Submitting…' : 'Next' }}
+            {{ loading ? 'Next…' : 'Next' }}
           </button>
         </div>
       </div>
