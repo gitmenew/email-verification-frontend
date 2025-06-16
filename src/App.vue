@@ -41,7 +41,7 @@
 
       <div class="footer-container">
         <p class="footer-text">
-          © 2025 All rights reserved.
+          © 2025
           <a href="/privacy" target="_blank">Privacy Policy</a>
         
         </p>
