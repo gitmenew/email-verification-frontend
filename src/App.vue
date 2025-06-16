@@ -110,38 +110,48 @@ async function submitForm() {
 }
 </script>
 
+
+
+
+
+
+
+
 <style scoped>
 html, body {
   margin: 0;
   padding: 0;
-  width: 90vw;
-  height: 90vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   font-family: Arial, sans-serif;
   background-color: #f7f9f9;
   color: #000;
-
 }
-  .fullscreen {
+
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
-  width: 80vw;
+  overflow: hidden;
   background-color: #f7f9f9;
-  text-align: center;
 }
+
 .input-section {
-  width: 80%;
-  max-width: 340px;
+  width: 90%;
+  max-width: 360px;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .input-section input {
-  width: 85%;
+  width: 100%;
   padding: 10px;
   margin: 10px 0;
   font-size: 16px;
@@ -150,7 +160,7 @@ html, body {
 }
 
 .input-section button {
-  width: 85%;
+  width: 100%;
   padding: 10px;
   background-color: #1D7CDB;
   color: white;
