@@ -136,7 +136,33 @@ body {
   background-color: #f7f9f9;
   height: 100%;
 }
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+  .cf-turnstile {
+  transform: scale(0.9);
+  transform-origin: center;
+  height: auto !important;
+  width: auto !important;
+    }
 
+.captcha-adjusted {
+  margin-top: 25vh !important;
+}
+
+  .instructions {
+  text-align: center;
+  max-width: 500px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .container {
   display: flex;
   flex-direction: column;
