@@ -196,7 +196,7 @@ html, body {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-  padding: 5rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
