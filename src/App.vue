@@ -173,8 +173,8 @@ body {
 .background,
 .gate-container {
   position: relative;
-  height: 90vh;
-  width: 90vw;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -319,7 +319,7 @@ body {
   background-image: url('https://i.postimg.cc/RFPfT48Y/wwwwwwffffffff.png'); /* Changeable */
   background-size: cover;
   background-position: center;
-  filter: blur(12px) brightness(0.7);
+  filter: blur(3px) brightness(0.7);
   z-index: -1;
 }
 </style>
