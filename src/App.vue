@@ -250,11 +250,11 @@ body {
 .email-input {
   width: 93%;
   padding: 0.6rem;
-  border: 0.9px solid #e1e1e1;
+  border: 0.9px solid #000;
   border-radius: 5px;
   font-size: 1rem;
   background-color: #fff;
-  color: #e1e1e1;
+  color: #000;
 }
 
 .error {
