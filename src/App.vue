@@ -247,7 +247,7 @@ body {
 }
 
 .email-input {
-  width: 100%;
+  width: 90%;
   padding: 0.6rem;
   border: 1px solid #e1e1e1;
   border-radius: 5px;
@@ -271,7 +271,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  width: 108%;
+  width: 100%;
   transition: background-color 0.2s ease;
 }
 
