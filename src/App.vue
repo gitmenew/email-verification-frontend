@@ -180,7 +180,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   background-color: transparent;
-  padding-top: 45px;
+  padding-top: 50px;
   box-sizing: border-box;
   z-index: 0;
 }
@@ -292,7 +292,7 @@ body {
   font-size: 0.90rem;
   color: #444;
   margin-top: 0.1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
 }
 
 .footer-text a {
