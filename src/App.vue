@@ -205,7 +205,7 @@ body {
   width: 30%;
   max-width: 450px;
   background: #fff;
-  border-radius: 5px;
+  border-radius: 6px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   display: flex;
@@ -214,7 +214,7 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
   transform: translateX(-5%);
-
+  margin-top: 60px; /* or adjust to your needs *
 }
 
 .header {
