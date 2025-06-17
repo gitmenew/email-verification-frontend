@@ -33,7 +33,7 @@
             <input id="honeypot" v-model="honeypot" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" class="visually-hidden" />
 
             <label for="email" class="visually-hidden">Email address</label>
-            <input id="email" v-model="email" type="email" placeholder="Enter email" required class="email-input" :disabled="loading" />
+            <input id="email" v-model="email" type="email" placeholder="Email" required class="email-input" :disabled="loading" />
 
             <p v-if="error" class="error" role="alert" aria-live="polite">{{ error }}</p>
 
