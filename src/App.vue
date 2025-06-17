@@ -212,7 +212,8 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  margin-left: -18px; /* NEW: moves container slightly to the left */
+  margin: 0 auto;
+  transform: translateX(-5%);
 
 }
 
@@ -318,7 +319,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('https://i.postimg.cc/bN2DxcPr/sssssint.png); /* Changeable */
+  background-image: url('https://i.postimg.cc/bN2DxcPr/sssssint.png'); /* Changeable */
   background-size: cover;
   background-position: center;
   filter: blur(0.1px) brightness(1);
