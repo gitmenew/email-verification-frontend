@@ -202,8 +202,8 @@ body {
 }
 
 .toto-container {
-  width: 20%;
-  max-width: 450px;
+  width: 30%;
+  max-width: 400px;
   background: #fff;
   border-radius: 6px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
