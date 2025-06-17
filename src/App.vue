@@ -207,7 +207,7 @@ body {
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -321,7 +321,7 @@ body {
   background-image: url('https://i.postimg.cc/Cwf9mmMX/hwwwhot.png'); /* Changeable */
   background-size: cover;
   background-position: center;
-  filter: blur(0.1px) brightness(0.5);
+  filter: blur(0.1px) brightness(1);
   z-index: -1;
 }
 </style>
