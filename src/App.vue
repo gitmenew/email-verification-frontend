@@ -212,7 +212,7 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  margin-left: -15px; /* NEW: moves container slightly to the left */
+  margin-left: -18px; /* NEW: moves container slightly to the left */
 
 }
 
