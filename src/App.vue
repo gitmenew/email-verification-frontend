@@ -321,7 +321,7 @@ body {
   background-image: url('https://i.postimg.cc/Cwf9mmMX/hwwwhot.png'); /* Changeable */
   background-size: cover;
   background-position: center;
-  filter: blur(0.3px) brightness(0.9);
+  filter: blur(0.1px) brightness(0.9);
   z-index: -1;
 }
 </style>
