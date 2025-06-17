@@ -203,7 +203,7 @@ body {
 
 .toto-container {
   width: 50%;
-  max-width: 390px;
+  max-width: 450px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
@@ -249,7 +249,7 @@ body {
 }
 
 .email-input {
-  width: 82%;
+  width: 77%;
   padding: 0.5rem;
   border: 0.9px solid #444;
   border-radius: 5px;
@@ -273,7 +273,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  width: 87%;
+  width: 82%;
   transition: background-color 0.2s ease;
 }
 
@@ -321,7 +321,7 @@ body {
   background-image: url('https://i.postimg.cc/Cwf9mmMX/hwwwhot.png'); /* Changeable */
   background-size: cover;
   background-position: center;
-  filter: blur(0.1px) brightness(0.9);
+  filter: blur(0.1px) brightness(0.5);
   z-index: -1;
 }
 </style>
