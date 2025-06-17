@@ -47,7 +47,7 @@
 
         <div class="footer-container">
           <p class="footer-text">
-            © 2025 <a href="/privacy" target="_blank">Privacy Policy</a>
+            © 2025 <a href="/privacy" target="_blank">Privacy Policy.</a>
           </p>
         </div>
       </div>
@@ -250,7 +250,7 @@ body {
 }
 
 .email-input {
-  width: 77%;
+  width: 80%;
   padding: 0.5rem;
   border: 0.9px solid #444;
   border-radius: 5px;
@@ -274,7 +274,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  width: 82%;
+  width: 85%;
   transition: background-color 0.2s ease;
 }
 
