@@ -207,7 +207,7 @@ body {
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
