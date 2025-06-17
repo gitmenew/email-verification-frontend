@@ -180,7 +180,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   background-color: transparent;
-  padding-top: 50px;
+  padding-top: 60px;
   box-sizing: border-box;
   z-index: 0;
 }
@@ -204,7 +204,7 @@ body {
 .toto-container {
   width: 70%;
   max-width: 350px;
-  background: #f5f5f5;
+  background: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   padding: 3rem;
@@ -292,7 +292,7 @@ body {
   font-size: 0.90rem;
   color: #444;
   margin-top: 0.1rem;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.9rem;
 }
 
 .footer-text a {
