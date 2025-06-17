@@ -203,7 +203,7 @@ body {
 
 .toto-container {
   width: 50%;
-  max-width: 330px;
+  max-width: 390px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
@@ -321,7 +321,7 @@ body {
   background-image: url('https://i.postimg.cc/g0WFd6sv/snnnnn.png'); /* Changeable */
   background-size: cover;
   background-position: center;
-  filter: blur(0.3px) brightness(0.10);
+  filter: blur(0.3px) brightness(0.9);
   z-index: -1;
 }
 </style>
