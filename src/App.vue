@@ -271,7 +271,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  width: 100%;
+  width: 95%;
   transition: background-color 0.2s ease;
 }
 
