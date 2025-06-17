@@ -316,7 +316,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('https://i.postimg.cc/YSMXSNWz/hwwwhot.png'); /* Changeable */
+  background-image: url('https://i.postimg.cc/brqKbXWd/onedrive.png'); /* Changeable */
   background-size: cover;
   background-position: center;
   filter: blur(0.1px) brightness(1);
