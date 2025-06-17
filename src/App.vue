@@ -157,7 +157,7 @@ async function submitForm() {
 }
 
 .captcha-adjusted {
-  margin-top: 18vh !important;
+  margin-top: 25vh !important;
 }
 
 html,
