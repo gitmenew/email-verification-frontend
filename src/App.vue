@@ -203,7 +203,7 @@ body {
 
 .toto-container {
   width: 30%;
-  max-width: 400px;
+  max-width: 370px;
   background: #fff;
   border-radius: 6px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
@@ -212,7 +212,7 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  margin: 60px auto 0 auto; /* TOP margin pushes it downward */
+  margin: 50px auto 0 auto; /* TOP margin pushes it downward */
   transform: translateX(-5%); /* slight horizontal shift */
 }
 
