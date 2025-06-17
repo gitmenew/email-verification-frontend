@@ -202,12 +202,12 @@ body {
 }
 
 .toto-container {
-  width: 50%;
+  width: 90%;
   max-width: 450px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
