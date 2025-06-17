@@ -319,7 +319,7 @@ body {
   background-image: url('https://i.postimg.cc/g0WFd6sv/snnnnn.png'); /* Changeable */
   background-size: cover;
   background-position: center;
-  filter: blur(0.3px) brightness(0.9);
+  filter: blur(0.7px) brightness(0.9);
   z-index: -1;
 }
 </style>
