@@ -212,10 +212,10 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  margin: 0 auto;
-  transform: translateX(-5%);
-  margin-top: 60px; /* or adjust to your needs *
+  margin: 60px auto 0 auto; /* TOP margin pushes it downward */
+  transform: translateX(-5%); /* slight horizontal shift */
 }
+
 
 .header {
   display: flex;
