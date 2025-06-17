@@ -6,8 +6,6 @@ COPY . .
 
 RUN npm install
 RUN npm run build
-
-# Install production server only
 RUN npm install express
 
 EXPOSE 3000
