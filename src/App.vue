@@ -207,12 +207,13 @@ body {
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  padding-left: 2rem;
+  margin-left: -15px; /* NEW: moves container slightly to the left */
+
 }
 
 .header {
