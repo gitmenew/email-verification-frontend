@@ -206,7 +206,7 @@ body {
   max-width: 350px;
   background: #fff;
   border-radius: 6px;
-  box-shadow: 0 1px o.7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0.7px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   display: flex;
   flex-direction: column;
