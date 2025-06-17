@@ -7,7 +7,7 @@
     <div v-if="!captchaToken" class="gate-container">
       <main>
         <div class="instructions captcha-adjusted">
-          <p>Please stand by while we are checking if the site connection is secure.</p>
+          
           <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
         </div>
       </main>
