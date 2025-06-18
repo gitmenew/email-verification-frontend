@@ -146,9 +146,9 @@ body {
 }
 
 .toto-container {
-  width: 33%;
+  width: 100%;
   max-width: 350px;
-  background: #fff;
+  background: #FAF9F6;
   border-radius: 6px;
   box-shadow: 0 1px 0.7px rgba(0, 0, 0, 0.1);
   padding: 2rem;
@@ -157,7 +157,22 @@ body {
   justify-content: center;
   box-sizing: border-box;
   margin: 50px auto 0 auto;
-  transform: translateX(-5%);
+}
+
+@media screen and (max-width: 768px) {
+  .toto-container {
+    width: 90%;
+    margin: 20px auto 0 auto;
+    transform: none;
+  }
+
+  .email-input {
+    width: 100%;
+  }
+
+  .action-button {
+    width: 100%;
+  }
 }
 
 .header {
